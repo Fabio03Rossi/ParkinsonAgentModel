@@ -10,7 +10,10 @@ import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.RandomCartesianAdder;
 import repast.simphony.space.continuous.SimpleCartesianAdder;
 import repast.simphony.space.continuous.WrapAroundBorders;
+import repast.simphony.space.grid.StrictBorders;
 import repast.simphony.parameter.Parameters;
+import repast.simphony.valueLayer.GridValueLayer;
+import repast.simphony.valueLayer.ValueLayerDiffuser;
 
 public class ParkinsonBuilder implements ContextBuilder<Object>{
 
@@ -44,6 +47,14 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 				"space", context, new RandomCartesianAdder<Object>(),
 				new BouncyBorders(), spaceSize,
 				spaceSize);
+		
+		GridValueLayer layer = new GridValueLayer(
+				"cytokineLayer", 0.0, false, new StrictBorders(), 50, 50  
+		);
+		context.addValueLayer(layer);
+		
+		ValueLayerDiffuser diffuser = new ValueLayerDiffuser(layer, 1.0, 1.0);
+		context.add(new Environment(diffuser));
 		
 		for(int i = 0; i < neuroNum; i++) {
 			new Neuron(context, space, cyto, debris, alphaSinucleinLimit, neuroHealth);
