@@ -5,6 +5,7 @@ import repast.simphony.context.space.continuous.ContinuousSpaceFactory;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactoryFinder;
 import repast.simphony.dataLoader.ContextBuilder;
 import repast.simphony.engine.environment.RunEnvironment;
+import repast.simphony.space.continuous.BouncyBorders;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.RandomCartesianAdder;
 import repast.simphony.space.continuous.WrapAroundBorders;
@@ -24,13 +25,19 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		int neuroNum = Math.abs((Integer) params.getValue("neuro_num"));
 		
 		int actThr = Math.abs((Integer) params.getValue("activation_threshold"));
+		int debris = Math.abs((Integer) params.getValue("debris_released"));
+		int cyto = Math.abs((Integer) params.getValue("cytokines_released"));
+			
+		double debrisStr = Math.abs((Double) params.getValue("debris_strength"));
+		double cytoStr = Math.abs((Double) params.getValue("cytokines_strength"));
+
 		
 		
 		ContinuousSpaceFactory spaceFactory = ContinuousSpaceFactoryFinder
 				.createContinuousSpaceFactory(null);
 		ContinuousSpace<Object> space = spaceFactory.createContinuousSpace(
 				"space", context, new RandomCartesianAdder<Object>(),
-				new WrapAroundBorders(), spaceSize,
+				new BouncyBorders(), spaceSize,
 				spaceSize);
 		
 		RunEnvironment.getInstance().endAt(1000);
