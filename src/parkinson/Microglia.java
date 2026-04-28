@@ -9,13 +9,14 @@ import repast.simphony.query.space.continuous.ContinuousWithin;
 import repast.simphony.space.continuous.ContinuousSpace;
 
 public class Microglia extends GlialCell{
-private int range;
+	private double range;
 	
-	public Microglia(Context context, ContinuousSpace<Object> space, int activationThreshold, int range) {
+	public Microglia(Context context, ContinuousSpace<Object> space, int activationThreshold, double range ) {
 		super(context, space, activationThreshold);
+		this.range = range;
 	}
 	
-	protected DopaminergicNeuron targetNeuron;
+	protected Neuron targetNeuron;
 	
     @ScheduledMethod(start = 1, interval = 1, priority = 5)
     public void step1() {
@@ -48,18 +49,11 @@ private int range;
 	protected void perceiveNeurons() {
 		
 		
-		
-		
 		Iterable within = new ContinuousWithin(this.context, this, range).query();
-		within.forEach((Object o) -> {System.out.println(o.toString());});
-		Iterator<Object> t = within.iterator();
-		
-		while(t.hasNext()) {
-			Object c = t.next();
-			if(c instanceof DopaminergicNeuron) {
-				DopaminergicNeuron n = (DopaminergicNeuron) c;
-				System.out.println("ciao");
-				if(n.getState() == DopaminergicNeuronState.DEGENERATED_DEATH) {
+		for(var x : within) {
+			if(x instanceof Neuron) {
+				Neuron n = (Neuron) x;
+				if(n.getState() == NeuronState.DEGENERATED_DEATH) {
 					this.state = GlialState.DAMAGE_PERCEIVED;
 					this.targetNeuron = n;
 					System.out.println("posizione Neurone: " + this.space.getLocation(n));
@@ -67,8 +61,8 @@ private int range;
 
 				}
 			}
-			
 		}
+		
 		
 		
 	}

@@ -6,10 +6,10 @@ import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.space.continuous.ContinuousSpace;
 
-public class DopaminergicNeuron extends Agent {
+public class Neuron extends Agent {
 
 	private ContinuousSpace<Object> space;
-	private DopaminergicNeuronState state;
+	private NeuronState state;
 	
 	// Valori del neurone
 	private int cytokineValue;
@@ -22,14 +22,14 @@ public class DopaminergicNeuron extends Agent {
 
 	private static final Random rnd = new Random();
 	
-	public DopaminergicNeuron(
+	public Neuron(
 			Context context, ContinuousSpace<Object> space, int cytokineMaxValue, int debris, int alphaSinucleinMaxValue, int health) {
 		
 		super(context);
 		this.space = space;
 		this.alphaSinucleinMaxValue = alphaSinucleinMaxValue;
 		this.cytokineMaxValue = cytokineMaxValue;
-		this.state = DopaminergicNeuronState.HEALTHY;
+		this.state = NeuronState.HEALTHY;
 		this.debris = debris;
 		
 	}
@@ -65,7 +65,7 @@ public class DopaminergicNeuron extends Agent {
 		{
         	if(this.health == 0)
             {
-            	this.state = DopaminergicNeuronState.DEGENERATED_DEATH;
+            	this.state = NeuronState.DEGENERATED_DEATH;
             	System.out.println("Il neurone è morto");
             }
         	else 
@@ -90,11 +90,11 @@ public class DopaminergicNeuron extends Agent {
 		this.health = health;
 	}
     
-	public DopaminergicNeuronState getState() {
+	public NeuronState getState() {
 		return state;
 	}
 
-	public void setState(DopaminergicNeuronState state) {
+	public void setState(NeuronState state) {
 		this.state = state;
 	}
 	
