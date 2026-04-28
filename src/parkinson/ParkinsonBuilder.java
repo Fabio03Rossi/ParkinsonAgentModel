@@ -8,6 +8,7 @@ import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.space.continuous.BouncyBorders;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.RandomCartesianAdder;
+import repast.simphony.space.continuous.SimpleCartesianAdder;
 import repast.simphony.space.continuous.WrapAroundBorders;
 import repast.simphony.parameter.Parameters;
 
