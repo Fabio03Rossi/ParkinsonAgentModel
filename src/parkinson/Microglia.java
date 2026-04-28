@@ -9,10 +9,11 @@ import repast.simphony.query.space.continuous.ContinuousWithin;
 import repast.simphony.space.continuous.ContinuousSpace;
 
 public class Microglia extends GlialCell{
-private int range;
+	private double range;
 	
-	public Microglia(Context context, ContinuousSpace<Object> space, int activationThreshold, int range) {
+	public Microglia(Context context, ContinuousSpace<Object> space, int activationThreshold, double range ) {
 		super(context, space, activationThreshold);
+		this.range = range;
 	}
 	
 	protected DopaminergicNeuron targetNeuron;
@@ -48,11 +49,11 @@ private int range;
 	protected void perceiveNeurons() {
 		
 		
-		
-		
 		Iterable within = new ContinuousWithin(this.context, this, range).query();
-		within.forEach((Object o) -> {System.out.println(o.toString());});
 		Iterator<Object> t = within.iterator();
+		for(var x : within) {
+			System.out.println(x.toString());
+		}
 		
 		while(t.hasNext()) {
 			Object c = t.next();
