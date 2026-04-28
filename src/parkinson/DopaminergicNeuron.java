@@ -16,18 +16,21 @@ public class DopaminergicNeuron extends Agent {
 	private int alphaSinucleinValue;
 	private int health;
 	
+	private int debris;
 	private int alphaSinucleinMaxValue;
 	private int cytokineMaxValue;
 
 	private static final Random rnd = new Random();
 	
 	public DopaminergicNeuron(
-			Context context, ContinuousSpace<Object> space, int cytokineMaxValue, int alphaSinucleinMaxValue, int health) {
+			Context context, ContinuousSpace<Object> space, int cytokineMaxValue, int debris, int alphaSinucleinMaxValue, int health) {
 		
 		super(context);
 		this.space = space;
 		this.alphaSinucleinMaxValue = alphaSinucleinMaxValue;
 		this.cytokineMaxValue = cytokineMaxValue;
+		this.state = DopaminergicNeuronState.HEALTHY;
+		this.debris = debris;
 		
 	}
 
@@ -40,6 +43,7 @@ public class DopaminergicNeuron extends Agent {
             	if(x == 1)
             	{
             		alphaSinucleinValue++;
+            		System.out.println("Alpha sinucleina aggiunta al neurone");
             	}
             	
 
@@ -59,12 +63,17 @@ public class DopaminergicNeuron extends Agent {
         
         if(alphaSinucleinValue >= alphaSinucleinMaxValue)
 		{
-			this.loseHealth();
+        	if(this.health == 0)
+            {
+            	this.state = DopaminergicNeuronState.DEGENERATED_DEATH;
+            	System.out.println("Il neurone è morto");
+            }
+        	else 
+        	{
+    			this.loseHealth();
+        	}
 		}
-        if(this.health == 0)
-        {
-        	this.state = DopaminergicNeuronState.DEGENERATED_DEATH;
-        }
+        
     }
 	
 	private void absorbCytokine(Cytokine cytokine) {
@@ -74,6 +83,7 @@ public class DopaminergicNeuron extends Agent {
 	
 	public void loseHealth() {
 		this.health--;
+		System.out.println("Health del neurone scesa a: " + this.health);
 	}
 	
 	public void setHealth(int health) {
