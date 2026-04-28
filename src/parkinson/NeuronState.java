@@ -1,6 +1,6 @@
 package parkinson;
 
-public enum DopaminergicNeuronState {
+public enum NeuronState {
 	HEALTHY,
 	STRESSED, // high toxicity
 	DEGENERATED_DEATH,

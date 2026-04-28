@@ -16,7 +16,7 @@ public class Microglia extends GlialCell{
 		this.range = range;
 	}
 	
-	protected DopaminergicNeuron targetNeuron;
+	protected Neuron targetNeuron;
 	
     @ScheduledMethod(start = 1, interval = 1, priority = 5)
     public void step1() {
@@ -50,17 +50,10 @@ public class Microglia extends GlialCell{
 		
 		
 		Iterable within = new ContinuousWithin(this.context, this, range).query();
-		Iterator<Object> t = within.iterator();
 		for(var x : within) {
-			System.out.println(x.toString());
-		}
-		
-		while(t.hasNext()) {
-			Object c = t.next();
-			if(c instanceof DopaminergicNeuron) {
-				DopaminergicNeuron n = (DopaminergicNeuron) c;
-				System.out.println("ciao");
-				if(n.getState() == DopaminergicNeuronState.DEGENERATED_DEATH) {
+			if(x instanceof Neuron) {
+				Neuron n = (Neuron) x;
+				if(n.getState() == NeuronState.DEGENERATED_DEATH) {
 					this.state = GlialState.DAMAGE_PERCEIVED;
 					this.targetNeuron = n;
 					System.out.println("posizione Neurone: " + this.space.getLocation(n));
@@ -68,8 +61,8 @@ public class Microglia extends GlialCell{
 
 				}
 			}
-			
 		}
+		
 		
 		
 	}

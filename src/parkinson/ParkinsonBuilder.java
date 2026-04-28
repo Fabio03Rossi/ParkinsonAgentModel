@@ -45,7 +45,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 				spaceSize);
 		
 		for(int i = 0; i < neuroNum; i++) {
-			new DopaminergicNeuron(context, space, cyto, debris, alphaSinucleinLimit, neuroHealth);
+			new Neuron(context, space, cyto, debris, alphaSinucleinLimit, neuroHealth);
 		}
 		
 		for(int i = 0; i < microNum; i++) {
