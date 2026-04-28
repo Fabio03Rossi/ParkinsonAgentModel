@@ -27,9 +27,9 @@ public class DopaminergicNeuron extends Agent {
 		
 	}
 	
-	private void absorbCytokine() {
+	private void absorbCytokine(Cytokine cytokine) {
+		this.context.remove(cytokine);
 		this.setCytokineValue(this.cytokineValue + 1);
-		
 	}
 	
 	public void setCytokineValue(int cytokineValue) {
