@@ -38,7 +38,9 @@ public class DopaminergicNeuron extends Agent {
             case HEALTHY:
             	int x = rnd.nextInt(2);
             	if(x == 1)
+            	{
             		alphaSinucleinValue++;
+            	}
             	
 
             break;
@@ -50,8 +52,34 @@ public class DopaminergicNeuron extends Agent {
 
                 break;
         }
+        
+        
+        
+        // CONTROLLI DI STEP
+        
+        if(alphaSinucleinValue >= alphaSinucleinMaxValue)
+		{
+			this.loseHealth();
+		}
+        if(this.health == 0)
+        {
+        	this.state = DopaminergicNeuronState.DEGENERATED_DEATH;
+        }
     }
 	
+	private void absorbCytokine(Cytokine cytokine) {
+		this.context.remove(cytokine);
+		this.setCytokineValue(this.cytokineValue + 1);
+	}
+	
+	public void loseHealth() {
+		this.health--;
+	}
+	
+	public void setHealth(int health) {
+		this.health = health;
+	}
+    
 	public DopaminergicNeuronState getState() {
 		return state;
 	}
@@ -60,10 +88,6 @@ public class DopaminergicNeuron extends Agent {
 		this.state = state;
 	}
 	
-	private void absorbCytokine(Cytokine cytokine) {
-		this.context.remove(cytokine);
-		this.setCytokineValue(this.cytokineValue + 1);
-	}
 	
 	public void setCytokineValue(int cytokineValue) {
 		this.cytokineValue = cytokineValue;
