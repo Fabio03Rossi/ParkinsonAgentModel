@@ -12,4 +12,12 @@ public class DopaminergicNeuron extends Agent {
 		super(context);
 		this.space = space;
 	}
+
+	public DopaminergicNeuronState getState() {
+		return state;
+	}
+
+	public void setState(DopaminergicNeuronState state) {
+		this.state = state;
+	}
 }

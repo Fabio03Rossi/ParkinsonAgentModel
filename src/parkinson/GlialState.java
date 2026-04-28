@@ -1,8 +1,8 @@
 package parkinson;
 
-public enum MicrogliaState {
+public enum GlialState {
 	RESTING,
 	DAMAGE_PERCEIVED,
 	PHAGOCITATION,
-	INFLAMMATORY_BYSTANDER,
+	INFLAMMATORY,
 }
