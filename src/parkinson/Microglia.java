@@ -9,25 +9,36 @@ import repast.simphony.query.space.continuous.ContinuousWithin;
 import repast.simphony.space.continuous.ContinuousSpace;
 
 public class Microglia extends GlialCell{
-	private double range;
+	private int perceptionRange;
 	private GlialState GliaState;
 	private boolean infiammatoryState; //true per stato infiammatorio, false per stato non infiammato
-	private double cytokineRange;
+	private int cytokineRange;
+	private int cytokineReleaseRate;
 	
 	
-	public Microglia(Context context, ContinuousSpace<Object> space, int activationThreshold, double range, double cytokineRange ) {
+	public Microglia(Context context, ContinuousSpace<Object> space, int activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate) {
 		super(context, space, activationThreshold);
-		this.range = range;
+		this.perceptionRange = perceptionRange;
 		this.state = GlialState.RESTING;
 		this.infiammatoryState = false;
 		this.cytokineRange = cytokineRange;
+		this.cytokineReleaseRate = cytokineReleaseRate;
 	}
 	
 	
-	ValueLayerDiffuser 
-	
-	
 	protected Neuron targetNeuron;
+	
+	@ScheduledMethod(start = 1, interval = 3, priority = 4)
+	public void cytokineRelease() {
+		 // Infiammazione da citochine con intervallo maggiore a 1
+	       if(this.infiammatoryState == true){
+	    	   // TODO Produce citochine
+	       }
+	       else{
+	    	   // TODO Check per citochine nei dintorni
+	       }
+	}
+	
 	
     @ScheduledMethod(start = 1, interval = 1, priority = 5)
     public void step1() {
@@ -48,16 +59,7 @@ public class Microglia extends GlialCell{
             	this.state = GlialState.RESTING;
                 break;
         }
-        
-        
-        // Infiammazione da citochine
-       if(this.infiammatoryState == true){
-    	   // TODO Produce citochine
-       }
-       else{
-    	   // TODO Check per citochine nei dintorni
-    	   Iterable within = new ContinuousWithin(this.context, this, cytokineRange).query();
-       }
+       
     }
 	
 	@Override
