@@ -52,7 +52,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 				"cytokineLayer", 0.0, false, new StrictBorders(), 50, 50  
 		);
 		context.addValueLayer(layer);
-		
+				
 		ValueLayerDiffuser diffuser = new ValueLayerDiffuser(layer, 1.0, 1.0);
 		context.add(new Environment(diffuser));
 		
