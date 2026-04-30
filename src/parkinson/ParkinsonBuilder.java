@@ -3,6 +3,8 @@ package parkinson;
 import repast.simphony.context.Context;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactory;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactoryFinder;
+import repast.simphony.context.space.grid.GridFactory;
+import repast.simphony.context.space.grid.GridFactoryFinder;
 import repast.simphony.dataLoader.ContextBuilder;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.space.continuous.BouncyBorders;
@@ -10,6 +12,9 @@ import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.RandomCartesianAdder;
 import repast.simphony.space.continuous.SimpleCartesianAdder;
 import repast.simphony.space.continuous.WrapAroundBorders;
+import repast.simphony.space.grid.Grid;
+import repast.simphony.space.grid.GridBuilderParameters;
+import repast.simphony.space.grid.SimpleGridAdder;
 import repast.simphony.space.grid.StrictBorders;
 import repast.simphony.parameter.Parameters;
 import repast.simphony.valueLayer.GridValueLayer;
@@ -27,15 +32,15 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		int microNum = Math.abs((Integer) params.getValue("micro_num"));
 		int astroNum = Math.abs((Integer) params.getValue("astro_num"));
 		int neuroNum = Math.abs((Integer) params.getValue("neuro_num"));
-		int range = Math.abs((Integer) params.getValue("range"));
-		int cytokineRange = Math.abs((Integer) params.getValue("cytokine_range"));
+		int perceptionRange = Math.abs((Integer) params.getValue("range"));
+		int cytoRange = Math.abs((Integer) params.getValue("cytokine_range"));
 
 		int neuroHealth = Math.abs((Integer) params.getValue("neuro_health"));
 		int actThr = Math.abs((Integer) params.getValue("activation_threshold"));
+		int cytoThr = Math.abs((Integer) params.getValue("cytokines_threshold"));
+		int alphaThr = Math.abs((Integer) params.getValue("alpha_threshold"));
 		int debris = Math.abs((Integer) params.getValue("debris_released"));
-		int cyto = Math.abs((Integer) params.getValue("cytokines_released"));
-		//int alphaSinucleinLimit = Math.abs((Integer) params.getValue("alphaSinucleinLimit"));
-		int alphaSinucleinLimit = 1;
+		int cytoRate = Math.abs((Integer) params.getValue("cytokines_released"));
 		
 		
 		double debrisStr = Math.abs((Double) params.getValue("debris_strength"));
@@ -49,8 +54,14 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 				new BouncyBorders(), spaceSize,
 				spaceSize);
 		
+		GridFactory gridFactory = GridFactoryFinder.createGridFactory(null);
+		Grid<Object> grid = gridFactory.createGrid(
+				"grid", context, 
+				GridBuilderParameters.singleOccupancy2D(new SimpleGridAdder<Object>(), new StrictBorders(), spaceSize, spaceSize)
+		);
+		
 		GridValueLayer layer = new GridValueLayer(
-				"cytokineLayer", 0.0, false, new StrictBorders(), 50, 50  
+				"cytokineLayer", 0.0, false, new StrictBorders(), spaceSize, spaceSize  
 		);
 		context.addValueLayer(layer);
 				
@@ -58,11 +69,11 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		context.add(new Environment(diffuser));
 		
 		for(int i = 0; i < neuroNum; i++) {
-			new Neuron(context, space, cyto, debris, alphaSinucleinLimit, neuroHealth);
+			new Neuron(context, cytoThr, debris, alphaThr, neuroHealth);
 		}
 		
 		for(int i = 0; i < microNum; i++) {
-			new Microglia(context, space, actThr, range, cytokineRange);
+			new Microglia(context, space, actThr, perceptionRange, cytoRange, cytoRate);
 		}
 		
 		RunEnvironment.getInstance().endAt(1000);
