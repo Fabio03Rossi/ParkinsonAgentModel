@@ -70,7 +70,7 @@ public class Microglia extends GlialCell{
 	protected void perceiveNeurons() {
 		
 		
-		Iterable within = new ContinuousWithin(this.context, this, range).query();
+		Iterable within = new ContinuousWithin(this.context, this, cytokineRange).query();
 		for(var x : within) {
 			if(x instanceof Neuron) {
 				Neuron n = (Neuron) x;
