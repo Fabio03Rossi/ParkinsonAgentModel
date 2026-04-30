@@ -4,14 +4,17 @@ import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.valueLayer.ValueLayerDiffuser;
 
 public class Environment {
-	private ValueLayerDiffuser diffuser;
+	private ValueLayerDiffuser cytoDiffuser;
+	private ValueLayerDiffuser alphaDiffuser;
 
-    public Environment(ValueLayerDiffuser diffuser) {
-        this.diffuser = diffuser;
+    public Environment(ValueLayerDiffuser cytoDiffuser, ValueLayerDiffuser alphaDiffuser) {
+        this.cytoDiffuser = cytoDiffuser;
+        this.alphaDiffuser = alphaDiffuser;
     }
     
     @ScheduledMethod(start = 1, interval = 1)
     public void step() {
-        diffuser.diffuse();
+    	cytoDiffuser.diffuse();
+    	alphaDiffuser.diffuse();
     }
 }

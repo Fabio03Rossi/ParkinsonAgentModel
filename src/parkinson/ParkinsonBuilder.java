@@ -42,7 +42,6 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		int debris = Math.abs((Integer) params.getValue("debris_released"));
 		int cytoRate = Math.abs((Integer) params.getValue("cytokines_released"));
 		
-		
 		double debrisStr = Math.abs((Double) params.getValue("debris_strength"));
 		double cytoStr = Math.abs((Double) params.getValue("cytokines_strength"));
 		
@@ -60,13 +59,19 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 				GridBuilderParameters.singleOccupancy2D(new SimpleGridAdder<Object>(), new StrictBorders(), spaceSize, spaceSize)
 		);
 		
-		GridValueLayer layer = new GridValueLayer(
+		GridValueLayer cytoLayer = new GridValueLayer(
 				"cytokineLayer", 0.0, false, new StrictBorders(), spaceSize, spaceSize  
 		);
-		context.addValueLayer(layer);
-				
-		ValueLayerDiffuser diffuser = new ValueLayerDiffuser(layer, 1.0, 1.0);
-		context.add(new Environment(diffuser));
+		context.addValueLayer(cytoLayer);
+		
+		GridValueLayer alphaLayer = new GridValueLayer(
+				"alphaLayer", 0.0, false, new StrictBorders(), spaceSize, spaceSize  
+		);
+		context.addValueLayer(alphaLayer);
+		
+		ValueLayerDiffuser cytoDiffuser = new ValueLayerDiffuser(cytoLayer, 1.0, 1.0);
+		ValueLayerDiffuser alphaDiffuser = new ValueLayerDiffuser(alphaLayer, 1.0, 1.0);
+		context.add(new Environment(cytoDiffuser, alphaDiffuser));
 		
 		for(int i = 0; i < neuroNum; i++) {
 			new Neuron(context, cytoThr, debris, alphaThr, neuroHealth);

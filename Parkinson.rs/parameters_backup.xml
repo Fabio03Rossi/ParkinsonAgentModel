@@ -15,6 +15,11 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
+				<parameter name="cytokines_threshold" displayName="Cytokines Threshold" type="int" 
+						defaultValue="3" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+											/>
 				<parameter name="space_size" displayName="Space Size" type="int" 
 						defaultValue="50" 
 						isReadOnly="false" 
@@ -52,6 +57,11 @@
 											/>
 				<parameter name="micro_num" displayName="Number of Micoglias" type="int" 
 						defaultValue="5" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+											/>
+				<parameter name="alpha_threshold" displayName="Alpha Threshold" type="int" 
+						defaultValue="3" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
