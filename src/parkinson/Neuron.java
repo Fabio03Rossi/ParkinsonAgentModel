@@ -14,7 +14,7 @@ public class Neuron extends Agent {
 	
 	private ContinuousSpace<Object> space;
 	private Grid<Object> grid;
-	private GridValueLayer valueLayer;
+	private GridValueLayer cytoValueLayer;
 	
 	private NeuronState state;
 	
@@ -22,6 +22,9 @@ public class Neuron extends Agent {
 	private int cytokineValue;
 	private int alphaSinucleinValue;
 	private int health;
+	
+	private final double x;
+	private final double y;
 	
 	private int debris;
 	private int alphaSinucleinTreshold;
@@ -34,16 +37,28 @@ public class Neuron extends Agent {
 		super(context);
 		this.space = (ContinuousSpace<Object>) context.getProjection("space");
 		this.grid = (Grid<Object>) context.getProjection("grid");
-		this.valueLayer = (GridValueLayer) context.getValueLayer("cytokineLayer");
+		this.cytoValueLayer = (GridValueLayer) context.getValueLayer("cytokineLayer");
+		
 		this.alphaSinucleinTreshold = alphaSinucleinTreshold;
 		this.cytokineTreshold = cytokineTreshold;
 		this.state = NeuronState.HEALTHY;
 		this.debris = debris;
 		
+		this.x = space.getLocation(this).getX();
+		this.y = space.getLocation(this).getY();
+
+		
 		this.MAX_HEALTH = health;
 		this.health = health;
 	}
 
+	
+	@ScheduledMethod(start = 1, interval = 1, priority = 5)
+	public void cytokineAbsorption() {
+		int x;
+		int y;
+		if(this.cytoValueLayer.get())
+	}
 	
     @ScheduledMethod(start = 1, interval = 1, priority = 5)
     public void step1() {
@@ -51,7 +66,7 @@ public class Neuron extends Agent {
             case HEALTHY:
             	int x = rnd.nextInt(2);
             	if(x == 1)
-            	{
+            	{	
             		alphaSinucleinValue++;
             		System.out.println("Alpha sinucleina aggiunta al neurone");
             	}

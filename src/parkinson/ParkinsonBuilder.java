@@ -1,5 +1,7 @@
 package parkinson;
 
+import org.omg.CORBA.Environment;
+
 import repast.simphony.context.Context;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactory;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactoryFinder;
@@ -41,6 +43,9 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		int alphaThr = Math.abs((Integer) params.getValue("alpha_threshold"));
 		int debris = Math.abs((Integer) params.getValue("debris_released"));
 		int cytoRate = Math.abs((Integer) params.getValue("cytokines_released"));
+		int diffusionConstant = 1;
+		int diffusionEvaporation = 1;
+		
 		
 		double debrisStr = Math.abs((Double) params.getValue("debris_strength"));
 		double cytoStr = Math.abs((Double) params.getValue("cytokines_strength"));
@@ -70,7 +75,15 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		context.addValueLayer(alphaLayer);
 		
 		ValueLayerDiffuser cytoDiffuser = new ValueLayerDiffuser(cytoLayer, 1.0, 1.0);
+		// Impostazioni diffuserLayer
+		cytoDiffuser.setDiffusionConst(diffusionConstant); 		// 1 = [0, 10, 0] gives [5, 0, 5].
+		cytoDiffuser.setEvaporationConst(diffusionEvaporation); 	// 1 = no evaporation
+
 		ValueLayerDiffuser alphaDiffuser = new ValueLayerDiffuser(alphaLayer, 1.0, 1.0);
+		// Impostazioni diffuserLayer
+		alphaDiffuser.setDiffusionConst(diffusionConstant); 		// 1 = [0, 10, 0] gives [5, 0, 5].
+		alphaDiffuser.setEvaporationConst(diffusionEvaporation); 	// 1 = no evaporation
+
 		context.add(new Environment(cytoDiffuser, alphaDiffuser));
 		
 		for(int i = 0; i < neuroNum; i++) {
