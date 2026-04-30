@@ -17,18 +17,18 @@ public class Neuron extends Agent {
 	private int health;
 	
 	private int debris;
-	private int alphaSinucleinMaxValue;
-	private int cytokineMaxValue;
+	private int alphaSinucleinTreshold;
+	private int cytokineTreshold;
 
 	private static final Random rnd = new Random();
 	
 	public Neuron(
-			Context context, ContinuousSpace<Object> space, int cytokineMaxValue, int debris, int alphaSinucleinMaxValue, int health) {
+			Context context, ContinuousSpace<Object> space, int cytokineTreshold, int debris, int alphaSinucleinTreshold, int health) {
 		
 		super(context);
 		this.space = space;
-		this.alphaSinucleinMaxValue = alphaSinucleinMaxValue;
-		this.cytokineMaxValue = cytokineMaxValue;
+		this.alphaSinucleinTreshold = alphaSinucleinTreshold;
+		this.cytokineTreshold = cytokineTreshold;
 		this.state = NeuronState.HEALTHY;
 		this.debris = debris;
 		
@@ -61,16 +61,18 @@ public class Neuron extends Agent {
         
         // CONTROLLI DI STEP
         
-        if(alphaSinucleinValue >= alphaSinucleinMaxValue)
+        if(alphaSinucleinValue >= alphaSinucleinTreshold)
 		{
-        	if(this.health == 0)
+        	if(this.health != 0)
             {
-            	this.state = NeuronState.DEGENERATED_DEATH;
-            	System.out.println("Il neurone è morto");
+        		this.loseHealth();
             }
         	else 
         	{
-    			this.loseHealth();
+        		if(this.state != NeuronState.DEGENERATED_DEATH) {
+                	this.state = NeuronState.DEGENERATED_DEATH;
+                	System.out.println("Il neurone è morto");
+        		}
         	}
 		}
         

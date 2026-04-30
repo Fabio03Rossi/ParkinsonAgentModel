@@ -11,12 +11,12 @@
       <string>repast.simphony.visualizationOGL2D.DefaultStyleOGL2D</string>
     </entry>
     <entry>
-      <string>parkinson.DopaminergicNeuron</string>
+      <string>parkinson.Microglia</string>
       <string>repast.simphony.visualization.editedStyle.EditedStyle2D</string>
     </entry>
     <entry>
-      <string>parkinson.Microglia</string>
-      <string>repast.simphony.visualization.editedStyle.EditedStyle2D</string>
+      <string>parkinson.Neuron</string>
+      <string>repast.simphony.visualizationOGL2D.DefaultStyleOGL2D</string>
     </entry>
   </styles>
   <editedStyles>
@@ -29,12 +29,12 @@
       <null/>
     </entry>
     <entry>
-      <string>parkinson.DopaminergicNeuron</string>
-      <string>parkinson.DopaminergicNeuron.style_0.xml</string>
-    </entry>
-    <entry>
       <string>parkinson.Microglia</string>
       <string>parkinson.Microglia.style_0.xml</string>
+    </entry>
+    <entry>
+      <string>parkinson.Neuron</string>
+      <null/>
     </entry>
   </editedStyles>
   <netStyles/>
@@ -47,7 +47,7 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>-59517245</hashCode>
+    <hashCode>1687591448</hashCode>
   </schedParams>
   <layoutClassName>foo.bar.baz</layoutClassName>
   <layoutProjection>space</layoutProjection>
@@ -55,19 +55,19 @@
   <layerOrder>
     <entry>
       <string>parkinson.Cytokine</string>
-      <int>1</int>
+      <int>2</int>
     </entry>
     <entry>
       <string>parkinson.AlphaSinuclein</string>
-      <int>0</int>
-    </entry>
-    <entry>
-      <string>parkinson.DopaminergicNeuron</string>
-      <int>3</int>
+      <int>1</int>
     </entry>
     <entry>
       <string>parkinson.Microglia</string>
-      <int>2</int>
+      <int>3</int>
+    </entry>
+    <entry>
+      <string>parkinson.Neuron</string>
+      <int>0</int>
     </entry>
   </layerOrder>
   <projections>
