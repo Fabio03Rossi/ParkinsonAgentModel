@@ -41,6 +41,9 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		int alphaThr = Math.abs((Integer) params.getValue("alpha_threshold"));
 		int debris = Math.abs((Integer) params.getValue("debris_released"));
 		int cytoRate = Math.abs((Integer) params.getValue("cytokines_released"));
+		int diffusionConstant = 1;
+		int diffusionEvaporation = 1;
+		
 		
 		
 		double debrisStr = Math.abs((Double) params.getValue("debris_strength"));
@@ -66,6 +69,11 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		context.addValueLayer(layer);
 				
 		ValueLayerDiffuser diffuser = new ValueLayerDiffuser(layer, 1.0, 1.0);
+		
+		// Impostazioni diffuserLayer
+		diffuser.setDiffusionConst(diffusionConstant); 		// 1 = [0, 10, 0] gives [5, 0, 5].
+		diffuser.setEvaporationConst(diffusionEvaporation); 	// 1 = no evaporation
+		
 		context.add(new Environment(diffuser));
 		
 		for(int i = 0; i < neuroNum; i++) {
