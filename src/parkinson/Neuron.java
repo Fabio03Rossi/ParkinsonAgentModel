@@ -8,8 +8,11 @@ import repast.simphony.space.continuous.ContinuousSpace;
 
 public class Neuron extends Agent {
 
+	private final int MAX_HEALTH;
+	
 	private ContinuousSpace<Object> space;
 	private NeuronState state;
+
 	
 	// Valori del neurone
 	private int cytokineValue;
@@ -32,6 +35,8 @@ public class Neuron extends Agent {
 		this.state = NeuronState.HEALTHY;
 		this.debris = debris;
 		
+		this.MAX_HEALTH = health;
+		this.health = health;
 	}
 
 	
@@ -100,6 +105,13 @@ public class Neuron extends Agent {
 		this.state = state;
 	}
 	
+	public int getMaxHealth() {
+		return MAX_HEALTH;
+	}
+	
+	public int getHealth() {
+		return health;
+	}
 	
 	public void setCytokineValue(int cytokineValue) {
 		this.cytokineValue = cytokineValue;
