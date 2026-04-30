@@ -7,6 +7,8 @@ import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.query.space.continuous.ContinuousWithin;
 import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.grid.Grid;
+import repast.simphony.valueLayer.GridValueLayer;
 
 public class Microglia extends GlialCell{
 	private int perceptionRange;
@@ -15,9 +17,12 @@ public class Microglia extends GlialCell{
 	private int cytokineRange;
 	private int cytokineReleaseRate;
 	
+	// LAYERS
+	private GridValueLayer cytokineLayer;
 	
-	public Microglia(Context context, ContinuousSpace<Object> space, int activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate) {
-		super(context, space, activationThreshold);
+	
+	public Microglia(Context context, ContinuousSpace<Object> space, Grid<Object> grid, int activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate, GridValueLayer cytokineLayer) {
+		super(context, space, activationThreshold, grid);
 		this.perceptionRange = perceptionRange;
 		this.state = GlialState.RESTING;
 		this.infiammatoryState = false;
@@ -30,12 +35,26 @@ public class Microglia extends GlialCell{
 	
 	@ScheduledMethod(start = 1, interval = 3, priority = 4)
 	public void cytokineRelease() {
+		
+		// Ottengo la posizione dalla griglia
+ 	   int x = this.grid.getLocation(this).getX();
+ 	   int y = this.grid.getLocation(this).getY();
+		
 		 // Infiammazione da citochine con intervallo maggiore a 1
 	       if(this.infiammatoryState == true){
-	    	   // TODO Produce citochine
+
+	    	   
+
+	    	   double cytokineValue = cytokineLayer.get(x,y);
+	    	   // Setto il nuovo valore
+	    	   cytokineLayer.set(++cytokineValue, x, y);
 	       }
 	       else{
 	    	   // TODO Check per citochine nei dintorni
+	    	   
+	    	   if(cytokineLayer.get(x,y) >= 1) {
+	    		   this.state = GlialState.INFLAMMATORY;
+	    	   }
 	       }
 	}
 	

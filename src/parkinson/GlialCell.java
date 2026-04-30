@@ -5,20 +5,26 @@ import java.util.Iterator;
 import repast.simphony.context.Context;
 import repast.simphony.query.space.continuous.ContinuousWithin;
 import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.grid.Grid;
 
 public class GlialCell extends Agent{
 
 	protected ContinuousSpace<Object> space;
+	protected Grid<Object> grid;
 	protected GlialState state;
+	
 	
 	protected int cytokinesReceived;
 	protected int activationThreshold;
 	
-	public GlialCell(Context context, ContinuousSpace<Object> space, int activationThreshold) {
+	public GlialCell(Context context, ContinuousSpace<Object> space, int activationThreshold, Grid<Object> grid) {
 		super(context);
 		this.space = space;
+		this.grid = grid;
+		
 		this.activationThreshold = activationThreshold;
 		this.state = GlialState.RESTING;
+		
 	}
 	
 	protected void perceiveCytokines() {

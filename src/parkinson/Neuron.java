@@ -55,9 +55,9 @@ public class Neuron extends Agent {
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 5)
 	public void cytokineAbsorption() {
-		int x;
-		int y;
-		if(this.cytoValueLayer.get())
+		if(this.cytoValueLayer.get(this.x,this.y) != 0);{
+			
+		}
 	}
 	
     @ScheduledMethod(start = 1, interval = 1, priority = 5)
