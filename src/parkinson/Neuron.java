@@ -5,14 +5,18 @@ import java.util.Random;
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.space.continuous.ContinuousSpace;
+import repast.simphony.space.grid.Grid;
+import repast.simphony.valueLayer.GridValueLayer;
 
 public class Neuron extends Agent {
 
 	private final int MAX_HEALTH;
 	
 	private ContinuousSpace<Object> space;
+	private Grid<Object> grid;
+	private GridValueLayer valueLayer;
+	
 	private NeuronState state;
-
 	
 	// Valori del neurone
 	private int cytokineValue;
@@ -25,11 +29,12 @@ public class Neuron extends Agent {
 
 	private static final Random rnd = new Random();
 	
-	public Neuron(
-			Context context, ContinuousSpace<Object> space, int cytokineTreshold, int debris, int alphaSinucleinTreshold, int health) {
+	public Neuron(Context context, int cytokineTreshold, int debris, int alphaSinucleinTreshold, int health) {
 		
 		super(context);
-		this.space = space;
+		this.space = (ContinuousSpace<Object>) context.getProjection("space");
+		this.grid = (Grid<Object>) context.getProjection("grid");
+		this.valueLayer = (GridValueLayer) context.getValueLayer("cytokineLayer");
 		this.alphaSinucleinTreshold = alphaSinucleinTreshold;
 		this.cytokineTreshold = cytokineTreshold;
 		this.state = NeuronState.HEALTHY;
