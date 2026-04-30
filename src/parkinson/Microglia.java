@@ -10,11 +10,22 @@ import repast.simphony.space.continuous.ContinuousSpace;
 
 public class Microglia extends GlialCell{
 	private double range;
+	private GlialState GliaState;
+	private boolean infiammatoryState; //true per stato infiammatorio, false per stato non infiammato
+	private double cytokineRange;
 	
-	public Microglia(Context context, ContinuousSpace<Object> space, int activationThreshold, double range ) {
+	
+	public Microglia(Context context, ContinuousSpace<Object> space, int activationThreshold, double range, double cytokineRange ) {
 		super(context, space, activationThreshold);
 		this.range = range;
+		this.state = GlialState.RESTING;
+		this.infiammatoryState = false;
+		this.cytokineRange = cytokineRange;
 	}
+	
+	
+	ValueLayerDiffuser 
+	
 	
 	protected Neuron targetNeuron;
 	
@@ -28,17 +39,25 @@ public class Microglia extends GlialCell{
             break;
                 
             case DAMAGE_PERCEIVED:
-            	this.context.remove(targetNeuron);
+            	// TODO muovere passo passo la cellula gliale
+            	this.state = GlialState.PHAGOCITATION;
             break;
 
             case PHAGOCITATION:
-
-                break;
-
-            case INFLAMMATORY:
-
+            	this.context.remove(targetNeuron);
+            	this.state = GlialState.RESTING;
                 break;
         }
+        
+        
+        // Infiammazione da citochine
+       if(this.infiammatoryState == true){
+    	   // TODO Produce citochine
+       }
+       else{
+    	   // TODO Check per citochine nei dintorni
+    	   Iterable within = new ContinuousWithin(this.context, this, cytokineRange).query();
+       }
     }
 	
 	@Override
@@ -56,9 +75,6 @@ public class Microglia extends GlialCell{
 				if(n.getState() == NeuronState.DEGENERATED_DEATH) {
 					this.state = GlialState.DAMAGE_PERCEIVED;
 					this.targetNeuron = n;
-					System.out.println("posizione Neurone: " + this.space.getLocation(n));
-					System.out.println("posizione glial: " + this.space.getLocation(this));
-
 				}
 			}
 		}

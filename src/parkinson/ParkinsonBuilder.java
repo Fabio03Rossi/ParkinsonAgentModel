@@ -27,8 +27,9 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		int microNum = Math.abs((Integer) params.getValue("micro_num"));
 		int astroNum = Math.abs((Integer) params.getValue("astro_num"));
 		int neuroNum = Math.abs((Integer) params.getValue("neuro_num"));
-
 		int range = Math.abs((Integer) params.getValue("range"));
+		int cytokineRange = Math.abs((Integer) params.getValue("cytokine_range"));
+
 		int neuroHealth = Math.abs((Integer) params.getValue("neuro_health"));
 		int actThr = Math.abs((Integer) params.getValue("activation_threshold"));
 		int debris = Math.abs((Integer) params.getValue("debris_released"));
@@ -61,7 +62,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		}
 		
 		for(int i = 0; i < microNum; i++) {
-			new Microglia(context, space, actThr, range);
+			new Microglia(context, space, actThr, range, cytokineRange);
 		}
 		
 		RunEnvironment.getInstance().endAt(1000);
