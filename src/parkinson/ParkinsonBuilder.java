@@ -78,12 +78,17 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		// Impostazioni diffuserLayer
 		cytoDiffuser.setDiffusionConst(diffusionConstant); 		// 1 = [0, 10, 0] gives [5, 0, 5].
 		cytoDiffuser.setEvaporationConst(diffusionEvaporation); 	// 1 = no evaporation
-
+		cytoDiffuser.setMinValue(0f);
+		cytoDiffuser.setMaxValue(1.0f);
+		
 		ValueLayerDiffuser alphaDiffuser = new ValueLayerDiffuser(alphaLayer, 1.0, 1.0);
+		
 		// Impostazioni diffuserLayer
 		alphaDiffuser.setDiffusionConst(diffusionConstant); 		// 1 = [0, 10, 0] gives [5, 0, 5].
 		alphaDiffuser.setEvaporationConst(diffusionEvaporation); 	// 1 = no evaporation
-
+		alphaDiffuser.setMinValue(0f);
+		alphaDiffuser.setMaxValue(1.0f);
+		
 		context.add(new Environment(cytoDiffuser, alphaDiffuser));
 		
 		for(int i = 0; i < neuroNum; i++) {
