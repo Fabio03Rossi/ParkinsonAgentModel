@@ -1,7 +1,5 @@
 package parkinson;
 
-import org.omg.CORBA.Environment;
-
 import repast.simphony.context.Context;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactory;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactoryFinder;
