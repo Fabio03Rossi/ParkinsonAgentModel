@@ -28,6 +28,8 @@ public class Microglia extends GlialCell{
 		this.infiammatoryState = false;
 		this.cytokineRange = cytokineRange;
 		this.cytokineReleaseRate = cytokineReleaseRate;
+		
+		this.cytokineLayer = (GridValueLayer) context.getValueLayer("cytoLayer");
 	}
 	
 	
@@ -41,21 +43,18 @@ public class Microglia extends GlialCell{
  	   int y = this.grid.getLocation(this).getY();
 		
 		 // Infiammazione da citochine con intervallo maggiore a 1
-	       if(this.infiammatoryState == true){
-
-	    	   
-
-	    	   double cytokineValue = cytokineLayer.get(x,y);
-	    	   // Setto il nuovo valore
-	    	   cytokineLayer.set(++cytokineValue, x, y);
-	       }
-	       else{
-	    	   // TODO Check per citochine nei dintorni
-	    	   
-	    	   if(cytokineLayer.get(x,y) >= 1) {
-	    		   this.state = GlialState.INFLAMMATORY;
-	    	   }
-	       }
+       if(this.infiammatoryState == true){
+    	   double cytokineValue = cytokineLayer.get(x,y);
+    	   // Setto il nuovo valore
+    	   cytokineLayer.set(++cytokineValue, x, y);
+    	   System.out.println("cytoValue: " + cytokineValue);	   
+       }else{
+    	   // TODO Check per citochine nei dintorni
+    	   
+    	   if(cytokineLayer.get(x,y) >= 1) {
+    		   this.state = GlialState.INFLAMMATORY;
+    	   }
+       }
 	}
 	
 	

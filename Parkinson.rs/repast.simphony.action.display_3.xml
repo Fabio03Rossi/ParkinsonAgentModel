@@ -31,7 +31,7 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>157200939</hashCode>
+    <hashCode>845053443</hashCode>
   </schedParams>
   <layoutClassName>foo.bar.baz</layoutClassName>
   <layoutProjection>grid</layoutProjection>
@@ -90,7 +90,7 @@
     <blue>255</blue>
     <alpha>255</alpha>
   </backgroundColor>
-  <valueLayerStyleName>repast.simphony.visualization.editedStyle.EditedValueLayerStyle2D</valueLayerStyleName>
+  <valueLayerStyleName>parkinson.style.CytoLayer2DStyle</valueLayerStyleName>
   <valueLayers>
     <string>cytoLayer</string>
   </valueLayers>

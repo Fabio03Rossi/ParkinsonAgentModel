@@ -23,7 +23,7 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>157200939</hashCode>
+    <hashCode>148763638</hashCode>
   </schedParams>
   <layoutClassName>foo.bar.baz</layoutClassName>
   <layoutProjection>grid</layoutProjection>
@@ -78,8 +78,7 @@
     <blue>255</blue>
     <alpha>255</alpha>
   </backgroundColor>
-  <valueLayerStyleName>repast.simphony.visualization.editedStyle.EditedValueLayerStyle2D</valueLayerStyleName>
-  <valueLayerEditedStyleName>alphaLayer.style_0.xml</valueLayerEditedStyleName>
+  <valueLayerStyleName>parkinson.style.AlphaLayer2DStyle</valueLayerStyleName>
   <valueLayers>
     <string>alphaLayer</string>
   </valueLayers>

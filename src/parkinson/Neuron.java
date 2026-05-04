@@ -15,6 +15,7 @@ public class Neuron extends Agent {
 	private ContinuousSpace<Object> space;
 	private Grid<Object> grid;
 	private GridValueLayer cytoValueLayer;
+	private GridValueLayer alphaValueLayer;
 	
 	private NeuronState state;
 	
@@ -37,8 +38,9 @@ public class Neuron extends Agent {
 		super(context);
 		this.space = (ContinuousSpace<Object>) context.getProjection("space");
 		this.grid = (Grid<Object>) context.getProjection("grid");
-		this.cytoValueLayer = (GridValueLayer) context.getValueLayer("cytokineLayer");
-		
+		this.cytoValueLayer = (GridValueLayer) context.getValueLayer("cytoLayer");
+		this.alphaValueLayer = (GridValueLayer) context.getValueLayer("alphaLayer");
+
 		this.alphaSinucleinTreshold = alphaSinucleinTreshold;
 		this.cytokineTreshold = cytokineTreshold;
 		this.state = NeuronState.HEALTHY;
@@ -55,14 +57,8 @@ public class Neuron extends Agent {
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 5)
 	public void cytokineAbsorption() {
-<<<<<<< HEAD
 		int x;
 		int y;
-=======
-		if(this.cytoValueLayer.get(this.x,this.y) != 0);{
-			
-		}
->>>>>>> 7045c68d2627eb15eec91fcf9a59662189c64a18
 	}
 	
     @ScheduledMethod(start = 1, interval = 1, priority = 5)
@@ -83,7 +79,9 @@ public class Neuron extends Agent {
             break;
 
             case DEGENERATED_DEATH:
-
+            	var originalVal = this.alphaValueLayer.get(this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
+            	System.out.println(originalVal);
+            	this.alphaValueLayer.set(originalVal + 0.1, this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
                 break;
         }
         

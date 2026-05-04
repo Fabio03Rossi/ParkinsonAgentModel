@@ -65,7 +65,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		);
 		
 		GridValueLayer cytoLayer = new GridValueLayer(
-				"cytokineLayer", 0.0, false, new StrictBorders(), spaceSize, spaceSize  
+				"cytoLayer", 0.0, false, new StrictBorders(), spaceSize, spaceSize  
 		);
 		context.addValueLayer(cytoLayer);
 		
@@ -90,11 +90,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		alphaDiffuser.setMaxValue(1.0f);
 		
 		context.add(new Environment(cytoDiffuser, alphaDiffuser));
-		
-		
-		
-		
-		
+				
 		for(int i = 0; i < neuroNum; i++) {
 			new Neuron(context, cytoThr, debris, alphaThr, neuroHealth);
 		}

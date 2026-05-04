@@ -1,11 +1,11 @@
 <repast.simphony.visualization.editedStyle.DefaultEditedValueLayerStyleData2D>
   <color>
-    <float>0.0</float>
-    <float>0.4</float>
-    <float>0.4</float>
+    <float>1.0</float>
+    <float>0.6</float>
+    <float>0.6</float>
   </color>
   <colorMax>
-    <float>1.0</float>
+    <float>10.0</float>
     <float>10.0</float>
     <float>10.0</float>
   </colorMax>
@@ -15,7 +15,7 @@
     <float>0.0</float>
   </colorMin>
   <colorScale>
-    <float>0.1</float>
+    <float>1.0</float>
     <float>1.0</float>
     <float>1.0</float>
   </colorScale>
