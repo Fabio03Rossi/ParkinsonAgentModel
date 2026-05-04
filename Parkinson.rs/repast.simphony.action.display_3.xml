@@ -8,7 +8,7 @@
     </entry>
     <entry>
       <string>parkinson.Neuron</string>
-      <string>repast.simphony.visualizationOGL2D.DefaultStyleOGL2D</string>
+      <string>parkinson.style.Neuron2DStyle</string>
     </entry>
   </styles>
   <editedStyles>
@@ -31,7 +31,7 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>845053443</hashCode>
+    <hashCode>-853012334</hashCode>
   </schedParams>
   <layoutClassName>foo.bar.baz</layoutClassName>
   <layoutProjection>grid</layoutProjection>

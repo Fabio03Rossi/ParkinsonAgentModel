@@ -30,6 +30,8 @@ public class Neuron extends Agent {
 	private int debris;
 	private int alphaSinucleinTreshold;
 	private int cytokineTreshold;
+	
+	private boolean flag;
 
 	private static final Random rnd = new Random();
 	
@@ -49,6 +51,7 @@ public class Neuron extends Agent {
 		this.x = space.getLocation(this).getX();
 		this.y = space.getLocation(this).getY();
 
+		this.flag = false;
 		
 		this.MAX_HEALTH = health;
 		this.health = health;
@@ -79,9 +82,11 @@ public class Neuron extends Agent {
             break;
 
             case DEGENERATED_DEATH:
-            	var originalVal = this.alphaValueLayer.get(this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
-            	System.out.println(originalVal);
-            	this.alphaValueLayer.set(originalVal + 0.1, this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
+            	if(!flag) {
+            		var originalVal = this.alphaValueLayer.get(this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
+            		this.alphaValueLayer.set(originalVal + (0.1 * alphaSinucleinValue), this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
+            		flag = true;
+            	}
                 break;
         }
         
