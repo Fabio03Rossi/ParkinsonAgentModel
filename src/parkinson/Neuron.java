@@ -36,7 +36,7 @@ public class Neuron extends Agent {
 	private static final Random rnd = new Random();
 	
 	public Neuron(Context context, int cytokineTreshold, int debris, int alphaSinucleinTreshold, int health) {
-		
+	
 		super(context);
 		this.space = (ContinuousSpace<Object>) context.getProjection("space");
 		this.grid = (Grid<Object>) context.getProjection("grid");
@@ -60,6 +60,13 @@ public class Neuron extends Agent {
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 5)
 	public void cytokineAbsorption() {
+		if(perceiveCytokines()) {
+			absorbCytokine();
+		}
+	}
+	
+	@ScheduledMethod(start = 1, interval = 1, priority = 5)
+	public void synucleineAbsorption() {
 		int x;
 		int y;
 	}
@@ -111,9 +118,26 @@ public class Neuron extends Agent {
         
     }
 	
-	private void absorbCytokine(Cytokine cytokine) {
-		this.context.remove(cytokine);
+	private void absorbCytokine() {
+		
 		this.setCytokineValue(this.cytokineValue + 1);
+		//this.cytoValueLayer
+		
+		double cytokineValue = cytoValueLayer.get(x,y);
+ 	    // Setto il nuovo valore
+ 	    cytoValueLayer.set(++cytokineValue, (int) this.x, (int) this.y);
+ 	    System.out.println("cytoValueInNeuron: " + cytokineValue);	 
+	}
+	
+	protected boolean perceiveCytokines() {
+		
+		// Ottengo la posizione dalla griglia
+		   int x = this.grid.getLocation(this).getX();
+		   int y = this.grid.getLocation(this).getY();
+			
+		   if(this.cytoValueLayer.get(x,y) >= 1) {
+			   return true;
+		   }else return false;
 	}
 	
 	public void loseHealth() {

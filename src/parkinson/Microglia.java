@@ -13,7 +13,6 @@ import repast.simphony.valueLayer.GridValueLayer;
 public class Microglia extends GlialCell{
 	private int perceptionRange;
 	private GlialState GliaState;
-	private boolean infiammatoryState; //true per stato infiammatorio, false per stato non infiammato
 
 	
 	
@@ -21,40 +20,18 @@ public class Microglia extends GlialCell{
 		super(context, space, grid, activationThreshold, cytokineRange, cytokineReleaseRate);
 		this.perceptionRange = perceptionRange;
 		this.state = GlialState.RESTING;
-		this.infiammatoryState = false;
 	}
 	
 	
 	protected Neuron targetNeuron;
 	
-	@ScheduledMethod(start = 1, interval = 3, priority = 4)
-	public void cytokineRelease() {
-		
-		// Ottengo la posizione dalla griglia
- 	   int x = this.grid.getLocation(this).getX();
- 	   int y = this.grid.getLocation(this).getY();
-		
-		 // Infiammazione da citochine con intervallo maggiore a 1
-       if(this.infiammatoryState == true){
-    	   double cytokineValue = cytokineLayer.get(x,y);
-    	   // Setto il nuovo valore
-    	   cytokineLayer.set(++cytokineValue, x, y);
-    	   System.out.println("cytoValue: " + cytokineValue);	   
-       }else{
-    	   // TODO Check per citochine nei dintorni
-    	   
-    	   if(cytokineLayer.get(x,y) >= 1) {
-    		   this.state = GlialState.INFLAMMATORY;
-    	   }
-       }
-	}
+	
 	
 	
     @ScheduledMethod(start = 1, interval = 1, priority = 5)
     public void step1() {
         switch (this.state) {
             case RESTING:
-                this.perceiveCytokines();
                 this.perceiveNeurons();
 
             break;
