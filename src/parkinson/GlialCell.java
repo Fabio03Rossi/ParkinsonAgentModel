@@ -17,10 +17,10 @@ public class GlialCell extends Agent{
 	protected int cytokinesReceived;
 	protected int activationThreshold;
 	
-	public GlialCell(Context context, ContinuousSpace<Object> space, int activationThreshold, Grid<Object> grid) {
+	public GlialCell(Context context, int activationThreshold) {
 		super(context);
-		this.space = space;
-		this.grid = grid;
+		this.space = (ContinuousSpace<Object>) context.getProjection("space");
+		this.grid = (Grid<Object>) context.getProjection("grid");
 		
 		this.activationThreshold = activationThreshold;
 		this.state = GlialState.RESTING;
