@@ -13,7 +13,6 @@ import repast.simphony.valueLayer.GridValueLayer;
 public class Microglia extends GlialCell{
 	private int perceptionRange;
 	private GlialState GliaState;
-	private boolean infiammatoryState; //true per stato infiammatorio, false per stato non infiammato
 	private double alphaSynAbsorbRatio = 0.1;
 	
 	private GridValueLayer alphaValueLayer;
@@ -42,8 +41,9 @@ public class Microglia extends GlialCell{
             break;
 
             case PHAGOCITATION:
+            	System.out.print("Microglia in fagocitosi");
             	this.absorbAlphaSyn();
-            	this.phagocitation();
+            	//this.phagocitation();
             	this.infiammatoryState = true;
                 break;
             default:

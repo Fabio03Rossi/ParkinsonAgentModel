@@ -14,7 +14,7 @@ public class GlialCell extends Agent{
 	protected ContinuousSpace<Object> space;
 	protected Grid<Object> grid;
 	protected GlialState state;
-	private boolean infiammatoryState; //true per stato infiammatorio, false per stato non infiammato
+	protected boolean infiammatoryState; //true per stato infiammatorio, false per stato non infiammato
 
 	
 	protected int cytokinesReceived;
@@ -43,7 +43,6 @@ public class GlialCell extends Agent{
 	
 	@ScheduledMethod(start = 1, interval = 3, priority = 4)
 	public void cytokineRelease() {
-		
 		// Ottengo la posizione dalla griglia
 		   int x = this.grid.getLocation(this).getX();
 		   int y = this.grid.getLocation(this).getY();
