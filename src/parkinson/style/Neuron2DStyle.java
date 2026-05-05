@@ -7,8 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import parkinson.DopaminergicNeuron;
-import parkinson.DopaminergicNeuronState;
 import parkinson.Neuron;
 import repast.simphony.visualizationOGL2D.DefaultStyleOGL2D;
 import saf.v3d.scene.VSpatial;
