@@ -14,22 +14,14 @@ public class Microglia extends GlialCell{
 	private int perceptionRange;
 	private GlialState GliaState;
 	private boolean infiammatoryState; //true per stato infiammatorio, false per stato non infiammato
-	private int cytokineRange;
-	private int cytokineReleaseRate;
-	
-	// LAYERS
-	private GridValueLayer cytokineLayer;
+
 	
 	
-	public Microglia(Context context, ContinuousSpace<Object> space, Grid<Object> grid, int activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate, GridValueLayer cytokineLayer) {
-		super(context, space, activationThreshold, grid);
+	public Microglia(Context context, ContinuousSpace<Object> space, Grid<Object> grid, int activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate) {
+		super(context, space, grid, activationThreshold, cytokineRange, cytokineReleaseRate);
 		this.perceptionRange = perceptionRange;
 		this.state = GlialState.RESTING;
 		this.infiammatoryState = false;
-		this.cytokineRange = cytokineRange;
-		this.cytokineReleaseRate = cytokineReleaseRate;
-		
-		this.cytokineLayer = (GridValueLayer) context.getValueLayer("cytoLayer");
 	}
 	
 	
