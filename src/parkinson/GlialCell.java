@@ -24,11 +24,7 @@ public class GlialCell extends Agent{
 	// LAYERS
 	protected GridValueLayer cytokineLayer;
 	
-<<<<<<< HEAD
-	public GlialCell(Context context, int activationThreshold) {
-=======
-	public GlialCell(Context context, ContinuousSpace<Object> space, Grid<Object> grid, int activationThreshold, int cytokineRange, int cytokineReleaseRate) {
->>>>>>> 4930f4491b1b94a7b7417ffd0887a48a323ee630
+	public GlialCell(Context context, int activationThreshold, int cytokineRange, int cytokineReleaseRate) {
 		super(context);
 		this.space = (ContinuousSpace<Object>) context.getProjection("space");
 		this.grid = (Grid<Object>) context.getProjection("grid");
@@ -57,18 +53,22 @@ public class GlialCell extends Agent{
 	    	   // Setto il nuovo valore
 	    	   cytokineLayer.set(++cytokineValue, x, y);
 	    	   System.out.println("cytoValue: " + cytokineValue);	   
-	       }else{
-	    	   perceiveCytokines(x,y);
 	       }
 		
 		 
 	}
 	
-	protected void perceiveCytokines(int x, int y) {
+	@ScheduledMethod(start = 1, interval = 1, priority = 3)
+	protected void perceiveCytokines() {
 		
-		   if(cytokineLayer.get(x,y) >= 1) {
-    		   this.state = GlialState.INFLAMMATORY;
-    	   }
+		 var originalVal = cytokineLayer.get(this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
+		
+		 if(originalVal >= 1) {
+			 this.infiammatoryState = true;
+		 }
+		 else if(originalVal <= 0) {
+			 this.infiammatoryState = false;
+		 }
 	}
 		
 

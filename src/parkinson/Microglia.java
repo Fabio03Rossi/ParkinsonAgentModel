@@ -20,18 +20,14 @@ public class Microglia extends GlialCell{
 	
 	protected Neuron targetNeuron;
 	
-	public Microglia(Context context, ContinuousSpace<Object> space, Grid<Object> grid, int activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate) {
-		super(context, space, grid, activationThreshold, cytokineRange, cytokineReleaseRate);
+	public Microglia(Context context, int activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate) {
+		super(context, activationThreshold, cytokineRange, cytokineReleaseRate);
 		this.perceptionRange = perceptionRange;
 		this.state = GlialState.RESTING;
 		this.infiammatoryState = false;
 		
 		this.alphaValueLayer = (GridValueLayer) context.getValueLayer("alphaLayer");
 	}
-
-	
-	
-	
 	
     @ScheduledMethod(start = 1, interval = 1, priority = 5)
     public void step1() {
@@ -72,11 +68,6 @@ public class Microglia extends GlialCell{
 		var originalVal = this.alphaValueLayer.get(this.grid.getLocation(targetNeuron).getX(), this.grid.getLocation(targetNeuron).getY());
     	this.alphaValueLayer.set(originalVal - (0.1 * alphaSynAbsorbRatio), this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
     }
-	
-	@Override
-	protected void perceiveCytokines() {
-		super.perceiveCytokines();
-	}
 	
 	protected void perceiveNeurons() {
 	
