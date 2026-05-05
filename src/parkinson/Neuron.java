@@ -48,6 +48,7 @@ public class Neuron extends Agent {
 		this.state = NeuronState.HEALTHY;
 		this.debris = debris;
 		
+		
 		this.x = space.getLocation(this).getX();
 		this.y = space.getLocation(this).getY();
 		
@@ -124,7 +125,8 @@ public class Neuron extends Agent {
 		
 		double cytokineValue = cytoValueLayer.get(x,y);
  	    // Setto il nuovo valore
- 	    cytoValueLayer.set(++cytokineValue, (int) this.x, (int) this.y);
+ 	    cytoValueLayer.set(0, (int) this.x, (int) this.y);
+ 	    cytokineValue = cytokineValue;
  	    System.out.println("cytoValueInNeuron: " + cytokineValue);	 
 	}
 
@@ -134,9 +136,10 @@ public class Neuron extends Agent {
 		this.setAlphaValue(this.cytokineValue + 1);
 		//this.cytoValueLayer
 		
-		double alphaValue = cytoValueLayer.get(x,y);
+		double alphaGridValue = cytoValueLayer.get(x,y);
  	    // Setto il nuovo valore
- 	    alphaValueLayer.set(++alphaValue, (int) this.x, (int) this.y);
+ 	    alphaValueLayer.set(0, (int) this.x, (int) this.y);
+ 	    alphaValue = (int) alphaGridValue;
  	    System.out.println("alphaValueInNeuron: " + alphaValue);	 
 	}
 	
