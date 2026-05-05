@@ -89,7 +89,6 @@ public class Neuron extends Agent {
                     	this.state = NeuronState.DEGENERATED_DEATH;
                     	System.out.println("Il neurone è morto");
             		}
-            	}
             	
             break;
 
@@ -102,25 +101,7 @@ public class Neuron extends Agent {
                 break;
         }
         
-        
-        
-        // CONTROLLI DI STEP
-        
-        //if(alphaValue >= alphaSinucleinTreshold)
-		//{
-        	if(this.health > 0)
-            {
-        		//this.loseHealth();
-            }
-        	else 
-        	{
-        		if(this.state != NeuronState.DEGENERATED_DEATH) {
-                	this.state = NeuronState.DEGENERATED_DEATH;
-                	System.out.println("Il neurone è morto");
-        		}
-        	}
-		//}
-        
+  
     }
 	
 	private void absorbCytokine() {
