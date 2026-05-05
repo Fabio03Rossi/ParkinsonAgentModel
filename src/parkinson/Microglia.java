@@ -37,7 +37,6 @@ public class Microglia extends GlialCell{
             break;
                 
             case DAMAGE_PERCEIVED:
-            	// TODO muovere passo passo la cellula gliale
             	this.linkToNeuron();
             	this.state = GlialState.PHAGOCITATION;
             break;
@@ -47,13 +46,15 @@ public class Microglia extends GlialCell{
             	this.phagocitation();
             	this.infiammatoryState = true;
                 break;
+            default:
+            	break;
         }
        
     }
     
     protected void linkToNeuron() {
-    	this.space.moveTo(this, this.space.getLocation(targetNeuron).getX() + 1, this.space.getLocation(targetNeuron).getY() + 1);
-    	
+    	var ret = this.space.moveTo(this, this.space.getLocation(targetNeuron).getX() + 1, this.space.getLocation(targetNeuron).getY() + 1);
+    	System.out.println(ret);
     }
     
     protected void phagocitation() {
@@ -71,11 +72,14 @@ public class Microglia extends GlialCell{
 	
 	protected void perceiveNeurons() {
 	
-		Iterable within = new ContinuousWithin(this.context, this, cytokineRange).query();
+		Iterable within = new ContinuousWithin(this.context, this, 10).query();
 		for(var x : within) {
+			
 			if(x instanceof Neuron) {
 				Neuron n = (Neuron) x;
+				
 				if(n.getState() == NeuronState.DEGENERATED_DEATH) {
+					System.out.println(n.getState());
 					this.state = GlialState.DAMAGE_PERCEIVED;
 					this.targetNeuron = n;
 				}

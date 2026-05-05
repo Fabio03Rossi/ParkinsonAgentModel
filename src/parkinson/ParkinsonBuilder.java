@@ -7,7 +7,6 @@ import repast.simphony.context.space.grid.GridFactory;
 import repast.simphony.context.space.grid.GridFactoryFinder;
 import repast.simphony.dataLoader.ContextBuilder;
 import repast.simphony.engine.environment.RunEnvironment;
-import repast.simphony.space.continuous.BouncyBorders;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.RandomCartesianAdder;
 import repast.simphony.space.continuous.SimpleCartesianAdder;
@@ -53,13 +52,13 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 				.createContinuousSpaceFactory(null);
 		ContinuousSpace<Object> space = spaceFactory.createContinuousSpace(
 				"space", context, new RandomCartesianAdder<Object>(),
-				new BouncyBorders(), spaceSize,
+				new repast.simphony.space.continuous.BouncyBorders(), spaceSize,
 				spaceSize);
 		
 		GridFactory gridFactory = GridFactoryFinder.createGridFactory(null);
 		Grid<Object> grid = gridFactory.createGrid(
 				"grid", context, 
-				GridBuilderParameters.singleOccupancy2D(new SimpleGridAdder<Object>(), new StrictBorders(), spaceSize, spaceSize)
+				GridBuilderParameters.multiOccupancy2D(new SimpleGridAdder<Object>(), new StrictBorders(), spaceSize, spaceSize)
 		);
 		
 		GridValueLayer cytoLayer = new GridValueLayer(
@@ -92,6 +91,9 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		for(int i = 0; i < neuroNum; i++) {
 			new Neuron(context, cytoThr, debris, alphaThr, neuroHealth);
 		}
+		
+		var x = new Neuron(context, cytoThr, debris, alphaThr, 0);
+		alphaLayer.set(10, grid.getLocation(x).getX(), grid.getLocation(x).getY());
 		
 		for(int i = 0; i < microNum; i++) {
 			new Microglia(context, actThr, perceptionRange, cytoRange, cytoRate);

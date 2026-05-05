@@ -11,7 +11,7 @@ import repast.simphony.valueLayer.GridValueLayer;
 public class Neuron extends Agent {
 
 	private final int MAX_HEALTH;
-	
+
 	private ContinuousSpace<Object> space;
 	private Grid<Object> grid;
 	private GridValueLayer cytoValueLayer;
@@ -20,8 +20,8 @@ public class Neuron extends Agent {
 	private NeuronState state;
 	
 	// Valori del neurone
-	private int cytokineValue;
-	private int alphaValue;
+	private double cytokineValue;
+	private double alphaValue;
 	private int health;
 	
 	private final double x;
@@ -49,15 +49,15 @@ public class Neuron extends Agent {
 		this.debris = debris;
 		
 		
-		this.x = space.getLocation(this).getX();
-		this.y = space.getLocation(this).getY();
+		this.x = grid.getLocation(this).getX();
+		this.y = grid.getLocation(this).getY();
 		
-		this.MAX_HEALTH = health;
+		this.MAX_HEALTH = 30;
 		this.health = health;
 	}
 
 	
-	@ScheduledMethod(start = 1, interval = 1, priority = 5)
+	@ScheduledMethod(start = 1, interval = 1, priority = 4)
 	public void cytokineAbsorption() {
 		if(perceiveCytokines()) {
 			absorbCytokine();
@@ -71,17 +71,16 @@ public class Neuron extends Agent {
 		}
 	}
 	
-    @ScheduledMethod(start = 1, interval = 1, priority = 5)
+    @ScheduledMethod(start = 1, interval = 1, priority = 3)
     public void step1() {
         switch (this.state) {
             case HEALTHY:
-            	int x = rnd.nextInt(2);
-            	if(x == 1)
-            	{	
-            		alphaValue++;
-            		System.out.println("Alpha sinucleina aggiunta al neurone");
-            	}
-            	
+//            	int x = rnd.nextInt(2);
+//            	if(x == 1)
+//            	{	
+//            		alphaSinucleinValue++;
+//            		System.out.println("Alpha sinucleina aggiunta al neurone");
+//            	}
 
             break;
                 
@@ -101,11 +100,11 @@ public class Neuron extends Agent {
         
         // CONTROLLI DI STEP
         
-        if(alphaValue >= alphaSinucleinTreshold)
-		{
-        	if(this.health != 0)
+        //if(alphaValue >= alphaSinucleinTreshold)
+		//{
+        	if(this.health > 0)
             {
-        		this.loseHealth();
+        		//this.loseHealth();
             }
         	else 
         	{
@@ -114,7 +113,7 @@ public class Neuron extends Agent {
                 	System.out.println("Il neurone è morto");
         		}
         	}
-		}
+		//}
         
     }
 	
@@ -133,23 +132,23 @@ public class Neuron extends Agent {
 
 	private void absorbSynuclein() {
 		
-		this.setAlphaValue(this.cytokineValue + 1);
+		//this.setAlphaValue(this.cytokineValue + 1);
 		//this.cytoValueLayer
 		
-		double alphaGridValue = cytoValueLayer.get(x,y);
+		//double alphaGridValue = cytoValueLayer.get(x,y);
  	    // Setto il nuovo valore
- 	    alphaValueLayer.set(0, (int) this.x, (int) this.y);
- 	    alphaValue = (int) alphaGridValue;
+		//TODO
+ 	    //alphaValueLayer.set(0, (int) this.x, (int) this.y);
+ 	    //alphaValue = (int) alphaGridValue;
  	    System.out.println("alphaValueInNeuron: " + alphaValue);	 
 	}
 	
 	protected boolean perceiveSynuclein() {
 		
-		// Ottengo la posizione dalla griglia
-		   int x = this.grid.getLocation(this).getX();
-		   int y = this.grid.getLocation(this).getY();
+		// Ottengo la posizione dalla grigli
+		alphaValue = this.alphaValueLayer.get(x,y);
 			
-		   if(this.alphaValueLayer.get(x,y) >= 1) {
+		   if(alphaValue >= 1) {
 			   return true;
 		   }else return false;
 	}
@@ -157,8 +156,6 @@ public class Neuron extends Agent {
 	protected boolean perceiveCytokines() {
 		
 		// Ottengo la posizione dalla griglia
-		   int x = this.grid.getLocation(this).getX();
-		   int y = this.grid.getLocation(this).getY();
 			
 		   if(this.cytoValueLayer.get(x,y) >= 1) {
 			   return true;
@@ -174,7 +171,7 @@ public class Neuron extends Agent {
 		this.health = health;
 	}
     
-	public int getAlphaValue() {
+	public double getAlphaValue() {
 		return alphaValue;
 	}
 	
@@ -198,7 +195,7 @@ public class Neuron extends Agent {
 		return health;
 	}
 	
-	public void setCytokineValue(int cytokineValue) {
+	public void setCytokineValue(double cytokineValue) {
 		this.cytokineValue = cytokineValue;
 	}
 	

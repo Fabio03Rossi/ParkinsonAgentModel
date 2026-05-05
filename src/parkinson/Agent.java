@@ -14,6 +14,7 @@ public class Agent {
 		this.context.add(this);
 		
 		var loc = ((ContinuousSpace) this.context.getProjection("space")).getLocation(this);
-		((Grid) this.context.getProjection("grid")).moveTo(this, (int) loc.getX(), (int) loc.getY());
+		var tr = ((Grid) this.context.getProjection("grid")).moveTo(this, (int) loc.getX(), (int) loc.getY());
+		System.out.println(tr + " " +(int) loc.getX() +" "+ (int) loc.getY());
 	}
 }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <parameters>
 					<parameter name="neuro_health" displayName="Neuron Max Health" type="int" 
-						defaultValue="3" 
+						defaultValue="30" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
 				<parameter name="cytokine_range" displayName="Range Cytokines" type="int" 
-						defaultValue="1" 
+						defaultValue="5" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
@@ -26,7 +26,7 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
 				<parameter name="range" displayName="Range" type="int" 
-						defaultValue="10" 
+						defaultValue="5" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
@@ -36,7 +36,7 @@
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
 				<parameter name="neuro_num" displayName="Number of Neurons" type="int" 
-						defaultValue="3" 
+						defaultValue="30" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
@@ -56,12 +56,12 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
 				<parameter name="micro_num" displayName="Number of Micoglias" type="int" 
-						defaultValue="5" 
+						defaultValue="30" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
 				<parameter name="alpha_threshold" displayName="Alpha Threshold" type="int" 
-						defaultValue="3" 
+						defaultValue="5" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
