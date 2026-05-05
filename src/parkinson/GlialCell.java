@@ -24,10 +24,14 @@ public class GlialCell extends Agent{
 	// LAYERS
 	protected GridValueLayer cytokineLayer;
 	
+<<<<<<< HEAD
+	public GlialCell(Context context, int activationThreshold) {
+=======
 	public GlialCell(Context context, ContinuousSpace<Object> space, Grid<Object> grid, int activationThreshold, int cytokineRange, int cytokineReleaseRate) {
+>>>>>>> 4930f4491b1b94a7b7417ffd0887a48a323ee630
 		super(context);
-		this.space = space;
-		this.grid = grid;
+		this.space = (ContinuousSpace<Object>) context.getProjection("space");
+		this.grid = (Grid<Object>) context.getProjection("grid");
 		
 		this.activationThreshold = activationThreshold;
 		this.state = GlialState.RESTING;

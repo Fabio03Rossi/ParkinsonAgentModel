@@ -16,8 +16,13 @@ public class Microglia extends GlialCell{
 
 	
 	
+<<<<<<< HEAD
+	public Microglia(Context context, int activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate) {
+		super(context, activationThreshold);
+=======
 	public Microglia(Context context, ContinuousSpace<Object> space, Grid<Object> grid, int activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate) {
 		super(context, space, grid, activationThreshold, cytokineRange, cytokineReleaseRate);
+>>>>>>> 4930f4491b1b94a7b7417ffd0887a48a323ee630
 		this.perceptionRange = perceptionRange;
 		this.state = GlialState.RESTING;
 	}
