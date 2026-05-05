@@ -21,7 +21,7 @@ public class Neuron extends Agent {
 	
 	// Valori del neurone
 	private int cytokineValue;
-	private int alphaSinucleinValue;
+	private int alphaValue;
 	private int health;
 	
 	private final double x;
@@ -50,8 +50,6 @@ public class Neuron extends Agent {
 		
 		this.x = space.getLocation(this).getX();
 		this.y = space.getLocation(this).getY();
-
-		this.flag = false;
 		
 		this.MAX_HEALTH = health;
 		this.health = health;
@@ -67,8 +65,9 @@ public class Neuron extends Agent {
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 5)
 	public void synucleineAbsorption() {
-		int x;
-		int y;
+		if(perceiveSynuclein()) {
+			absorbSynuclein();
+		}
 	}
 	
     @ScheduledMethod(start = 1, interval = 1, priority = 5)
@@ -78,7 +77,7 @@ public class Neuron extends Agent {
             	int x = rnd.nextInt(2);
             	if(x == 1)
             	{	
-            		alphaSinucleinValue++;
+            		alphaValue++;
             		System.out.println("Alpha sinucleina aggiunta al neurone");
             	}
             	
@@ -91,7 +90,7 @@ public class Neuron extends Agent {
             case DEGENERATED_DEATH:
             	if(!flag) {
             		var originalVal = this.alphaValueLayer.get(this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
-            		this.alphaValueLayer.set(originalVal + (0.1 * alphaSinucleinValue), this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
+            		this.alphaValueLayer.set(originalVal + (0.1 * alphaValue), this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
             		flag = true;
             	}
                 break;
@@ -101,7 +100,7 @@ public class Neuron extends Agent {
         
         // CONTROLLI DI STEP
         
-        if(alphaSinucleinValue >= alphaSinucleinTreshold)
+        if(alphaValue >= alphaSinucleinTreshold)
 		{
         	if(this.health != 0)
             {
@@ -128,6 +127,29 @@ public class Neuron extends Agent {
  	    cytoValueLayer.set(++cytokineValue, (int) this.x, (int) this.y);
  	    System.out.println("cytoValueInNeuron: " + cytokineValue);	 
 	}
+
+
+	private void absorbSynuclein() {
+		
+		this.setAlphaValue(this.cytokineValue + 1);
+		//this.cytoValueLayer
+		
+		double alphaValue = cytoValueLayer.get(x,y);
+ 	    // Setto il nuovo valore
+ 	    alphaValueLayer.set(++alphaValue, (int) this.x, (int) this.y);
+ 	    System.out.println("alphaValueInNeuron: " + alphaValue);	 
+	}
+	
+	protected boolean perceiveSynuclein() {
+		
+		// Ottengo la posizione dalla griglia
+		   int x = this.grid.getLocation(this).getX();
+		   int y = this.grid.getLocation(this).getY();
+			
+		   if(this.alphaValueLayer.get(x,y) >= 1) {
+			   return true;
+		   }else return false;
+	}
 	
 	protected boolean perceiveCytokines() {
 		
@@ -149,6 +171,14 @@ public class Neuron extends Agent {
 		this.health = health;
 	}
     
+	public int getAlphaValue() {
+		return alphaValue;
+	}
+	
+	public void setAlphaValue(int alphaValue) {
+		this.alphaValue = alphaValue;
+	}
+	
 	public NeuronState getState() {
 		return state;
 	}
