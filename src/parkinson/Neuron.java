@@ -75,16 +75,22 @@ public class Neuron extends Agent {
     public void step1() {
         switch (this.state) {
             case HEALTHY:
-//            	int x = rnd.nextInt(2);
-//            	if(x == 1)
-//            	{	
-//            		alphaSinucleinValue++;
-//            		System.out.println("Alpha sinucleina aggiunta al neurone");
-//            	}
-
+            	
+            	if(alphaValue >= alphaSinucleinTreshold) this.state = NeuronState.STRESSED;
+            		
             break;
                 
             case STRESSED:
+            	
+            	if(this.health > 0){
+            		this.loseHealth();
+                }
+            	else {
+                    	this.state = NeuronState.DEGENERATED_DEATH;
+                    	System.out.println("Il neurone è morto");
+            		}
+            	}
+            	
             break;
 
             case DEGENERATED_DEATH:
@@ -132,14 +138,20 @@ public class Neuron extends Agent {
 
 	private void absorbSynuclein() {
 		
-		//this.setAlphaValue(this.cytokineValue + 1);
-		//this.cytoValueLayer
+		this.setAlphaValue(this.alphaValue + 1);
 		
-		//double alphaGridValue = cytoValueLayer.get(x,y);
- 	    // Setto il nuovo valore
+		double alphaGridValue = alphaValueLayer.get(x,y); 
+ 	    //Setto il nuovo valore
 		//TODO
- 	    //alphaValueLayer.set(0, (int) this.x, (int) this.y);
- 	    //alphaValue = (int) alphaGridValue;
+		int i = 0;
+		var it = grid.getObjectsAt((int) x,(int) y).iterator();
+		while(it.hasNext()) {
+			it.next();
+			i++;
+		}
+		
+ 	    alphaValueLayer.set(0, (int) this.x, (int) this.y);
+ 	    alphaValue = (int) alphaGridValue;
  	    System.out.println("alphaValueInNeuron: " + alphaValue);	 
 	}
 	
@@ -175,7 +187,7 @@ public class Neuron extends Agent {
 		return alphaValue;
 	}
 	
-	public void setAlphaValue(int alphaValue) {
+	public void setAlphaValue(double alphaValue) {
 		this.alphaValue = alphaValue;
 	}
 	
