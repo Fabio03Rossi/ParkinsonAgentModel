@@ -35,7 +35,7 @@ public class Neuron extends Agent {
 
 	private static final Random rnd = new Random();
 	
-	public Neuron(Context context, int cytokineTreshold, int debris, int alphaSinucleinTreshold, int health) {
+	public Neuron(Context context, int cytokineTreshold, int debris, int alphaSinucleinTreshold, int maxHealth) {
 	
 		super(context);
 		this.space = (ContinuousSpace<Object>) context.getProjection("space");
@@ -52,8 +52,8 @@ public class Neuron extends Agent {
 		this.x = grid.getLocation(this).getX();
 		this.y = grid.getLocation(this).getY();
 		
-		this.MAX_HEALTH = 30;
-		this.health = health;
+		this.MAX_HEALTH = maxHealth;
+		this.health = maxHealth;
 	}
 
 	
@@ -75,12 +75,13 @@ public class Neuron extends Agent {
     public void step1() {
         switch (this.state) {
             case HEALTHY:
-            	
-            	if(alphaValue >= alphaSinucleinTreshold) this.state = NeuronState.STRESSED;
+            	if(health <= 0) this.state = NeuronState.DEGENERATED_DEATH;
+            	if(alphaValue >= alphaSinucleinTreshold || cytokineValue >= cytokineTreshold) this.state = NeuronState.STRESSED;
             		
             break;
                 
             case STRESSED:
+            	if(alphaValue < alphaSinucleinTreshold && cytokineValue < cytokineTreshold) this.state = NeuronState.HEALTHY;
             	
             	if(this.health > 0){
             		this.loseHealth();
@@ -94,9 +95,13 @@ public class Neuron extends Agent {
 
             case DEGENERATED_DEATH:
             	if(!flag) {
+            		
             		var originalVal = this.alphaValueLayer.get(this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
-            		this.alphaValueLayer.set(originalVal + (0.1 * alphaValue), this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
+            		
+            		// TODO QUI HO MESSO 1 PER TEST, IN REALTA VA RILASCIATA LA QUANTITA DI ALPHA ACCUMULATA
+            		this.alphaValueLayer.set(originalVal + 100, this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
             		flag = true;
+            		System.out.println("Rilascio alpha-sinucleine");
             	}
                 break;
         }
@@ -105,34 +110,30 @@ public class Neuron extends Agent {
     }
 	
 	private void absorbCytokine() {
+		// TODO Logica per controllo numero neuroni
+		int i = 3;
 		
-		this.setCytokineValue(this.cytokineValue + 1);
-		//this.cytoValueLayer
-		
-		double cytokineValue = cytoValueLayer.get(x,y);
- 	    // Setto il nuovo valore
- 	    cytoValueLayer.set(0, (int) this.x, (int) this.y);
- 	    cytokineValue = cytokineValue;
+		double oldValue = this.cytoValueLayer.get(x, y);
+		double absorbedValue = oldValue / i;
+		double newValue = oldValue - absorbedValue;
+	
+ 	    cytoValueLayer.set(newValue, (int) this.x, (int) this.y);
+ 	    this.cytokineValue = this.cytokineValue + absorbedValue;
  	    System.out.println("cytoValueInNeuron: " + cytokineValue);	 
 	}
 
 
 	private void absorbSynuclein() {
-		
-		this.setAlphaValue(this.alphaValue + 1);
-		
-		double alphaGridValue = alphaValueLayer.get(x,y); 
- 	    //Setto il nuovo valore
+				
 		//TODO
-		int i = 0;
-		var it = grid.getObjectsAt((int) x,(int) y).iterator();
-		while(it.hasNext()) {
-			it.next();
-			i++;
-		}
-		
- 	    alphaValueLayer.set(0, (int) this.x, (int) this.y);
- 	    alphaValue = (int) alphaGridValue;
+		int i = 3;
+	
+		double oldValue = this.alphaValueLayer.get(x, y);
+		double absorbedValue = oldValue / i;
+		double newValue = oldValue - absorbedValue;
+	
+ 	    alphaValueLayer.set(newValue, (int) this.x, (int) this.y);
+ 	    this.alphaValue = this.alphaValue + absorbedValue;
  	    System.out.println("alphaValueInNeuron: " + alphaValue);	 
 	}
 	
@@ -140,8 +141,8 @@ public class Neuron extends Agent {
 		
 		// Ottengo la posizione dalla grigli
 		alphaValue = this.alphaValueLayer.get(x,y);
+		   if(alphaValue > 0) {
 			
-		   if(alphaValue >= 1) {
 			   return true;
 		   }else return false;
 	}
@@ -150,7 +151,7 @@ public class Neuron extends Agent {
 		
 		// Ottengo la posizione dalla griglia
 			
-		   if(this.cytoValueLayer.get(x,y) >= 1) {
+		   if(this.cytoValueLayer.get(x,y) > 0) {
 			   return true;
 		   }else return false;
 	}

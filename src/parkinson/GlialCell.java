@@ -41,32 +41,32 @@ public class GlialCell extends Agent{
 	}
 	
 	
-	@ScheduledMethod(start = 1, interval = 3, priority = 4)
+	
 	public void cytokineRelease() {
+		// TODO Da ottimizzare probabilmente
 		// Ottengo la posizione dalla griglia
 		   int x = this.grid.getLocation(this).getX();
 		   int y = this.grid.getLocation(this).getY();
-		// Se si trova in uno stato infiammatorio rilascia citochine
-	       if(this.infiammatoryState == true){
 	    	   double cytokineValue = cytokineLayer.get(x,y);
 	    	   // Setto il nuovo valore
-	    	   cytokineLayer.set(++cytokineValue, x, y);
-	    	   System.out.println("cytoValue: " + cytokineValue);	   
-	       }
-		
-		 
+	    	   cytokineLayer.set(cytokineValue + 1, x, y);
+	    	   //System.out.println("cytoValue: " + cytokineValue);	    
 	}
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 3)
-	protected void perceiveCytokines() {
-		
+	public void perceiveCytokines() {
+
 		 var originalVal = cytokineLayer.get(this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
 		
-		 if(originalVal >= 1) {
-			 this.infiammatoryState = true;
+		 if(originalVal >= 0.1) {
+			this.infiammatoryState = true;
+			//System.out.println("CITOCHINE PERCEPITE, RILASCIO CITOCHINE");
+			cytokineRelease();
+			return;
 		 }
 		 else if(originalVal <= 0) {
 			 this.infiammatoryState = false;
+			 return;
 		 }
 	}
 		

@@ -41,9 +41,9 @@ public class Microglia extends GlialCell{
             break;
 
             case PHAGOCITATION:
-            	System.out.print("Microglia in fagocitosi");
-            	this.absorbAlphaSyn();
-            	//this.phagocitation();
+            	//this.absorbAlphaSyn();
+            	this.phagocitation();
+            	this.cytokineRelease();
             	this.infiammatoryState = true;
                 break;
             default:
@@ -52,17 +52,34 @@ public class Microglia extends GlialCell{
        
     }
     
+
+	
+	
     protected void linkToNeuron() {
-    	var ret = this.space.moveTo(this, this.space.getLocation(targetNeuron).getX() + 1, this.space.getLocation(targetNeuron).getY() + 1);
-    	System.out.println(ret);
+    	if(!context.contains(targetNeuron)) {
+    		this.state = GlialState.RESTING;
+    		return;
+    	}
+    	double rndX = Math.random();
+    	double rndY = Math.random();
+    	
+    	double newX = this.space.getLocation(targetNeuron).getX() + rndX;
+    	double newY = this.space.getLocation(targetNeuron).getY() + rndY;
+    	
+    	if(newX < 0) newX = 0.1;
+    	if(newY < 0) newY = 0.1;
+    	double gridDim = this.space.getDimensions().getWidth();
+    	if(newX >= gridDim) newX = gridDim -0.1;
+    	if(newY >= gridDim) newY = gridDim -0.1;
+    	
+    	this.space.moveTo(this, newX, newY);
+    	this.grid.moveTo(this, (int) newX, (int) newY);
+
     }
     
     protected void phagocitation() {
-    	var originalVal = this.alphaValueLayer.get(this.grid.getLocation(targetNeuron).getX(), this.grid.getLocation(targetNeuron).getY());
-    	if(originalVal <= 0) {
     		this.context.remove(targetNeuron);
         	this.state = GlialState.RESTING;
-    	}
     }
     
     protected void absorbAlphaSyn() {
@@ -71,18 +88,21 @@ public class Microglia extends GlialCell{
     }
 	
 	protected void perceiveNeurons() {
-	
-		Iterable within = new ContinuousWithin(this.context, this, 10).query();
+		
+		this.targetNeuron = null;
+		
+		Iterable within = new ContinuousWithin(this.context, this, 8).query();
 		for(var x : within) {
 			
 			if(x instanceof Neuron) {
 				Neuron n = (Neuron) x;
 				
 				if(n.getState() == NeuronState.DEGENERATED_DEATH) {
-					System.out.println(n.getState());
+					System.out.println("Identificato un neurone in stato DEGENERATED_DEATH");
 					this.state = GlialState.DAMAGE_PERCEIVED;
 					this.targetNeuron = n;
 				}
+				
 			}
 		}
 	}
