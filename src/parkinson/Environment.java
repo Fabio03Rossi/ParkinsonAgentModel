@@ -4,6 +4,7 @@ import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.valueLayer.ValueLayerDiffuser;
 
 public class Environment {
+	
 	private ValueLayerDiffuser cytoDiffuser;
 	private ValueLayerDiffuser alphaDiffuser;
 
@@ -16,5 +17,21 @@ public class Environment {
     public void step() {
     	cytoDiffuser.diffuse();
     	alphaDiffuser.diffuse();
+    }
+    
+    public void setDiffusionRate(ValueLayerDiffuser v, double diffusionRate) {
+    	v.setDiffusionConst(diffusionRate);
+    }
+    
+    public void setEvaporationRate(ValueLayerDiffuser v, double evapRate) {
+    	v.setEvaporationConst(evapRate);
+    }
+    
+    public ValueLayerDiffuser getCytokineDiffuser() {
+    	return cytoDiffuser;
+    }
+    
+    public ValueLayerDiffuser getAlphaDiffuser() {
+    	return alphaDiffuser;
     }
 }
