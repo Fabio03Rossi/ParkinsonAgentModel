@@ -95,7 +95,6 @@ public class Neuron extends Agent {
 
             case DEGENERATED_DEATH:
             	if(!flag) {
-            		
             		var originalVal = this.alphaValueLayer.get(this.grid.getLocation(this).getX(), this.grid.getLocation(this).getY());
             		
             		// TODO QUI HO MESSO 1 PER TEST, IN REALTA VA RILASCIATA LA QUANTITA DI ALPHA ACCUMULATA

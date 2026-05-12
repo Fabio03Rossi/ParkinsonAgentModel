@@ -22,7 +22,7 @@ public class Microglia extends GlialCell{
 	
 	protected Neuron targetNeuron;
 	
-	public Microglia(Context context, int activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate) {
+	public Microglia(Context context, float activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate) {
 		super(context, activationThreshold, cytokineRange, cytokineReleaseRate);
 		this.perceptionRange = perceptionRange;
 		this.state = GlialState.RESTING;
@@ -58,7 +58,6 @@ public class Microglia extends GlialCell{
             break;
 
             case PHAGOCITATION:
-            	//this.absorbAlphaSyn();
             	this.phagocitation();
             	this.cytokineRelease();
             	this.infiammatoryState = true;
@@ -106,7 +105,6 @@ public class Microglia extends GlialCell{
     }
 	
 	protected void perceiveNeurons() {
-		
 		this.targetNeuron = null;
 		
 		Iterable within = new ContinuousWithin(this.context, this, 8).query();
