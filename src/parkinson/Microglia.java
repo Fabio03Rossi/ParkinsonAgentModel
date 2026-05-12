@@ -51,8 +51,7 @@ public class Microglia extends GlialCell{
             		if(sLoc.getY() > yToReach) yDif -= .1f;
             		if(sLoc.getY() < yToReach) yDif += .1f;
             		
-                	this.space.moveTo(this, sLoc.getX() + xDif, sLoc.getY() + yDif);
-                	this.grid.moveTo(this, (int)(sLoc.getX() + xDif), (int)(sLoc.getY() + yDif));
+                	this.moveTo(sLoc.getX() + xDif, sLoc.getY() + yDif);
             	} else {
             		this.state = GlialState.PHAGOCITATION;
             	}
@@ -125,5 +124,8 @@ public class Microglia extends GlialCell{
 			}
 		}
 	}
-
+	
+	public GlialState getState() {
+		return this.state;
+	}
 }
