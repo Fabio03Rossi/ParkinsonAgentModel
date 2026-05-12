@@ -15,6 +15,9 @@ public class Microglia extends GlialCell{
 	private GlialState GliaState;
 	private double alphaSynAbsorbRatio = 0.1;
 	
+	private double xToReach = -1;
+	private double yToReach = -1;
+	
 	private GridValueLayer alphaValueLayer;
 	
 	protected Neuron targetNeuron;
@@ -37,7 +40,22 @@ public class Microglia extends GlialCell{
                 
             case DAMAGE_PERCEIVED:
             	this.linkToNeuron();
-            	this.state = GlialState.PHAGOCITATION;
+            	var gLoc = this.grid.getLocation(this);
+            	var sLoc = this.space.getLocation(this);
+
+            	if(gLoc.getX() != (int) xToReach || gLoc.getY() != (int) yToReach) { 		
+            		float xDif = 0, yDif = 0;
+            		
+            		if(sLoc.getX() > xToReach) xDif -= .1f;
+            		if(sLoc.getX() < xToReach) xDif += .1f;
+            		if(sLoc.getY() > yToReach) yDif -= .1f;
+            		if(sLoc.getY() < yToReach) yDif += .1f;
+            		
+                	this.space.moveTo(this, sLoc.getX() + xDif, sLoc.getY() + yDif);
+                	this.grid.moveTo(this, (int)(sLoc.getX() + xDif), (int)(sLoc.getY() + yDif));
+            	} else {
+            		this.state = GlialState.PHAGOCITATION;
+            	}
             break;
 
             case PHAGOCITATION:
@@ -72,9 +90,10 @@ public class Microglia extends GlialCell{
     	if(newX >= gridDim) newX = gridDim -0.1;
     	if(newY >= gridDim) newY = gridDim -0.1;
     	
-    	this.space.moveTo(this, newX, newY);
-    	this.grid.moveTo(this, (int) newX, (int) newY);
-
+    	xToReach = newX;
+    	yToReach = newY;
+    	//this.space.moveTo(this, newX, newY);
+    	//this.grid.moveTo(this, (int) newX, (int) newY);
     }
     
     protected void phagocitation() {
