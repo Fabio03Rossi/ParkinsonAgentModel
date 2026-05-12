@@ -1,18 +1,16 @@
 package parkinson;
 
-public class ImmuneCompromisedDisease extends HealthDisease {
-
-	protected double diffusionRateModifier;
-	protected double evaporationRateModifier;
+public record ImmuneCompromisedDisease(double diffusionRateModifier, 
+		double evaporationRateModifier) implements HealthDisease {
 	
 	@Override
 	public double getDiffusionRateMod() {
-		return 1.0f * diffusionRateModifier;
+		return this.diffusionRateModifier;
 	}
 	
 	@Override
 	public double getEvaporationRateMod() {
-		return 1.0f * evaporationRateModifier;
+		return this.evaporationRateModifier;
 	}
 	
 }
