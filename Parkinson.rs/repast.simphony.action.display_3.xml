@@ -4,7 +4,7 @@
   <styles>
     <entry>
       <string>parkinson.Microglia</string>
-      <string>repast.simphony.visualization.editedStyle.EditedStyle2D</string>
+      <string>parkinson.style.Microglia2DStyle</string>
     </entry>
     <entry>
       <string>parkinson.Neuron</string>
@@ -31,7 +31,7 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>-853012334</hashCode>
+    <hashCode>-1907191487</hashCode>
   </schedParams>
   <layoutClassName>foo.bar.baz</layoutClassName>
   <layoutProjection>grid</layoutProjection>
