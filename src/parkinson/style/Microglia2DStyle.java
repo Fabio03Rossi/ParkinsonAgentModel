@@ -8,15 +8,21 @@ public class Microglia2DStyle extends DefaultStyleOGL2D {
 	
 	@Override
 	public VSpatial getVSpatial(Object agent, VSpatial spatial) {
-		try {
-			return shapeFactory.createImage("icons/gliaCell.png");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    if (spatial == null) {
+			try {
+				return shapeFactory.createImage("icons/glialCell.png");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	    }
 	    return spatial;
 	}
-
-	  public int getBorderSize(Object object) {
+	
+	public float getScale(Object object) {
+		return .1f;
+	}
+	
+	public int getBorderSize(Object object) {
 	    return 1;
-	  }
+	}
 }

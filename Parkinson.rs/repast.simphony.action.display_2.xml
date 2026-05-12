@@ -1,13 +1,21 @@
 <repast.simphony.visualization.engine.CartesianDisplayDescriptor simphonyVersion="2.11.0">
-  <name>AlphaLayer</name>
+  <name>CytoLayer</name>
   <type>2D</type>
   <styles>
+    <entry>
+      <string>parkinson.Microglia</string>
+      <string>parkinson.style.Microglia2DStyle</string>
+    </entry>
     <entry>
       <string>parkinson.Neuron</string>
       <string>parkinson.style.Neuron2DStyle</string>
     </entry>
   </styles>
   <editedStyles>
+    <entry>
+      <string>parkinson.Microglia</string>
+      <null/>
+    </entry>
     <entry>
       <string>parkinson.Neuron</string>
       <null/>
@@ -23,12 +31,16 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>1147407403</hashCode>
+    <hashCode>-1866745686</hashCode>
   </schedParams>
   <layoutClassName>foo.bar.baz</layoutClassName>
   <layoutProjection>grid</layoutProjection>
   <layoutInterval>0</layoutInterval>
   <layerOrder>
+    <entry>
+      <string>parkinson.Microglia</string>
+      <int>1</int>
+    </entry>
     <entry>
       <string>parkinson.Neuron</string>
       <int>0</int>
@@ -78,8 +90,8 @@
     <blue>255</blue>
     <alpha>255</alpha>
   </backgroundColor>
-  <valueLayerStyleName>parkinson.style.AlphaLayer2DStyle</valueLayerStyleName>
+  <valueLayerStyleName>parkinson.style.CytoLayer2DStyle</valueLayerStyleName>
   <valueLayers>
-    <string>alphaLayer</string>
+    <string>cytoLayer</string>
   </valueLayers>
 </repast.simphony.visualization.engine.CartesianDisplayDescriptor>

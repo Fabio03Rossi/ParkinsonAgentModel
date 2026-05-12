@@ -3,14 +3,6 @@
   <type>2D</type>
   <styles>
     <entry>
-      <string>parkinson.Cytokine</string>
-      <string>repast.simphony.visualization.editedStyle.EditedStyle2D</string>
-    </entry>
-    <entry>
-      <string>parkinson.AlphaSinuclein</string>
-      <string>repast.simphony.visualizationOGL2D.DefaultStyleOGL2D</string>
-    </entry>
-    <entry>
       <string>parkinson.Microglia</string>
       <string>parkinson.style.Microglia2DStyle</string>
     </entry>
@@ -21,16 +13,8 @@
   </styles>
   <editedStyles>
     <entry>
-      <string>parkinson.Cytokine</string>
-      <string>parkinson.Cytokine.style_0.xml</string>
-    </entry>
-    <entry>
-      <string>parkinson.AlphaSinuclein</string>
-      <null/>
-    </entry>
-    <entry>
       <string>parkinson.Microglia</string>
-      <string>parkinson.Microglia.style_0.xml</string>
+      <null/>
     </entry>
     <entry>
       <string>parkinson.Neuron</string>
@@ -47,23 +31,15 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>-1907191487</hashCode>
+    <hashCode>-1329074413</hashCode>
   </schedParams>
   <layoutClassName>foo.bar.baz</layoutClassName>
   <layoutProjection>space</layoutProjection>
   <layoutInterval>0</layoutInterval>
   <layerOrder>
     <entry>
-      <string>parkinson.Cytokine</string>
-      <int>2</int>
-    </entry>
-    <entry>
-      <string>parkinson.AlphaSinuclein</string>
-      <int>1</int>
-    </entry>
-    <entry>
       <string>parkinson.Microglia</string>
-      <int>3</int>
+      <int>1</int>
     </entry>
     <entry>
       <string>parkinson.Neuron</string>

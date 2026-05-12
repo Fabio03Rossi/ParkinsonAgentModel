@@ -30,6 +30,6 @@ public class CytoLayer2DStyle implements ValueLayerStyleOGL {
         
         int blue = (int) (normalizedVal * 255);
         
-        return new Color(blue, blue, 0);
+        return new Color(255 - blue, 255 - blue, 255);
     }
 }

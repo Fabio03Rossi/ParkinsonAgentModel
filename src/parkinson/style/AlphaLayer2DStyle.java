@@ -30,6 +30,6 @@ public class AlphaLayer2DStyle implements ValueLayerStyleOGL {
         
         int red = (int) (normalizedVal * 255);
         
-        return new Color(0, red, red);
+        return new Color(255, 255 - red, 255 - red);
     }
 }

@@ -17,9 +17,17 @@ public class Neuron2DStyle extends DefaultStyleOGL2D {
 	@Override
 	public VSpatial getVSpatial(Object agent, VSpatial spatial) {
 	    if (spatial == null) {
-			return shapeFactory.createCircle(5f, 16);
+			try {
+				return shapeFactory.createImage("icons/neuron.png");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 	    }
 	    return spatial;
+	}
+	
+	public float getScale(Object object) {
+		return .01f;
 	}
 	
 	@Override
