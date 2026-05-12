@@ -28,8 +28,8 @@ public class CytoLayer2DStyle implements ValueLayerStyleOGL {
     	double val = layer.get(coordinates);
         double normalizedVal = Math.max(0.0, Math.min(MAX_VALUE, val)) / MAX_VALUE;
         
-        int blue = (int) (normalizedVal * 255);
+        int color = (int) (normalizedVal * 255);
         
-        return new Color(229, 255 - blue, 255 - blue);
+        return new Color(255, 255, 255 - color);
     }
 }

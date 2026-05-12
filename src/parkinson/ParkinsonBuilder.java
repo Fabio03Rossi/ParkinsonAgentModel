@@ -27,6 +27,16 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		
 		Parameters params = RunEnvironment.getInstance().getParameters();
 		
+		// Patient 
+		//boolean gender = (Boolean) params.getValue("gender");
+		//int age = Math.abs((Integer) params.getValue("age"));
+		
+		
+		
+		// Treatment
+		
+		
+		// General
 		int spaceSize = Math.abs((Integer) params.getValue("space_size"));
 		int microNum = Math.abs((Integer) params.getValue("micro_num"));
 		int astroNum = Math.abs((Integer) params.getValue("astro_num"));
@@ -35,7 +45,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		int cytoRange = Math.abs((Integer) params.getValue("cytokine_range"));
 
 		int neuroHealth = Math.abs((Integer) params.getValue("neuro_health"));
-		int actThr = Math.abs((Integer) params.getValue("activation_threshold"));
+		float actThr = Math.abs((Float) params.getValue("activation_threshold"));
 		int cytoThr = Math.abs((Integer) params.getValue("cytokines_threshold"));
 		int alphaThr = Math.abs((Integer) params.getValue("alpha_threshold"));
 		int debris = Math.abs((Integer) params.getValue("debris_released"));
@@ -47,6 +57,8 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		double debrisStr = Math.abs((Double) params.getValue("debris_strength"));
 		double cytoStr = Math.abs((Double) params.getValue("cytokines_strength"));
 		
+		
+		//Policy policy = new Policy();
 		
 		ContinuousSpaceFactory spaceFactory = ContinuousSpaceFactoryFinder
 				.createContinuousSpaceFactory(null);
@@ -100,7 +112,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 			new Microglia(context, actThr, perceptionRange, cytoRange, cytoRate);
 		}
 		
-		RunEnvironment.getInstance().endAt(1000);
+		RunEnvironment.getInstance().endAt(800);
 
 		return context;
 	}
