@@ -20,32 +20,37 @@ public class Treatment {
 	
 	protected double resistence;
 	protected Policy policy;
-	private double dosage = 0;
+	private double GLP1dosage = 0;
+	private double NLRB3dosage = 0;
 	private double TotTreatmentDuration = 0;
 	private double efficacy;
 	private double dosageEvaporation;
 	private double glialRedutionTreshold; // Tasso di riduzione del treshold 
 	private double neuronDegenerationRateMod;
 	
-	public Treatment(Context<Object> context, Environment env, Policy policy) {
+	public Treatment(Context<Object> context, Environment env) {
 		this.context = context;
-		this.policy = policy;
+		this.policy = env.getPolicy();
 		this.env = env;
 		// TODO this.efficacy = ;
 	}
 	
 	
 	public void somministrateGLP1(double dosage) {
-		this.dosage = this.dosage + dosage;
+		this.GLP1dosage = this.GLP1dosage + dosage;
 	}
 	
-	@ScheduledMethod(start = 1, interval = 1, priority = 3)
+	public void somministrateNLRB3(double dosage) {
+		this.NLRB3dosage = this.NLRB3dosage + dosage;
+	}
+	
+	@ScheduledMethod(start = 1, interval = 1, priority = 2)
 	public void step()
 	{
 		// Cytokine rate update
-		double rateModifier = this.dosage * this.policy.getDiffusionRateMod();
+		double rateModifier = this.GLP1dosage * this.policy.getDiffusionRateMod();
 		this.env.setDiffusionRate(env.getCytokineDiffuser(), rateModifier);
-		this.dosage = this.dosage * this.dosageEvaporation;
+		this.GLP1dosage = this.GLP1dosage * this.dosageEvaporation;
 		
 		// GlialCell treshold update
 		double oldTreshold = this.policy.getCytoActivationTreshold();
@@ -56,9 +61,15 @@ public class Treatment {
 		double oldValue = this.policy.getDegenerationRate();
 		double newValue = oldValue * this.neuronDegenerationRateMod;
 		this.policy.setDegenerationRate(newValue);
-		}
+		
+		// Evaporazione/assorbimento farmaco (riduzione dose)
+		this.GLP1dosage = this.GLP1dosage - this.dosageEvaporation;
+		
+		// Per le statistiche
+		this.TotTreatmentDuration++;
+	}
 	
-	
+
 	/* 
 	 TODO Parametri
 	 context:

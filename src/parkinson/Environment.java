@@ -7,10 +7,12 @@ public class Environment {
 	
 	private ValueLayerDiffuser cytoDiffuser;
 	private ValueLayerDiffuser alphaDiffuser;
+	private Policy policy;
 
-    public Environment(ValueLayerDiffuser cytoDiffuser, ValueLayerDiffuser alphaDiffuser) {
+    public Environment(ValueLayerDiffuser cytoDiffuser, ValueLayerDiffuser alphaDiffuser, Policy policy) {
         this.cytoDiffuser = cytoDiffuser;
         this.alphaDiffuser = alphaDiffuser;
+        this.policy = policy;
     }
     
     @ScheduledMethod(start = 1, interval = 1)
@@ -34,4 +36,8 @@ public class Environment {
     public ValueLayerDiffuser getAlphaDiffuser() {
     	return alphaDiffuser;
     }
+    
+    public Policy getPolicy() {
+		return policy;
+	}
 }
