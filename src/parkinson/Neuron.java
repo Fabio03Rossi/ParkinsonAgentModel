@@ -12,8 +12,6 @@ public class Neuron extends Agent {
 
 	private final int MAX_HEALTH;
 
-	private ContinuousSpace<Object> space;
-	private Grid<Object> grid;
 	private GridValueLayer cytoValueLayer;
 	private GridValueLayer alphaValueLayer;
 	
@@ -24,8 +22,8 @@ public class Neuron extends Agent {
 	private double alphaValue;
 	private int health;
 	
-	private final double x;
-	private final double y;
+	private double x;
+	private double y;
 	
 	private double alphaSinucleinTreshold;
 	private double cytokineTreshold;
@@ -33,23 +31,21 @@ public class Neuron extends Agent {
 	private boolean flag;
 
 	private static final Random rnd = new Random();
-	
-	public Neuron(Context context, int cytokineTreshold, int debris, int alphaSinucleinTreshold, int maxHealth) {
-	
+		
+	public Neuron(Context context, int maxHealth) {
 		super(context);
 		this.space = (ContinuousSpace<Object>) context.getProjection("space");
 		this.grid = (Grid<Object>) context.getProjection("grid");
+
 		this.cytoValueLayer = (GridValueLayer) context.getValueLayer("cytoLayer");
 		this.alphaValueLayer = (GridValueLayer) context.getValueLayer("alphaLayer");
 
-		this.alphaSinucleinTreshold = alphaSinucleinTreshold;
-		this.cytokineTreshold = cytokineTreshold;
+		this.alphaSinucleinTreshold = this.env.getPolicy().getAlphaSinucleinTreshold();
+		this.cytokineTreshold = this.env.getPolicy().getCytokineTreshold();
 		this.state = NeuronState.HEALTHY;
-		this.debris = debris;
 		
-		
-		this.x = grid.getLocation(this).getX();
-		this.y = grid.getLocation(this).getY();
+		this.x = this.grid.getLocation(this).getX();
+		this.y = this.grid.getLocation(this).getY();
 		
 		this.MAX_HEALTH = maxHealth;
 		this.health = maxHealth;

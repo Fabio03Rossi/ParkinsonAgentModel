@@ -8,11 +8,8 @@ import repast.simphony.valueLayer.GridValueLayer;
 
 public class GlialCell extends Agent{
 
-	protected ContinuousSpace<Object> space;
-	protected Grid<Object> grid;
 	protected GlialState state;
 	protected boolean infiammatoryState; //true per stato infiammatorio, false per stato non infiammato
-
 	
 	protected int cytokinesReceived;
 	protected float activationThreshold;
@@ -21,16 +18,14 @@ public class GlialCell extends Agent{
 	// LAYERS
 	protected GridValueLayer cytokineLayer;
 	
-	public GlialCell(Context context, float activationThreshold, int cytokineRange, int cytokineReleaseRate) {
+	public GlialCell(Context context) {
 		super(context);
-		this.space = (ContinuousSpace<Object>) context.getProjection("space");
-		this.grid = (Grid<Object>) context.getProjection("grid");
 		
-		this.activationThreshold = activationThreshold;
+		this.activationThreshold = (float) this.env.getPolicy().getCytoActivationTreshold();
 		this.state = GlialState.RESTING;
 		
-		this.cytokineRange = cytokineRange;
-		this.cytokineReleaseRate = cytokineReleaseRate;
+		this.cytokineRange = (int) this.env.getPolicy().getCytoPerceptionRange();
+		this.cytokineReleaseRate = (int) this.env.getPolicy().getCytoReleaseRate();
 		
 		this.cytokineLayer = (GridValueLayer) context.getValueLayer("cytoLayer");
 		this.infiammatoryState = false;

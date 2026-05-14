@@ -78,5 +78,13 @@ public class Policy {
 	public double getEvaporationRateMod() {
 		return 1.0f;
 	}
+	
+	public double getCytoPerceptionRange() {
+		return 1.0f;
+	}
+	
+	public double getCytoReleaseRate() {
+		return 1.0f;
+	}
 
 }

@@ -30,7 +30,7 @@ public class Neuron2DStyle extends DefaultStyleOGL2D {
 	}
 	
 	public float getScale(Object object) {
-		return .01f;
+		return .015f;
 	}
 	
 	@Override

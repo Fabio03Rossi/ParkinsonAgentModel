@@ -5,12 +5,16 @@ import repast.simphony.valueLayer.ValueLayerDiffuser;
 
 public class Environment {
 	
+	private Policy policy;
+	
 	private ValueLayerDiffuser cytoDiffuser;
 	private ValueLayerDiffuser alphaDiffuser;
 
-    public Environment(ValueLayerDiffuser cytoDiffuser, ValueLayerDiffuser alphaDiffuser) {
+    public Environment(Policy policy, ValueLayerDiffuser cytoDiffuser, ValueLayerDiffuser alphaDiffuser) {
         this.cytoDiffuser = cytoDiffuser;
         this.alphaDiffuser = alphaDiffuser;
+        
+        this.policy = policy;
     }
     
     @ScheduledMethod(start = 1, interval = 1)
@@ -25,6 +29,10 @@ public class Environment {
     
     public void setEvaporationRate(ValueLayerDiffuser v, double evapRate) {
     	v.setEvaporationConst(evapRate);
+    }
+    
+    public Policy getPolicy() {
+    	return this.policy;
     }
     
     public ValueLayerDiffuser getCytokineDiffuser() {

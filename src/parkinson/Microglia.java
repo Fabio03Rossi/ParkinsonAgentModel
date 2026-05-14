@@ -22,8 +22,15 @@ public class Microglia extends GlialCell {
 	
 	protected Neuron targetNeuron;
 	
-	public Microglia(Context context, float activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate) {
-		super(context, activationThreshold, cytokineRange, cytokineReleaseRate);
+	private ContinuousSpace<Object> space;
+	private Grid<Object> grid;
+	
+	public Microglia(Context context, int perceptionRange) {
+		super(context);
+		
+		this.space = (ContinuousSpace<Object>) context.getProjection("space");
+		this.grid = (Grid<Object>) context.getProjection("grid");
+
 		this.perceptionRange = perceptionRange;
 		this.state = GlialState.RESTING;
 		this.infiammatoryState = false;
