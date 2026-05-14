@@ -27,9 +27,8 @@ public class Neuron extends Agent {
 	private final double x;
 	private final double y;
 	
-	private int debris;
-	private int alphaSinucleinTreshold;
-	private int cytokineTreshold;
+	private double alphaSinucleinTreshold;
+	private double cytokineTreshold;
 	
 	private boolean flag;
 
