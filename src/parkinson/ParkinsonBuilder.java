@@ -58,7 +58,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		double cytoStr = Math.abs((Double) params.getValue("cytokines_strength"));
 		
 		
-		//Policy policy = new Policy();
+		Policy policy = new Policy(70, true, null, actThr, alphaThr, cytoThr);
 		
 		ContinuousSpaceFactory spaceFactory = ContinuousSpaceFactoryFinder
 				.createContinuousSpaceFactory(null);
@@ -98,7 +98,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		alphaDiffuser.setMinValue(0f);
 		alphaDiffuser.setMaxValue(1.0f);
 		
-		context.add(new Environment(cytoDiffuser, alphaDiffuser));
+		context.add(new Environment(policy, cytoDiffuser, alphaDiffuser));
 				
 		for(int i = 0; i < neuroNum; i++) {
 			new Neuron(context, cytoThr, debris, alphaThr, neuroHealth);
