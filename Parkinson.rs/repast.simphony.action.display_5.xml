@@ -1,13 +1,21 @@
 <repast.simphony.visualization.engine.CartesianDisplayDescriptor simphonyVersion="2.11.0">
-  <name>AlphaLayer</name>
+  <name>Space</name>
   <type>2D</type>
   <styles>
+    <entry>
+      <string>parkinson.Microglia</string>
+      <string>parkinson.style.Microglia2DStyle</string>
+    </entry>
     <entry>
       <string>parkinson.Neuron</string>
       <string>parkinson.style.Neuron2DStyle</string>
     </entry>
   </styles>
   <editedStyles>
+    <entry>
+      <string>parkinson.Microglia</string>
+      <null/>
+    </entry>
     <entry>
       <string>parkinson.Neuron</string>
       <null/>
@@ -23,12 +31,16 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>-1866745686</hashCode>
+    <hashCode>-1329074413</hashCode>
   </schedParams>
   <layoutClassName>foo.bar.baz</layoutClassName>
-  <layoutProjection>grid</layoutProjection>
+  <layoutProjection>space</layoutProjection>
   <layoutInterval>0</layoutInterval>
   <layerOrder>
+    <entry>
+      <string>parkinson.Microglia</string>
+      <int>1</int>
+    </entry>
     <entry>
       <string>parkinson.Neuron</string>
       <int>0</int>
@@ -36,9 +48,9 @@
   </layerOrder>
   <projections>
     <repast.simphony.scenario.data.ProjectionData>
-      <id>grid</id>
+      <id>space</id>
       <attributes/>
-      <type>grid</type>
+      <type>continuous space</type>
     </repast.simphony.scenario.data.ProjectionData>
   </projections>
   <visualizationProperties class="repast.simphony.visualization.UnitSizeLayoutProperties">
@@ -46,12 +58,12 @@
   </visualizationProperties>
   <projectionDescriptors>
     <entry>
-      <string>grid</string>
-      <repast.simphony.visualization.grid.GridProjectionDescriptor>
+      <string>space</string>
+      <repast.simphony.visualization.continuous.ContinuousProjectionDescriptor>
         <proj reference="../../../../projections/repast.simphony.scenario.data.ProjectionData"/>
         <props>
           <entry>
-            <string>repast.simphony.visualization.grid.GridDecorator</string>
+            <string>repast.simphony.visualization.continuous.ContinuousDecorator</string>
             <map>
               <entry>
                 <string>COLOR</string>
@@ -68,7 +80,7 @@
             </map>
           </entry>
         </props>
-      </repast.simphony.visualization.grid.GridProjectionDescriptor>
+      </repast.simphony.visualization.continuous.ContinuousProjectionDescriptor>
     </entry>
   </projectionDescriptors>
   <props/>
@@ -78,8 +90,5 @@
     <blue>255</blue>
     <alpha>255</alpha>
   </backgroundColor>
-  <valueLayerStyleName>parkinson.style.AlphaLayer2DStyle</valueLayerStyleName>
-  <valueLayers>
-    <string>alphaLayer</string>
-  </valueLayers>
+  <valueLayers/>
 </repast.simphony.visualization.engine.CartesianDisplayDescriptor>

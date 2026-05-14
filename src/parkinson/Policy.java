@@ -1,6 +1,11 @@
  package parkinson;
 
-public class Policy{
+ /**
+  * La Policy determina le caratteristiche mutabili della simulazione.
+  * Tenendo conto della fisiologia del paziente e degli stimuli esterni per calcolare
+  * i corretti moltiplicatori.
+  */
+public class Policy {
 	// Treatment
 	protected boolean NLRB3inibitor;	 // Utilizzata per indicare se nel sistema è presente una quantità 
 										 //sufficiente di inibitore per bloccare lo stato infiammatorio delle cellule gliali
@@ -56,8 +61,7 @@ public class Policy{
 		this.cytokineTreshold = cytokineTreshold;
 	}
 	
-	
-	
+	// -----------------------------------------------------------------------------------
 	
 	public double getNeuronDeathRate() {
 		return 1.0f;

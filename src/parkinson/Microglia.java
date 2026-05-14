@@ -10,7 +10,7 @@ import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
 import repast.simphony.valueLayer.GridValueLayer;
 
-public class Microglia extends GlialCell{
+public class Microglia extends GlialCell {
 	private int perceptionRange;
 	private GlialState GliaState;
 	private double alphaSynAbsorbRatio = 0.1;
