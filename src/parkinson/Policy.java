@@ -61,6 +61,14 @@ public class Policy {
 		this.cytokineTreshold = cytokineTreshold;
 	}
 	
+	public boolean isNLRB3inibitor() {
+		return NLRB3inibitor;
+	}
+	
+	public void setNLRB3inibitor(boolean nLRB3inibitor) {
+		NLRB3inibitor = nLRB3inibitor;
+	}
+	
 	// -----------------------------------------------------------------------------------
 	
 	public double getNeuronDeathRate() {

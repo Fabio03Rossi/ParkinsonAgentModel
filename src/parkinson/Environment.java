@@ -9,11 +9,10 @@ public class Environment {
 	
 	private ValueLayerDiffuser cytoDiffuser;
 	private ValueLayerDiffuser alphaDiffuser;
-
+	
     public Environment(Policy policy, ValueLayerDiffuser cytoDiffuser, ValueLayerDiffuser alphaDiffuser) {
         this.cytoDiffuser = cytoDiffuser;
         this.alphaDiffuser = alphaDiffuser;
-        
         this.policy = policy;
     }
     
