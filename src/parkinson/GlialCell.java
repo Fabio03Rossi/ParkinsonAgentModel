@@ -63,6 +63,10 @@ public class GlialCell extends Agent{
 			 return;
 		 }
 	}
-		
+	
+	
+	public boolean isInflammated() {
+		return this.infiammatoryState;
+	}
 
 }

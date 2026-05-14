@@ -1,9 +1,9 @@
 <repast.simphony.chart2.engine.TimeSeriesChartDescriptor simphonyVersion="2.11.0">
-  <name>Time Series Chart</name>
-  <dataSet>NeuronDataSet</dataSet>
+  <name>Microglia Chart</name>
+  <dataSet>MicrogliaDataSet</dataSet>
   <xAxisLabel>Tick Count</xAxisLabel>
   <yAxisLabel></yAxisLabel>
-  <chartTitle>Alpha</chartTitle>
+  <chartTitle>Microglia Inflammation Mean</chartTitle>
   <type>TIME_SERIES</type>
   <background>
     <red>192</red>
@@ -21,9 +21,9 @@
   <showLegend>true</showLegend>
   <seriesIds>
     <entry>
-      <string>MeanAlphaValue</string>
+      <string>Inflammation</string>
       <SeriesData>
-        <label>MeanAlphaValue</label>
+        <label>Inflammation</label>
         <color>
           <red>0</red>
           <green>0</green>
