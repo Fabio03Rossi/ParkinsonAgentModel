@@ -6,6 +6,7 @@ import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.query.space.continuous.ContinuousWithin;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
+import repast.simphony.util.collections.IndexedIterable;
 import repast.simphony.valueLayer.GridValueLayer;
 import repast.simphony.valueLayer.ValueLayerDiffuser;
 
@@ -32,12 +33,20 @@ public class Treatment {
 	private double GLP1somministrationNumber = 0;
 	private double NLRP3somministrationNumber = 0;
 
+	// perception (internal state)
+	private int numberOfDegeneratedNeuron;
+	private int numberOfStressedNeuron;
+	private int numberOfInflammatedMicroglia;
 	
 	public Treatment(Context<Object> context, Environment env) {
 		this.context = context;
 		this.policy = env.getPolicy();
 		this.env = env;
 		// TODO this.efficacy = ;
+		
+		this.numberOfDegeneratedNeuron = 0;
+		this.numberOfInflammatedMicroglia = 0;
+		this.numberOfStressedNeuron = 0;
 	}
 	
 	
@@ -53,7 +62,43 @@ public class Treatment {
 		this.NLRP3somministrationNumber++;
 	}
 	
-	@ScheduledMethod(start = 1, interval = 1, priority = 2)
+	@ScheduledMethod(start = 1, interval = 1, priority = 5)
+	public void stepPerception() {
+		IndexedIterable<Object> currentNeurons = context.getObjects(Neuron.class);
+	
+		for(Object s : currentNeurons) {
+			Neuron d = (Neuron) s;
+			
+			if(d.getState() == NeuronState.DEGENERATED_DEATH) numberOfDegeneratedNeuron++;
+			if(d.getState() == NeuronState.STRESSED) numberOfStressedNeuron++;
+		}
+		
+		IndexedIterable<Object> currentMicroglias = context.getObjects(Microglia.class);
+		
+		for(Object s : currentMicroglias) {
+			Microglia d = (Microglia) s;
+			
+			if(d.isInfiammatoryState()) numberOfInflammatedMicroglia++;
+		}
+	}
+	
+	private double dosageAction() {
+		double deathWeight = 0.9;
+		double stressedWeight = 0.2;
+		double base = 0.1;
+		double dosage = (deathWeight * numberOfDegeneratedNeuron + stressedWeight * numberOfStressedNeuron) * base;
+		
+		return dosage;
+	}
+	
+	@ScheduledMethod(start = 1, interval = 1, priority = 4)
+	public void stepAction() {
+		if(numberOfDegeneratedNeuron > 0) {
+			somministrateGLP1(dosageAction());
+		}
+	}
+	
+	@ScheduledMethod(start = 1, interval = 1, priority = 3)
 	public void step()
 	{
 		// GLP1
