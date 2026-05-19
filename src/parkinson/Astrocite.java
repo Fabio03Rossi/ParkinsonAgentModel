@@ -16,11 +16,9 @@ public class Astrocite extends GlialCell{
 	
 	protected Neuron targetNeuron;
 	
-	public Astrocite(Context context, int activationThreshold, int perceptionRange, int cytokineRange, int cytokineReleaseRate) {
-		super(context, activationThreshold, cytokineRange, cytokineReleaseRate);
-		this.perceptionRange = perceptionRange;
-		this.state = GlialState.RESTING;
-		this.infiammatoryState = false;
+	public Astrocite(Context context) {
+		super(context);
+
 		
 		this.alphaValueLayer = (GridValueLayer) context.getValueLayer("alphaLayer");
 	}
