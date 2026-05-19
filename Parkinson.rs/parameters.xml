@@ -60,6 +60,12 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
+				<parameter name="condition" displayName="Condition" type="java.lang.String" 
+						defaultValue="normale" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter"
+												values="normale , raffreddore, cancro "
+											/>
 				<parameter name="alpha_threshold" displayName="Alpha Threshold" type="int" 
 						defaultValue="5" 
 						isReadOnly="false" 

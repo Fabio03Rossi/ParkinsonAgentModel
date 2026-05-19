@@ -9,24 +9,45 @@ import java.util.Map;
   * i corretti moltiplicatori.
   */
 public class Policy {
+	private static Policy instance = null;
+	private final Map<StatType, ModifiableParameter> params = new EnumMap<>(StatType.class);
+
 	// Treatment
 	protected boolean NLRB3inibitor;	 // Utilizzata per indicare se nel sistema è presente una quantità 
 										 //sufficiente di inibitore per bloccare lo stato infiammatorio delle cellule gliali
-	
 	// Valori default
-	protected double cytoRelease = 1;
+	protected double cytoRelease = 1;	
 	
-	private final Map<StatType, ModifiableParameter> params = new EnumMap<>(StatType.class);
-	
-	
-	public Policy(int age, boolean gender, HealthDisease healthAlteration, double cytoActTre, double cytoRelease, double alphaTre, double cytoTre, double degenRate) {
+	private Policy(int age, boolean gender, HealthDisease healthAlteration, double cytoActTre, double cytoRelease, double alphaTre, double cytoTre, double degenRate) {
 		params.put(StatType.CYTO_ACTIVATION_THRESHOLD, new ModifiableParameter(cytoActTre));
 		params.put(StatType.CYTO_RELEASE_RATE, new ModifiableParameter(cytoRelease));
 		params.put(StatType.ALPHA_SINUCLEIN_THRESHOLD, new ModifiableParameter(alphaTre));
 		params.put(StatType.CYTOKINE_THRESHOLD, new ModifiableParameter(cytoTre));
 		params.put(StatType.DEGENERATION_RATE, new ModifiableParameter(degenRate));
 	}
+	
+	public static Policy createInstance(
+			int age, 
+			boolean gender, 
+			HealthDisease healthAlteration, 
+			double cytoActTre, 
+			double cytoRelease, 
+			double alphaTre, 
+			double cytoTre, 
+			double degenRate
+			) {
+		if(instance == null) return new Policy(age, gender, healthAlteration, cytoActTre, cytoRelease, alphaTre, cytoTre, degenRate);
+		return instance;
+	}
+	
+	public static Policy getInstance() {
+		if(instance == null) throw new NullPointerException("La Policy è null");
+		return instance;
+	}
 
+	public ModifiableParameter getParam(StatType type) {
+		return this.params.get(type);
+	}
 	
 	public boolean isNLRB3inibitor() {
 		return NLRB3inibitor;
@@ -34,10 +55,6 @@ public class Policy {
 	
 	public void setNLRB3inibitor(boolean nLRB3inibitor) {
 		NLRB3inibitor = nLRB3inibitor;
-	}
-	
-	public ModifiableParameter getParam(StatType type) {
-		return this.params.get(type);
 	}
 	
 	public enum StatType {
@@ -57,11 +74,11 @@ public class Policy {
 	        this.modifier = 1.0;
 	    }
 
-	    public void setModifier(double modifier) {
+	    public synchronized void setModifier(double modifier) {
 	        this.modifier = modifier;
 	    }
 
-	    public void addModifier(double delta) {
+	    public synchronized void addModifier(double delta) {
 	        this.modifier += delta;
 	    }
 
