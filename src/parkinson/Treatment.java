@@ -1,5 +1,7 @@
 package parkinson;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
@@ -32,11 +34,13 @@ public class Treatment {
 	
 	private double GLP1somministrationNumber = 0;
 	private double NLRP3somministrationNumber = 0;
-
-	// perception (internal state)
-	private int numberOfDegeneratedNeuron;
-	private int numberOfStressedNeuron;
-	private int numberOfInflammatedMicroglia;
+	
+	// Learning Model
+	private SubstanciaNigraState currentState;
+	private List<Action> possibleActions;
+	private final int NUM_ACTIONS = 21;     
+	
+	
 	
 	public Treatment(Context<Object> context, Environment env) {
 		this.context = context;
@@ -44,9 +48,11 @@ public class Treatment {
 		this.env = env;
 		// TODO this.efficacy = ;
 		
-		this.numberOfDegeneratedNeuron = 0;
-		this.numberOfInflammatedMicroglia = 0;
-		this.numberOfStressedNeuron = 0;
+		this.currentState.setDegeratedNeuron(0);
+		this.currentState.setStressedNeuron(0);
+		this.currentState.setInflammatedMicroglia(0);
+		
+		this.possibleActions = initializeDiscreteActions();	
 	}
 	
 	
@@ -69,8 +75,8 @@ public class Treatment {
 		for(Object s : currentNeurons) {
 			Neuron d = (Neuron) s;
 			
-			if(d.getState() == NeuronState.DEGENERATED_DEATH) numberOfDegeneratedNeuron++;
-			if(d.getState() == NeuronState.STRESSED) numberOfStressedNeuron++;
+			if(d.getState() == NeuronState.DEGENERATED_DEATH) this.currentState.setDegeratedNeuron(this.currentState.getDegeneratedNeuron()+1);
+			if(d.getState() == NeuronState.STRESSED) this.currentState.setStressedNeuron(this.currentState.getStressedNeuron()+1);
 		}
 		
 		IndexedIterable<Object> currentMicroglias = context.getObjects(Microglia.class);
@@ -78,7 +84,7 @@ public class Treatment {
 		for(Object s : currentMicroglias) {
 			Microglia d = (Microglia) s;
 			
-			if(d.isInflammated()) numberOfInflammatedMicroglia++;
+			if(d.isInflammated()) this.currentState.setInflammatedMicroglia(this.currentState.getInflammatedMicroglia()+1);
 		}
 	}
 	
@@ -86,14 +92,14 @@ public class Treatment {
 		double deathWeight = 0.9;
 		double stressedWeight = 0.2;
 		double base = 0.1;
-		double dosage = (deathWeight * numberOfDegeneratedNeuron + stressedWeight * numberOfStressedNeuron) * base;
+		double dosage = (deathWeight * this.currentState.getDegeneratedNeuron() + stressedWeight * this.currentState.getStressedNeuron()) * base;
 		
 		return dosage;
 	}
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 4)
 	public void stepAction() {
-		if(numberOfDegeneratedNeuron > 0) {
+		if(this.currentState.getDegeneratedNeuron() > 0) {
 			somministrateGLP1(dosageAction());
 		}
 	}
@@ -137,6 +143,88 @@ public class Treatment {
 			this.policy.setNLRB3inibitor(false);
 		}
 	}
+	
+	private List<Action> initializeDiscreteActions() {
+		List<Action> l = new LinkedList<>();
+		for (int i = 0; i < NUM_ACTIONS; i++) {
+            l.add(new Dosage((double) i / (NUM_ACTIONS - 1)));   // 0.0 → 1.0 inclusi
+        }
+        return l;
+	}
+	
+
+	private class SubstanciaNigraState implements State {
+		
+		// perception (internal state)
+		private int degeneratedNeuronCount;
+		private int stressedNeuronCount;
+		private int inflammetedMicrogliaCount;
+		
+		public SubstanciaNigraState(int deg, int str, int inf) {
+			this.degeneratedNeuronCount = deg;
+			this.inflammetedMicrogliaCount = inf;
+			this.stressedNeuronCount = str;
+		}
+		
+		public void setDegeratedNeuron(int x) {
+			degeneratedNeuronCount = x;
+		}
+		
+		
+		public void setStressedNeuron(int x) {
+			stressedNeuronCount = x;
+		}
+		
+		
+		public void setInflammatedMicroglia(int x) {
+			inflammetedMicrogliaCount = x;
+		}
+		
+		public int getDegeneratedNeuron() {
+			return degeneratedNeuronCount;
+		}
+		
+		public int getStressedNeuron() {
+			return stressedNeuronCount;
+		}
+		
+		public int getInflammatedMicroglia() {
+			return inflammetedMicrogliaCount;
+		}
+		
+		@Override
+		public int hashCode(){
+	      int result = degeneratedNeuronCount;
+	      result = 31 * inflammetedMicrogliaCount;
+	      result = 31 * stressedNeuronCount;
+	      return result;
+		}
+		
+	}
+	
+	private class Dosage implements Action {
+		
+		private double dosage;
+		
+		public Dosage(double x) {
+			dosage = x;
+		}
+
+		@Override
+		public String getLabel() {
+			// TODO Auto-generated method stub
+			return String.valueOf(dosage);
+		}
+		
+		@Override
+		public int hashCode(){
+	      int result;
+	      result = 31 * (int) dosage;
+	      return result;
+		}
+		
+	}
+	
 	
 
 	/* 
