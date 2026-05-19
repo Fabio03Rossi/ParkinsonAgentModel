@@ -3,6 +3,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import parkinson.Policy.StatType;
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.query.space.continuous.ContinuousWithin;
@@ -27,7 +28,7 @@ public class Treatment {
 	private double GLP1dosage = 0;
 	private double NLRP3dosage = 0;
 	private double efficacy;
-	private double GLP1dosageEvaporation;
+	private final double GLP1dosageEvaporation = .1d;
 	private double NLRP3dosageEvaporation;
 	private double glialRedutionTreshold; // Tasso di riduzione del treshold 
 	private double neuronDegenerationRateMod;
@@ -108,28 +109,19 @@ public class Treatment {
 	public void step()
 	{
 		// GLP1
-		double rateModifier = Math.log(1 + this.GLP1dosage);
-		
+		double cytokineRateModifier = -(Math.log(1 + this.GLP1dosage));
+		double degeneratedNeuronRateModifier = Math.log(1 + this.GLP1dosage);
+
 		// Cytokine rate update
-		double oldCytoValue = this.policy.getCytoReleaseRate();
-		this.policy.setCytoReleaseRate(oldCytoValue * rateModifier);
+		this.policy.getParam(StatType.CYTO_RELEASE_RATE).setModifier(cytokineRateModifier);
+		this.policy.getParam(StatType.DEGENERATION_RATE).setModifier(degeneratedNeuronRateModifier);
 		
-		// GlialCell treshold update
-		double oldTreshold = this.policy.getCytoActivationTreshold();
-		double newTreshold = oldTreshold * rateModifier;
-		policy.setCytoActivationTreshold(newTreshold);
-		
-		// HealthReductionRate
-		double oldValue = this.policy.getDegenerationRate();
-		double newValue = oldValue * rateModifier;
-		this.policy.setDegenerationRate(newValue);
 		
 		// Evaporazione/assorbimento farmaco (riduzione dose)
 		if(this.GLP1dosage <= this.GLP1dosageEvaporation)
 			this.GLP1dosage = 0;
 		else
 			this.GLP1dosage = this.GLP1dosage - this.GLP1dosageEvaporation;
-		
 		
 		
 		// NLRP3
