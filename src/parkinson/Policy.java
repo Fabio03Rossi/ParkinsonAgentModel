@@ -36,18 +36,9 @@ public class Policy {
 		NLRB3inibitor = nLRB3inibitor;
 	}
 	
-	public double getValue(StatType type) {
-		return this.params.get(type).getEffectiveValue();
+	public ModifiableParameter getParam(StatType type) {
+		return this.params.get(type);
 	}
-	
-	public void addParameterMod(StatType type, double rateMod) {
-		this.params.get(type).addModifier(rateMod);
-	}
-	
-	public void setParameterMod(StatType type, double rateMod) {
-		this.params.get(type).setModifier(rateMod);
-	}
-	
 	
 	public enum StatType {
 	    CYTO_ACTIVATION_THRESHOLD, // Numero di cytokine necessarie per attivare la microglia
