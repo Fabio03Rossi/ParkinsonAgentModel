@@ -107,7 +107,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		alphaLayer.set(10, grid.getLocation(x).getX(), grid.getLocation(x).getY());
 		
 		for(int i = 0; i < microNum; i++) {
-			new Microglia(context, perceptionRange);
+			new Microglia(context);
 		}
 		
 		RunEnvironment.getInstance().endAt(800);
