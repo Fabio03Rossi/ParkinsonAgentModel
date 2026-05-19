@@ -20,6 +20,8 @@ public class Agent {
 		this.grid = (Grid<Object>) context.getProjection("grid");
 		
 		this.env = (Environment) this.context.getObjectsAsStream(Environment.class).findFirst().get();
+		
+		this.grid.moveTo(this, (int) this.space.getLocation(this).getX(), (int) this.space.getLocation(this).getY());
 	}
 	
 	public void moveTo(double x, double y) {		

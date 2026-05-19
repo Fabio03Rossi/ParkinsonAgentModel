@@ -78,7 +78,7 @@ public class Treatment {
 		for(Object s : currentMicroglias) {
 			Microglia d = (Microglia) s;
 			
-			if(d.isInfiammatoryState()) numberOfInflammatedMicroglia++;
+			if(d.isInflammated()) numberOfInflammatedMicroglia++;
 		}
 	}
 	
@@ -102,19 +102,20 @@ public class Treatment {
 	public void step()
 	{
 		// GLP1
+		double rateModifier = Math.log(1 + this.GLP1dosage);
+		
 		// Cytokine rate update
-		double rateModifier = this.GLP1dosage * this.policy.getDiffusionRateMod();
-		this.env.setDiffusionRate(env.getCytokineDiffuser(), rateModifier);
-		this.GLP1dosage = this.GLP1dosage * this.GLP1dosageEvaporation;
+		double oldCytoValue = this.policy.getCytoReleaseRate();
+		this.policy.setCytoReleaseRate(oldCytoValue * rateModifier);
 		
 		// GlialCell treshold update
 		double oldTreshold = this.policy.getCytoActivationTreshold();
-		double newTreshold = oldTreshold * this.glialRedutionTreshold;
+		double newTreshold = oldTreshold * rateModifier;
 		policy.setCytoActivationTreshold(newTreshold);
 		
 		// HealthReductionRate
 		double oldValue = this.policy.getDegenerationRate();
-		double newValue = oldValue * this.neuronDegenerationRateMod;
+		double newValue = oldValue * rateModifier;
 		this.policy.setDegenerationRate(newValue);
 		
 		// Evaporazione/assorbimento farmaco (riduzione dose)

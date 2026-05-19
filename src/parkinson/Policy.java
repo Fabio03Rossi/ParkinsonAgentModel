@@ -22,6 +22,10 @@ public class Policy {
 	protected double degenerationRate;
 	
 	
+	// Valori default
+	protected double cytoRelease = 1;
+	
+	
 	public Policy(int age, boolean gender, HealthDisease healthAlteration, double cytoActTre, double alphaTre, double cytoTre) {
 		this.cytoActivationTreshold = cytoActTre;
 		this.alphaSinucleinTreshold = alphaTre;
@@ -69,6 +73,17 @@ public class Policy {
 		NLRB3inibitor = nLRB3inibitor;
 	}
 	
+	public double getCytoReleaseRate() {
+		return cytoReleaseRate;
+	}
+	
+	// Contine la logica per l'aggiornamento del rilascio di citochine
+	public void setCytoReleaseRate(double rateMod) {
+		if(this.cytoReleaseRate > this.cytoRelease)
+		//double oldV = this.cytoReleaseRate;
+		this.cytoReleaseRate = this.cytoReleaseRate * rateMod ;
+	}
+	
 	// -----------------------------------------------------------------------------------
 	
 	public double getNeuronDeathRate() {
@@ -76,10 +91,6 @@ public class Policy {
 	}
 	
 	public double getMicrogliaActivationThreshold() {
-		return 1.0f;
-	}
-	
-	public double getDiffusionRateMod() {
 		return 1.0f;
 	}
 	
@@ -91,8 +102,5 @@ public class Policy {
 		return 1.0f;
 	}
 	
-	public double getCytoReleaseRate() {
-		return 1.0f;
-	}
 
 }
