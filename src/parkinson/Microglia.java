@@ -11,8 +11,7 @@ import repast.simphony.space.grid.Grid;
 import repast.simphony.valueLayer.GridValueLayer;
 
 public class Microglia extends GlialCell {
-	private int perceptionRange;
-	private GlialState GliaState;
+	//private int perceptionRange;
 	private double alphaSynAbsorbRatio = 0.1;
 	
 	private double xToReach = -1;
@@ -25,13 +24,12 @@ public class Microglia extends GlialCell {
 	private ContinuousSpace<Object> space;
 	private Grid<Object> grid;
 	
-	public Microglia(Context context, int perceptionRange) {
+	public Microglia(Context context) {
 		super(context);
 		
 		this.space = (ContinuousSpace<Object>) context.getProjection("space");
 		this.grid = (Grid<Object>) context.getProjection("grid");
 
-		this.perceptionRange = perceptionRange;
 		this.state = GlialState.RESTING;
 		this.infiammatoryState = false;
 		
@@ -113,6 +111,8 @@ public class Microglia extends GlialCell {
 	
 	protected void perceiveNeurons() {
 		this.targetNeuron = null;
+		
+		// TODO Introdurre potenzialmente il parametro range
 		
 		Iterable within = new ContinuousWithin(this.context, this, 8).query();
 		for(var x : within) {

@@ -194,7 +194,7 @@ public class Neuron extends Agent {
 		return MAX_HEALTH;
 	}
 	
-	public int getHealth() {
+	public double getHealth() {
 		return health;
 	}
 	
