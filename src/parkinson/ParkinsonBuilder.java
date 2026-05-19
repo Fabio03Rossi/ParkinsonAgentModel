@@ -96,7 +96,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		alphaDiffuser.setMinValue(0f);
 		alphaDiffuser.setMaxValue(1.0f);
 		
-		context.add(new Environment(policy, cytoDiffuser, alphaDiffuser));
+		context.add(new Environment(cytoDiffuser, alphaDiffuser));
 				
 		for(int i = 0; i < neuroNum; i++) {
 			new Neuron(context, neuroHealth);
@@ -109,6 +109,8 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		for(int i = 0; i < microNum; i++) {
 			new Microglia(context);
 		}
+		
+		new Treatment(context);
 		
 		RunEnvironment.getInstance().endAt(800);
 

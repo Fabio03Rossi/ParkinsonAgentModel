@@ -16,10 +16,7 @@ import repast.simphony.valueLayer.ValueLayerDiffuser;
 
 
 
-public class Treatment {
-	
-	private Context<Object> context;
-	private Environment env;
+public class Treatment extends PassiveAgent {
 
 	
 	protected double resistence;
@@ -28,7 +25,7 @@ public class Treatment {
 	private double GLP1dosage = 0;
 	private double NLRP3dosage = 0;
 	private double efficacy;
-	private final double GLP1dosageEvaporation = .1d;
+	private final double GLP1dosageEvaporation = 0.8f;
 	private double NLRP3dosageEvaporation;
 	private double glialRedutionTreshold; // Tasso di riduzione del treshold 
 	private double neuronDegenerationRateMod;
@@ -43,17 +40,14 @@ public class Treatment {
 	
 	
 	
-	public Treatment(Context<Object> context, Environment env) {
-		this.context = context;
-		this.policy = env.getPolicy();
-		this.env = env;
+	public Treatment(Context<Object> context) {
+		super(context);
+		this.policy = Policy.getInstance();
 		// TODO this.efficacy = ;
-		
-		this.currentState.setDegeratedNeuron(0);
-		this.currentState.setStressedNeuron(0);
-		this.currentState.setInflammatedMicroglia(0);
+	
 		
 		this.possibleActions = initializeDiscreteActions();	
+		this.currentState = new SubstanciaNigraState(0, 0, 0);
 	}
 	
 	
@@ -109,9 +103,10 @@ public class Treatment {
 	public void step()
 	{
 		// GLP1
-		double cytokineRateModifier = -(Math.log(1 + this.GLP1dosage));
-		double degeneratedNeuronRateModifier = Math.log(1 + this.GLP1dosage);
-
+		double cytokineRateModifier = (1 + Math.log(this.GLP1dosage));
+		double degeneratedNeuronRateModifier = (1 + Math.log(this.GLP1dosage));
+		System.out.println(this.GLP1dosage);
+		System.out.println("Health deg rate"+degeneratedNeuronRateModifier);
 		// Cytokine rate update
 		this.policy.getParam(StatType.CYTO_RELEASE_RATE).setModifier(cytokineRateModifier);
 		this.policy.getParam(StatType.DEGENERATION_RATE).setModifier(degeneratedNeuronRateModifier);
@@ -121,7 +116,7 @@ public class Treatment {
 		if(this.GLP1dosage <= this.GLP1dosageEvaporation)
 			this.GLP1dosage = 0;
 		else
-			this.GLP1dosage = this.GLP1dosage - this.GLP1dosageEvaporation;
+			this.GLP1dosage = this.GLP1dosage * GLP1dosageEvaporation;
 		
 		
 		// NLRP3

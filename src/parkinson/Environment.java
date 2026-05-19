@@ -20,6 +20,7 @@ public class Environment {
     public void step() {
     	cytoDiffuser.diffuse();
     	alphaDiffuser.diffuse();
+    	System.out.println("ssn");
     }
     
     public void setDiffusionRate(ValueLayerDiffuser v, double diffusionRate) {

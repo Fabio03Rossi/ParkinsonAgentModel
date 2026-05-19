@@ -2,6 +2,7 @@ package parkinson;
 
 import java.util.Random;
 
+import parkinson.Policy.StatType;
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.space.continuous.ContinuousSpace;
@@ -166,8 +167,9 @@ public class Neuron extends Agent {
 	}
 	
 	public void loseHealth() {
-		this.health = this.health - 1 * this.degenerationRate;
+		this.health = this.health / this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue();
 		System.out.println("Health del neurone scesa a: " + this.health);
+		
 	}
 	
 	public void setHealth(int health) {
