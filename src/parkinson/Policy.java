@@ -71,11 +71,11 @@ public class Policy {
 	    }
 
 	    public void addModifier(double delta) {
-	        this.modifier *= delta;
+	        this.modifier += delta;
 	    }
 
 	    public double getEffectiveValue() {
-	        return originalValue + modifier; 
+	        return originalValue * modifier; 
 	    }
 
 	    public double getOriginalValue() {
