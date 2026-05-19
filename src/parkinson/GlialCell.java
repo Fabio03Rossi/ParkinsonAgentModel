@@ -11,24 +11,26 @@ public class GlialCell extends Agent{
 	protected GlialState state;
 	protected boolean infiammatoryState; //true per stato infiammatorio, false per stato non infiammato
 	
-	protected int cytokinesReceived;
-	protected float activationThreshold;
-	protected int cytokineRange;
-	protected int cytokineReleaseRate;
+	protected double cytokinesReceived;
+	protected double activationThreshold;
+	protected double cytokineReleaseRate;
+	
+	protected Policy policy;
 	// LAYERS
 	protected GridValueLayer cytokineLayer;
 	
 	public GlialCell(Context context) {
 		super(context);
 		
-		this.activationThreshold = (float) this.env.getPolicy().getCytoActivationTreshold();
+		this.policy = this.env.getPolicy();
 		this.state = GlialState.RESTING;
 		
-		this.cytokineRange = (int) this.env.getPolicy().getCytoPerceptionRange();
-		this.cytokineReleaseRate = (int) this.env.getPolicy().getCytoReleaseRate();
+		this.cytokineReleaseRate = this.policy.getParam(Policy.StatType.CYTO_RELEASE_RATE).getEffectiveValue();
+		this.activationThreshold = this.policy.getParam(Policy.StatType.CYTO_ACTIVATION_THRESHOLD).getEffectiveValue();
+		this.infiammatoryState = this.policy.isNLRB3inibitor();
 		
 		this.cytokineLayer = (GridValueLayer) context.getValueLayer("cytoLayer");
-		this.infiammatoryState = false;
+
 
 	}
 	
@@ -41,6 +43,13 @@ public class GlialCell extends Agent{
 	    	   double cytokineValue = cytokineLayer.get(x,y);
 	    	   // Setto il nuovo valore
 	    	   cytokineLayer.set(cytokineValue + 1, x, y);
+	}
+	
+	@ScheduledMethod(start = 1, interval = 1, priority = 2)
+	public void updateValues() {
+		this.cytokineReleaseRate = this.policy.getParam(Policy.StatType.CYTO_RELEASE_RATE).getEffectiveValue();
+		this.activationThreshold = this.policy.getParam(Policy.StatType.CYTO_ACTIVATION_THRESHOLD).getEffectiveValue();
+		this.infiammatoryState = this.policy.isNLRB3inibitor();
 	}
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 3)

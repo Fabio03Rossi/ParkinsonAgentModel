@@ -25,23 +25,28 @@ public class Neuron extends Agent {
 	private double x;
 	private double y;
 	
-	private double alphaSinucleinTreshold;
-	private double cytokineTreshold;
+	private double alphaSinucleinThreshold;
+	private double cytokineThreshold;
 	
 	private boolean flag;
 
-	private static final Random rnd = new Random();
-		
-	public Neuron(Context context, int maxHealth) {
+	private Policy policy;
+	
+	
+	
+	@SuppressWarnings("unchecked")
+	public Neuron(Context<Object> context, int maxHealth) {
 		super(context);
+		
+		this.policy = this.env.getPolicy();
 		this.space = (ContinuousSpace<Object>) context.getProjection("space");
 		this.grid = (Grid<Object>) context.getProjection("grid");
 
 		this.cytoValueLayer = (GridValueLayer) context.getValueLayer("cytoLayer");
 		this.alphaValueLayer = (GridValueLayer) context.getValueLayer("alphaLayer");
 
-		this.alphaSinucleinTreshold = this.env.getPolicy().getAlphaSinucleinTreshold();
-		this.cytokineTreshold = this.env.getPolicy().getCytokineTreshold();
+		this.alphaSinucleinThreshold = this.policy.getParam(Policy.StatType.ALPHA_SINUCLEIN_THRESHOLD).getEffectiveValue();
+		this.cytokineThreshold = this.policy.getParam(Policy.StatType.CYTOKINE_THRESHOLD).getEffectiveValue();
 		this.state = NeuronState.HEALTHY;
 		
 		this.x = this.grid.getLocation(this).getX();
@@ -49,6 +54,12 @@ public class Neuron extends Agent {
 		
 		this.MAX_HEALTH = maxHealth;
 		this.health = maxHealth;
+	}
+	
+	@ScheduledMethod(start = 1, interval = 1, priority = 1)
+	public void updateValues() {
+		this.alphaSinucleinThreshold = this.policy.getParam(Policy.StatType.ALPHA_SINUCLEIN_THRESHOLD).getEffectiveValue();
+		this.cytokineThreshold = this.policy.getParam(Policy.StatType.CYTOKINE_THRESHOLD).getEffectiveValue();
 	}
 
 	
@@ -71,12 +82,12 @@ public class Neuron extends Agent {
         switch (this.state) {
             case HEALTHY:
             	if(health <= 0) this.state = NeuronState.DEGENERATED_DEATH;
-            	if(alphaValue >= alphaSinucleinTreshold || cytokineValue >= cytokineTreshold) this.state = NeuronState.STRESSED;
+            	if(alphaValue >= alphaSinucleinThreshold || cytokineValue >= cytokineThreshold) this.state = NeuronState.STRESSED;
             		
             break;
                 
             case STRESSED:
-            	if(alphaValue < alphaSinucleinTreshold && cytokineValue < cytokineTreshold) this.state = NeuronState.HEALTHY;
+            	if(alphaValue < alphaSinucleinThreshold && cytokineValue < cytokineThreshold) this.state = NeuronState.HEALTHY;
             	
             	if(this.health > 0){
             		this.loseHealth();
