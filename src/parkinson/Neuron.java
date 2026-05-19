@@ -48,7 +48,7 @@ public class Neuron extends Agent {
 		this.alphaValueLayer = (GridValueLayer) context.getValueLayer("alphaLayer");
 
 		this.alphaSinucleinThreshold = this.policy.getParam(Policy.StatType.ALPHA_SINUCLEIN_THRESHOLD).getEffectiveValue();
-		this.cytokineThreshold = this.policy.getParam(Policy.StatType.CYTOKINE_THRESHOLD).getEffectiveValue();
+		this.cytokineThreshold = this.policy.getParam(Policy.StatType.CYTO_NEURON_THRESHOLD).getEffectiveValue();
 		this.degenerationRate = this.policy.getParam(Policy.StatType.DEGENERATION_RATE).getEffectiveValue();
 
 		this.state = NeuronState.HEALTHY;
@@ -63,7 +63,7 @@ public class Neuron extends Agent {
 	@ScheduledMethod(start = 1, interval = 1, priority = 1)
 	public void updateValues() {
 		this.alphaSinucleinThreshold = this.policy.getParam(Policy.StatType.ALPHA_SINUCLEIN_THRESHOLD).getEffectiveValue();
-		this.cytokineThreshold = this.policy.getParam(Policy.StatType.CYTOKINE_THRESHOLD).getEffectiveValue();
+		this.cytokineThreshold = this.policy.getParam(Policy.StatType.CYTO_NEURON_THRESHOLD).getEffectiveValue();
 		this.degenerationRate = this.policy.getParam(Policy.StatType.DEGENERATION_RATE).getEffectiveValue();
 	}
 
@@ -129,7 +129,7 @@ public class Neuron extends Agent {
 	
  	    cytoValueLayer.set(newValue, (int) this.x, (int) this.y);
  	    this.cytokineValue = this.cytokineValue + absorbedValue;
- 	    System.out.println("cytoValueInNeuron: " + cytokineValue);	 
+ 	    //System.out.println("cytoValueInNeuron: " + cytokineValue);	 
 	}
 
 
@@ -144,7 +144,7 @@ public class Neuron extends Agent {
 	
  	    alphaValueLayer.set(newValue, (int) this.x, (int) this.y);
  	    this.alphaValue = this.alphaValue + absorbedValue;
- 	    System.out.println("alphaValueInNeuron: " + alphaValue);	 
+ 	    //System.out.println("alphaValueInNeuron: " + alphaValue);	 
 	}
 	
 	protected boolean perceiveSynuclein() {
@@ -167,9 +167,9 @@ public class Neuron extends Agent {
 	}
 	
 	public void loseHealth() {
-		this.health = this.health / this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue();
-		System.out.println("Health del neurone scesa a: " + this.health);
 		
+		this.health = this.health - (1 / this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue());
+		System.out.println("Health del neurone scesa a: " + this.health);
 	}
 	
 	public void setHealth(int health) {

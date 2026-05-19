@@ -1,5 +1,6 @@
 package parkinson;
 
+import parkinson.Policy.StatType;
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.space.continuous.ContinuousSpace;
@@ -26,7 +27,7 @@ public class GlialCell extends Agent{
 		this.state = GlialState.RESTING;
 		
 		this.cytokineReleaseRate = this.policy.getParam(Policy.StatType.CYTO_RELEASE_RATE).getEffectiveValue();
-		this.activationThreshold = this.policy.getParam(Policy.StatType.CYTO_ACTIVATION_THRESHOLD).getEffectiveValue();
+		this.activationThreshold = this.policy.getParam(Policy.StatType.CYTO_MICROGLIA_THRESHOLD).getEffectiveValue();
 		this.infiammatoryState = this.policy.isNLRB3inibitor();
 		
 		this.cytokineLayer = (GridValueLayer) context.getValueLayer("cytoLayer");
@@ -36,19 +37,19 @@ public class GlialCell extends Agent{
 	
 	
 	public void cytokineRelease() {
-		// TODO Da ottimizzare probabilmente
 		// Ottengo la posizione dalla griglia
 		   int x = this.grid.getLocation(this).getX();
 		   int y = this.grid.getLocation(this).getY();
 	    	   double cytokineValue = cytokineLayer.get(x,y);
-	    	   // Setto il nuovo valore
-	    	   cytokineLayer.set(cytokineValue + 1, x, y);
+	    	   // Setto il nuovo valore tenendo in considerazione il cytoReleaseRate da policy
+	    	   System.out.println("Valore cytomodifier " + this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue());
+	    	   cytokineLayer.set(cytokineValue + 1 / this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue(), x, y);
 	}
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 2)
 	public void updateValues() {
 		this.cytokineReleaseRate = this.policy.getParam(Policy.StatType.CYTO_RELEASE_RATE).getEffectiveValue();
-		this.activationThreshold = this.policy.getParam(Policy.StatType.CYTO_ACTIVATION_THRESHOLD).getEffectiveValue();
+		this.activationThreshold = this.policy.getParam(Policy.StatType.CYTO_MICROGLIA_THRESHOLD).getEffectiveValue();
 		this.infiammatoryState = this.policy.isNLRB3inibitor();
 	}
 	

@@ -19,10 +19,10 @@ public class Policy {
 	protected double cytoRelease = 1;	
 	
 	private Policy(int age, boolean gender, HealthDisease healthAlteration, double cytoActTre, double cytoRelease, double alphaTre, double cytoTre, double degenRate) {
-		params.put(StatType.CYTO_ACTIVATION_THRESHOLD, new ModifiableParameter(cytoActTre));
+		params.put(StatType.CYTO_MICROGLIA_THRESHOLD, new ModifiableParameter(cytoActTre));
 		params.put(StatType.CYTO_RELEASE_RATE, new ModifiableParameter(cytoRelease));
 		params.put(StatType.ALPHA_SINUCLEIN_THRESHOLD, new ModifiableParameter(alphaTre));
-		params.put(StatType.CYTOKINE_THRESHOLD, new ModifiableParameter(cytoTre));
+		params.put(StatType.CYTO_NEURON_THRESHOLD, new ModifiableParameter(cytoTre));
 		params.put(StatType.DEGENERATION_RATE, new ModifiableParameter(degenRate));
 	}
 	
@@ -60,10 +60,10 @@ public class Policy {
 	}
 	
 	public enum StatType {
-	    CYTO_ACTIVATION_THRESHOLD, // Numero di cytokine necessarie per attivare la microglia
+	    CYTO_MICROGLIA_THRESHOLD, // Numero di cytokine necessarie per attivare la microglia
 	    CYTO_RELEASE_RATE, // Numero di cytokine rilasciate dalla microglia nel value layer
 	    ALPHA_SINUCLEIN_THRESHOLD, // Tossicità delle alpha necessarie per stressare il neurone
-	    CYTOKINE_THRESHOLD, // Numero di cytokine necessarie per stressare il neurone
+	    CYTO_NEURON_THRESHOLD, // Numero di cytokine necessarie per stressare il neurone
 	    DEGENERATION_RATE // Vita persa del neurone stressato ad ogni step
 	}
 	

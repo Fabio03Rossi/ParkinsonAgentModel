@@ -37,6 +37,8 @@ public class Treatment extends PassiveAgent {
 	private SubstanciaNigraState currentState;
 	private List<Action> possibleActions;
 	private final int NUM_ACTIONS = 21;     
+	private IndexedIterable<Object> currentNeurons;
+	private int totNeurons;
 	
 	
 	
@@ -48,7 +50,9 @@ public class Treatment extends PassiveAgent {
 		
 		this.possibleActions = initializeDiscreteActions();	
 		this.currentState = new SubstanciaNigraState(0, 0, 0);
-	}
+		currentNeurons = context.getObjects(Neuron.class);
+		this.totNeurons = currentNeurons.size();
+		}
 	
 	
 	public void somministrateGLP1(double dosage) {
@@ -65,14 +69,21 @@ public class Treatment extends PassiveAgent {
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 5)
 	public void stepPerception() {
-		IndexedIterable<Object> currentNeurons = context.getObjects(Neuron.class);
-	
+		
+		this.currentState.setDegeratedNeuron(0);
+		this.currentState.setStressedNeuron(0);
+		this.currentState.setInflammatedMicroglia(0);
+		int healthyCount = 0;
 		for(Object s : currentNeurons) {
 			Neuron d = (Neuron) s;
 			
-			if(d.getState() == NeuronState.DEGENERATED_DEATH) this.currentState.setDegeratedNeuron(this.currentState.getDegeneratedNeuron()+1);
+			if(d.getState() == NeuronState.HEALTHY) healthyCount++;
 			if(d.getState() == NeuronState.STRESSED) this.currentState.setStressedNeuron(this.currentState.getStressedNeuron()+1);
 		}
+		
+		var x = totNeurons - healthyCount - this.currentState.getStressedNeuron();
+		this.currentState.setDegeratedNeuron(x);
+		System.out.println("NEURONI MORTI: " + x);
 		
 		IndexedIterable<Object> currentMicroglias = context.getObjects(Microglia.class);
 		
@@ -86,7 +97,7 @@ public class Treatment extends PassiveAgent {
 	private double dosageAction() {
 		double deathWeight = 0.9;
 		double stressedWeight = 0.2;
-		double base = 0.1;
+		double base = 0.5;
 		double dosage = (deathWeight * this.currentState.getDegeneratedNeuron() + stressedWeight * this.currentState.getStressedNeuron()) * base;
 		
 		return dosage;
@@ -103,20 +114,26 @@ public class Treatment extends PassiveAgent {
 	public void step()
 	{
 		// GLP1
-		double cytokineRateModifier = (1 + Math.log(this.GLP1dosage));
-		double degeneratedNeuronRateModifier = (1 + Math.log(this.GLP1dosage));
-		System.out.println(this.GLP1dosage);
-		System.out.println("Health deg rate"+degeneratedNeuronRateModifier);
-		// Cytokine rate update
-		this.policy.getParam(StatType.CYTO_RELEASE_RATE).setModifier(cytokineRateModifier);
-		this.policy.getParam(StatType.DEGENERATION_RATE).setModifier(degeneratedNeuronRateModifier);
+		double rateModifier = (1 + Math.log(1 + this.GLP1dosage));
 		
+		// Cytokine rate update
+		this.policy.getParam(StatType.CYTO_RELEASE_RATE).setModifier(rateModifier);
+		// DegenerateNeuronRate
+		this.policy.getParam(StatType.DEGENERATION_RATE).setModifier(rateModifier);
+		
+		// 1 / (1 + e ^ -dosaggio)
+		
+		this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).setModifier(rateModifier);
+		
+		
+		
+		System.out.println("Dosaggio " + this.GLP1dosage);
 		
 		// Evaporazione/assorbimento farmaco (riduzione dose)
 		if(this.GLP1dosage <= this.GLP1dosageEvaporation)
 			this.GLP1dosage = 0;
 		else
-			this.GLP1dosage = this.GLP1dosage * GLP1dosageEvaporation;
+			this.GLP1dosage = this.GLP1dosage - GLP1dosageEvaporation;
 		
 		
 		// NLRP3
