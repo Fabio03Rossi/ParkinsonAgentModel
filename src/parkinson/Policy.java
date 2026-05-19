@@ -26,7 +26,7 @@ public class Policy {
 		params.put(StatType.DEGENERATION_RATE, new ModifiableParameter(degenRate));
 	}
 	
-	public static Policy createInstance(
+	public synchronized static Policy createInstance(
 			int age, 
 			boolean gender, 
 			HealthDisease healthAlteration, 
@@ -36,11 +36,13 @@ public class Policy {
 			double cytoTre, 
 			double degenRate
 			) {
-		if(instance == null) return new Policy(age, gender, healthAlteration, cytoActTre, cytoRelease, alphaTre, cytoTre, degenRate);
+		if(instance == null) {
+			instance = new Policy(age, gender, healthAlteration, cytoActTre, cytoRelease, alphaTre, cytoTre, degenRate);
+		}
 		return instance;
 	}
 	
-	public static Policy getInstance() {
+	public synchronized static Policy getInstance() {
 		if(instance == null) throw new NullPointerException("La Policy è null");
 		return instance;
 	}

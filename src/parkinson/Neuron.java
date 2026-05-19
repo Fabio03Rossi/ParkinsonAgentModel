@@ -38,7 +38,7 @@ public class Neuron extends Agent {
 	public Neuron(Context<Object> context, int maxHealth) {
 		super(context);
 		
-		this.policy = this.env.getPolicy();
+		this.policy = Policy.getInstance();
 		this.space = (ContinuousSpace<Object>) context.getProjection("space");
 		this.grid = (Grid<Object>) context.getProjection("grid");
 

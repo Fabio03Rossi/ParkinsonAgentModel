@@ -22,7 +22,7 @@ public class GlialCell extends Agent{
 	public GlialCell(Context context) {
 		super(context);
 		
-		this.policy = this.env.getPolicy();
+		this.policy = Policy.getInstance();
 		this.state = GlialState.RESTING;
 		
 		this.cytokineReleaseRate = this.policy.getParam(Policy.StatType.CYTO_RELEASE_RATE).getEffectiveValue();
