@@ -1,6 +1,9 @@
  package parkinson;
 
- /**
+import java.util.EnumMap;
+import java.util.Map;
+
+/**
   * La Policy determina le caratteristiche mutabili della simulazione.
   * Tenendo conto della fisiologia del paziente e degli stimuli esterni per calcolare
   * i corretti moltiplicatori.
@@ -10,60 +13,20 @@ public class Policy {
 	protected boolean NLRB3inibitor;	 // Utilizzata per indicare se nel sistema è presente una quantità 
 										 //sufficiente di inibitore per bloccare lo stato infiammatorio delle cellule gliali
 	
-	// Microglia
-	protected double cytoActivationTreshold;
-	protected double cytoReleaseRate;
-	protected double cytoPerceptionRange;
-	
-	
-	// Neuroni
-	protected double alphaSinucleinTreshold;
-	protected double cytokineTreshold;
-	protected double degenerationRate;
-	
-	
 	// Valori default
 	protected double cytoRelease = 1;
 	
-	
-	public Policy(int age, boolean gender, HealthDisease healthAlteration, double cytoActTre, double alphaTre, double cytoTre) {
-		this.cytoActivationTreshold = cytoActTre;
-		this.alphaSinucleinTreshold = alphaTre;
-		this.cytokineTreshold = cytoTre;
-	}
+	private final Map<StatType, ModifiableParameter> params = new EnumMap<>(StatType.class);
 	
 	
-	public double getDegenerationRate() {
-		return degenerationRate;
-	}
-	
-	public void setDegenerationRate(double degenerationRate) {
-		this.degenerationRate = degenerationRate;
-	}
-	
-	public double getAlphaSinucleinTreshold() {
-		return alphaSinucleinTreshold;
-	}
-	
-	public void setAlphaSinucleinTreshold(double alphaSinucleinTreshold) {
-		this.alphaSinucleinTreshold = alphaSinucleinTreshold;
+	public Policy(int age, boolean gender, HealthDisease healthAlteration, double cytoActTre, double cytoRelease, double alphaTre, double cytoTre, double degenRate) {
+		params.put(StatType.CYTO_ACTIVATION_THRESHOLD, new ModifiableParameter(cytoActTre));
+		params.put(StatType.CYTO_RELEASE_RATE, new ModifiableParameter(cytoRelease));
+		params.put(StatType.ALPHA_SINUCLEIN_THRESHOLD, new ModifiableParameter(alphaTre));
+		params.put(StatType.CYTOKINE_THRESHOLD, new ModifiableParameter(cytoTre));
+		params.put(StatType.DEGENERATION_RATE, new ModifiableParameter(degenRate));
 	}
 
-	public double getCytoActivationTreshold() {
-		return cytoActivationTreshold;
-	}
-	
-	public void setCytoActivationTreshold(double cytoActivationTreshold) {
-		this.cytoActivationTreshold = cytoActivationTreshold;
-	}
-	
-	public double getCytokineTreshold() {
-		return cytokineTreshold;
-	}
-	
-	public void setCytokineTreshold(double cytokineTreshold) {
-		this.cytokineTreshold = cytokineTreshold;
-	}
 	
 	public boolean isNLRB3inibitor() {
 		return NLRB3inibitor;
@@ -73,34 +36,54 @@ public class Policy {
 		NLRB3inibitor = nLRB3inibitor;
 	}
 	
-	public double getCytoReleaseRate() {
-		return cytoReleaseRate;
+	public double getValue(StatType type) {
+		return this.params.get(type).getEffectiveValue();
 	}
 	
-	// Contine la logica per l'aggiornamento del rilascio di citochine
-	public void setCytoReleaseRate(double rateMod) {
-		if(this.cytoReleaseRate > this.cytoRelease)
-		//double oldV = this.cytoReleaseRate;
-		this.cytoReleaseRate = this.cytoReleaseRate * rateMod ;
+	public void addParameterMod(StatType type, double rateMod) {
+		this.params.get(type).addModifier(rateMod);
 	}
 	
-	// -----------------------------------------------------------------------------------
-	
-	public double getNeuronDeathRate() {
-		return 1.0f;
+	public void setParameterMod(StatType type, double rateMod) {
+		this.params.get(type).setModifier(rateMod);
 	}
 	
-	public double getMicrogliaActivationThreshold() {
-		return 1.0f;
+	
+	public enum StatType {
+	    CYTO_ACTIVATION_THRESHOLD, // Numero di cytokine necessarie per attivare la microglia
+	    CYTO_RELEASE_RATE, // Numero di cytokine rilasciate dalla microglia nel value layer
+	    ALPHA_SINUCLEIN_THRESHOLD, // Tossicità delle alpha necessarie per stressare il neurone
+	    CYTOKINE_THRESHOLD, // Numero di cytokine necessarie per stressare il neurone
+	    DEGENERATION_RATE // Vita persa del neurone stressato ad ogni step
 	}
 	
-	public double getEvaporationRateMod() {
-		return 1.0f;
-	}
-	
-	public double getCytoPerceptionRange() {
-		return 1.0f;
-	}
-	
+	public class ModifiableParameter {
+	    private final double originalValue;
+	    private double modifier;
 
+	    public ModifiableParameter(double originalValue) {
+	        this.originalValue = originalValue;
+	        this.modifier = 1.0;
+	    }
+
+	    public void setModifier(double modifier) {
+	        this.modifier = modifier;
+	    }
+
+	    public void addModifier(double delta) {
+	        this.modifier *= delta;
+	    }
+
+	    public double getEffectiveValue() {
+	        return originalValue + modifier; 
+	    }
+
+	    public double getOriginalValue() {
+	        return originalValue;
+	    }
+
+	    public double getModifier() {
+	        return modifier;
+	    }
+	}
 }
