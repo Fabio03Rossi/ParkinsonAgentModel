@@ -30,11 +30,10 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		// Patient 
 		//boolean gender = (Boolean) params.getValue("gender");
 		//int age = Math.abs((Integer) params.getValue("age"));
-		
-		
+		//String condition = (String) params.getValue("condition");
 		
 		// Treatment
-		
+		//String treatment = (String) params.getValue("treatment");
 		
 		// General
 		int spaceSize = Math.abs((Integer) params.getValue("space_size"));
@@ -57,8 +56,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		double debrisStr = Math.abs((Double) params.getValue("debris_strength"));
 		double cytoStr = Math.abs((Double) params.getValue("cytokines_strength"));
 		
-		
-		Policy policy = new Policy(70, true, null, actThr, alphaThr, cytoThr);
+		Policy policy = Policy.createInstance(70, true, null, actThr, alphaThr, cytoThr, 1.0f, 1.0f);
 		
 		ContinuousSpaceFactory spaceFactory = ContinuousSpaceFactoryFinder
 				.createContinuousSpaceFactory(null);
