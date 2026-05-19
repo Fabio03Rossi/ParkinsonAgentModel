@@ -20,11 +20,12 @@ public class Neuron extends Agent {
 	// Valori del neurone
 	private double cytokineValue;
 	private double alphaValue;
-	private int health;
+	private double health;
 	
 	private double x;
 	private double y;
 	
+	private double degenerationRate;
 	private double alphaSinucleinThreshold;
 	private double cytokineThreshold;
 	
@@ -47,6 +48,8 @@ public class Neuron extends Agent {
 
 		this.alphaSinucleinThreshold = this.policy.getParam(Policy.StatType.ALPHA_SINUCLEIN_THRESHOLD).getEffectiveValue();
 		this.cytokineThreshold = this.policy.getParam(Policy.StatType.CYTOKINE_THRESHOLD).getEffectiveValue();
+		this.degenerationRate = this.policy.getParam(Policy.StatType.DEGENERATION_RATE).getEffectiveValue();
+
 		this.state = NeuronState.HEALTHY;
 		
 		this.x = this.grid.getLocation(this).getX();
@@ -60,6 +63,7 @@ public class Neuron extends Agent {
 	public void updateValues() {
 		this.alphaSinucleinThreshold = this.policy.getParam(Policy.StatType.ALPHA_SINUCLEIN_THRESHOLD).getEffectiveValue();
 		this.cytokineThreshold = this.policy.getParam(Policy.StatType.CYTOKINE_THRESHOLD).getEffectiveValue();
+		this.degenerationRate = this.policy.getParam(Policy.StatType.DEGENERATION_RATE).getEffectiveValue();
 	}
 
 	
@@ -162,7 +166,7 @@ public class Neuron extends Agent {
 	}
 	
 	public void loseHealth() {
-		this.health--;
+		this.health = this.health - 1 * this.degenerationRate;
 		System.out.println("Health del neurone scesa a: " + this.health);
 	}
 	
