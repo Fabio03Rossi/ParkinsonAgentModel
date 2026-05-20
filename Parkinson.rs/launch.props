@@ -1,0 +1,6 @@
+#
+#Tue May 19 16:40:47 CEST 2026
+incoming=tcp\://127.0.0.1\:5555
+outgoing=tcp\://127.0.0.1\:5556
+scenario=..\\Parkinson.rs
+working.directory=../

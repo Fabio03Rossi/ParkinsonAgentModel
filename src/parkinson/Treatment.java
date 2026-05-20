@@ -1,4 +1,5 @@
 package parkinson;
+import java.io.File;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,26 +8,24 @@ import java.util.Random;
 import parkinson.Policy.StatType;
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.essentials.RepastEssentials;
 import repast.simphony.query.space.continuous.ContinuousWithin;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
 import repast.simphony.util.collections.IndexedIterable;
 import repast.simphony.valueLayer.GridValueLayer;
 import repast.simphony.valueLayer.ValueLayerDiffuser;
-
-
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class Treatment extends PassiveAgent {
-
-	
 	protected double resistence;
 	protected Policy policy;
 	
 	private double GLP1dosage = 0;
 	private double NLRP3dosage = 0;
 	private double efficacy;
-	private final double GLP1dosageEvaporation = 0.9f;
+	private final double GLP1dosageEvaporation = 0.95f;
 	private double NLRP3dosageEvaporation;
 	private double glialRedutionTreshold; // Tasso di riduzione del treshold 
 	private double neuronDegenerationRateMod;
@@ -126,6 +125,10 @@ public class Treatment extends PassiveAgent {
 			lastAction = (Dosage) decideAction();
 			somministrateGLP1(lastAction.getDosage());
 			this.currentState.setCurrentGLP1dose(lastAction.getDosage());
+		}
+		if(RepastEssentials.GetTickCount() == 1200)
+		{
+			this.save();
 		}
 	}
 	
@@ -356,6 +359,11 @@ public class Treatment extends PassiveAgent {
 	   }
 		
 		
+	}
+	
+	public void save() {
+		System.out.println("Map has been saved.");
+		this.rlModel.save("learnMap.json");
 	}
 	
 	

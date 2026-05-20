@@ -7,6 +7,8 @@ import repast.simphony.context.space.grid.GridFactory;
 import repast.simphony.context.space.grid.GridFactoryFinder;
 import repast.simphony.dataLoader.ContextBuilder;
 import repast.simphony.engine.environment.RunEnvironment;
+import repast.simphony.engine.environment.RunListener;
+import repast.simphony.essentials.RepastEssentials;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.continuous.RandomCartesianAdder;
 import repast.simphony.space.continuous.SimpleCartesianAdder;
@@ -20,7 +22,6 @@ import repast.simphony.valueLayer.GridValueLayer;
 import repast.simphony.valueLayer.ValueLayerDiffuser;
 
 public class ParkinsonBuilder implements ContextBuilder<Object>{
-
 	@Override
 	public Context<Object> build(Context<Object> context) {
 		context.setId("Parkinson");
@@ -113,10 +114,10 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 			new Microglia(context);
 		}
 		
-		new Treatment(context);
+		var t = new Treatment(context);
 		
 		RunEnvironment.getInstance().endAt(1200);
-
+		
 		return context;
 	}
 }
