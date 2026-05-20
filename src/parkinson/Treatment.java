@@ -307,6 +307,14 @@ public class Treatment extends PassiveAgent {
 	         + ", Last Dose: " + this.getCurrentGLP1dose());
 		}
 		
+	   @Override
+	   public boolean equals(Object obj) {
+	      if (this == obj) return true;
+	      if (obj == null || getClass() != obj.getClass()) return false;
+	      SubstanciaNigraState player = (SubstanciaNigraState) obj;
+	      return this.hashCode() == player.hashCode();
+	   }
+		
 	}
 	
 	public class Dosage implements Action {
@@ -338,6 +346,14 @@ public class Treatment extends PassiveAgent {
 		public double getDosage() {
 			return dosage;
 		}
+		
+	   @Override
+	   public boolean equals(Object obj) {
+	      if (this == obj) return true;
+	      if (obj == null || getClass() != obj.getClass()) return false;
+	      Dosage player = (Dosage) obj;
+	      return this.hashCode() == player.hashCode();
+	   }
 		
 		
 	}
