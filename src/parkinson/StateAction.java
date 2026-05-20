@@ -48,6 +48,5 @@ public class StateAction {
       if (agentAction != null ? !agentAction.equals(that.agentAction) : that.agentAction != null) return false;
       return opponentActions != null ? opponentActions.equals(that.opponentActions) : that.opponentActions == null;
    }
-   
 
 }

@@ -3,17 +3,43 @@ package parkinson;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.io.FileWriter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParseException;
+import com.google.gson.reflect.TypeToken;
 
 public abstract class LearningModel {
 	
-   public final Gson gson = new GsonBuilder().create();
+   public final Gson gson = new GsonBuilder()
+		   .registerTypeAdapter(new TypeToken<HashMap<StateAction, Double>>(){}.getType(), new JsonDeserializer<HashMap<StateAction, Double>>() {
+				    @Override
+				    public HashMap<StateAction, Double> deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+				        HashMap<StateAction, Double> map = new HashMap<>();
+				        for (JsonElement element : json.getAsJsonArray()) {
+				            JsonArray entry = element.getAsJsonArray();
+				            StateAction key = context.deserialize(entry.get(0), StateAction.class);
+				            Double value = context.deserialize(entry.get(1), Double.class);
+				            map.put(key, value); 
+				        }
+				        return map;
+				    }
+			    })
+		   .registerTypeAdapter(State.class, new StateInstanceCreator())
+		   .registerTypeAdapter(Action.class, new ActionInstanceCreator())
+		   .enableComplexMapKeySerialization()
+		   .create();
+   
    public HashMap<StateAction, Double> actionValues;
    protected List<Action> possibleActions = null;
    private final static double learningRate = 0.1;
@@ -57,7 +83,8 @@ public abstract class LearningModel {
        try {
            f.createNewFile();
     	    FileWriter f2 = new FileWriter(f, false);
-    	    f2.write(gson.toJson(actionValues.toString()));
+    	    Type typeObject = new TypeToken<HashMap<StateAction, Double>>(){}.getType();
+    	    f2.write(gson.toJson(actionValues, typeObject));
     	    f2.close();
     	} catch (IOException e) {
     	    e.printStackTrace();
@@ -65,7 +92,7 @@ public abstract class LearningModel {
    }
 
    private HashMap<StateAction, Double> load(String path) {
-       File f = new File(path);
+	   File f = new File(path);
        if (!f.exists()) return null;
        
        String data = "";
@@ -77,8 +104,10 @@ public abstract class LearningModel {
 		  } catch (FileNotFoundException e) {
 		    e.printStackTrace();
 		  }
-    		   
-	   return gson.fromJson(data, HashMap.class);
+		Type typeObject = new TypeToken<HashMap<StateAction, Double>>(){}.getType();
+		var result = gson.fromJson(data, typeObject);
+		System.out.println("JSON: " + result);
+	   return (HashMap<StateAction, Double>) result;
    }
 	
 }
