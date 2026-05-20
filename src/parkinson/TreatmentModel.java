@@ -14,15 +14,15 @@ public class TreatmentModel extends LearningModel {
 	
    @Override
    public double getMaxFutureValue(State state) {
-      double bestValue = Double.MIN_VALUE; 
+      double bestValue = Double.NEGATIVE_INFINITY; 
       
       // Per ogni azione possibile
       for (Action myAction : possibleActions) {
          double actionValue = this.getValue(new StateAction(state, myAction));
-         
          if (actionValue > bestValue) {
                bestValue = actionValue;
          }
+
       }
       
       return bestValue;

@@ -42,7 +42,7 @@ public class GlialCell extends Agent{
 		   int y = this.grid.getLocation(this).getY();
 	    	   double cytokineValue = cytokineLayer.get(x,y);
 	    	   // Setto il nuovo valore tenendo in considerazione il cytoReleaseRate da policy
-	    	   System.out.println("Valore cytomodifier " + this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue());
+	    	   //System.out.println("Valore cytomodifier " + this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue());
 	    	   cytokineLayer.set(cytokineValue + 1 / this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue(), x, y);
 	}
 	

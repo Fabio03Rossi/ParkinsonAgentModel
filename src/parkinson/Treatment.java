@@ -26,7 +26,7 @@ public class Treatment extends PassiveAgent {
 	private double GLP1dosage = 0;
 	private double NLRP3dosage = 0;
 	private double efficacy;
-	private final double GLP1dosageEvaporation = 0.8f;
+	private final double GLP1dosageEvaporation = 0.9f;
 	private double NLRP3dosageEvaporation;
 	private double glialRedutionTreshold; // Tasso di riduzione del treshold 
 	private double neuronDegenerationRateMod;
@@ -37,8 +37,8 @@ public class Treatment extends PassiveAgent {
 	// Learning Model
 	private SubstanciaNigraState currentState;
 	private List<Action> possibleActions;
-	private final int NUM_ACTIONS = 200;     
-	private Dosage lastAction;
+	private final int NUM_ACTIONS = 20;     
+	private Dosage lastAction = null;
 	private LearningModel rlModel;   
 	
 	private IndexedIterable<Object> currentNeurons;
@@ -52,7 +52,7 @@ public class Treatment extends PassiveAgent {
 		
 		// Initializing rl model	
 		this.possibleActions = initializeDiscreteActions();	
-		this.currentState = new SubstanciaNigraState(0, 0, 0);
+		this.currentState = new SubstanciaNigraState(0, 0, 0, 0, 0);
 		this.rlModel = new TreatmentModel(this.possibleActions);
 		
 		currentNeurons = context.getObjects(Neuron.class);
@@ -72,23 +72,28 @@ public class Treatment extends PassiveAgent {
 		this.NLRP3somministrationNumber++;
 	}
 	
-	@ScheduledMethod(start = 1, interval = 1, priority = 5)
+	//@ScheduledMethod(start = 1, interval = 1, priority = 5)
 	public void stepPerception() {
 		// TODO update it with new state stuff except for the dose
 		this.currentState.setDegeratedNeuron(0);
 		this.currentState.setStressedNeuron(0);
 		this.currentState.setInflammatedMicroglia(0);
 		int healthyCount = 0;
+		double avgNeuronHealth = 0;
 		for(Object s : currentNeurons) {
 			Neuron d = (Neuron) s;
 			
-			if(d.getState() == NeuronState.HEALTHY) healthyCount++;
+			if(d.getState() == NeuronState.HEALTHY) {
+				healthyCount++;
+				avgNeuronHealth += d.getHealth();
+			}
 			if(d.getState() == NeuronState.STRESSED) this.currentState.setStressedNeuron(this.currentState.getStressedNeuron()+1);
 		}
 		
 		var x = totNeurons - healthyCount - this.currentState.getStressedNeuron();
 		this.currentState.setDegeratedNeuron(x);
 		System.out.println("NEURONI MORTI: " + x);
+		this.currentState.setAverageNeuronHealth(avgNeuronHealth / healthyCount);
 		
 		IndexedIterable<Object> currentMicroglias = context.getObjects(Microglia.class);
 		
@@ -108,7 +113,7 @@ public class Treatment extends PassiveAgent {
 		return dosage;
 	}
 	
-	@ScheduledMethod(start = 1, interval = 1, priority = 4)
+	//@ScheduledMethod(start = 1, interval = 1, priority = 4)
 	public void stepAction() {
 		if(this.currentState.getDegeneratedNeuron() > 0) {
 			somministrateGLP1(dosageAction());
@@ -117,9 +122,11 @@ public class Treatment extends PassiveAgent {
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 4)
 	public void stepQAction() {
-		lastAction = (Dosage) decideAction();
-		somministrateGLP1(lastAction.getDosage());
-		this.currentState.setCurrentGLP1dose(lastAction.getDosage());
+		if(this.currentState.getDegeneratedNeuron() > 0) {
+			lastAction = (Dosage) decideAction();
+			somministrateGLP1(lastAction.getDosage());
+			this.currentState.setCurrentGLP1dose(lastAction.getDosage());
+		}
 	}
 	
 	public Action decideAction() {
@@ -143,23 +150,27 @@ public class Treatment extends PassiveAgent {
 	         }
 	      }
 	      
-	      if(bestValue == 0) epsilonProb = 1.0;
-	      else epsilonProb = epsilonProb + (zeroCount * 0.02);
+	      //if(bestValue == 0) epsilonProb = 1.0;
+	      //else epsilonProb = epsilonProb + (zeroCount * 0.02);
 	      
 	    
-	      boolean epsilonExp = new Random().nextInt(1, 11) <= epsilonProb * 10;
-
-	      if(epsilonExp) possibleActions.get(new Random().nextInt(possibleActions.size()));
+	      //boolean epsilonExp = new Random().nextInt(1, 11) <= epsilonProb * 10;
 	      
-	      return bestAction;
+
+	      //if(epsilonExp) bestAction = possibleActions.get(new Random().nextInt(possibleActions.size()));
+	      
+	      return bestAction != null ? bestAction : possibleActions.get(new Random().nextInt(possibleActions.size()));
 	}
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 5)
 	public void updateModel() {
-		SubstanciaNigraState oldState = currentState;
+		SubstanciaNigraState oldState = new SubstanciaNigraState(currentState.getDegeneratedNeuron(), currentState.getStressedNeuron(), 
+				currentState.getInflammatedMicroglia(), currentState.getAverageNeuronHealth(), currentState.getCurrentGLP1dose());
 		stepPerception();
-		double reward = this.reward(oldState);
-		rlModel.updateValue(new StateAction(oldState, lastAction), currentState, reward);
+		if(lastAction != null) {
+			double reward = this.reward(oldState);
+			rlModel.updateValue(new StateAction(oldState, lastAction), currentState, reward);
+		}
 	}
 	
 	public double reward(SubstanciaNigraState oldState) {
@@ -167,8 +178,8 @@ public class Treatment extends PassiveAgent {
 		double stressedWeight = 0.2;
 		double dosageWeight = 0.5;
 		double avgHealthDiff = currentState.getAverageNeuronHealth() - oldState.getAverageNeuronHealth();
-		double reward = - (deathWeight * this.currentState.getDegeneratedNeuron() + stressedWeight * this.currentState.getStressedNeuron()) +
-				(1 / avgHealthDiff) - (dosageWeight * this.currentState.getCurrentGLP1dose());
+		double reward = - (deathWeight * this.currentState.getDegeneratedNeuron() + stressedWeight * this.currentState.getStressedNeuron())
+				- (dosageWeight * this.currentState.getCurrentGLP1dose());
 		
 		return reward;
 		
@@ -197,7 +208,7 @@ public class Treatment extends PassiveAgent {
 		if(this.GLP1dosage <= this.GLP1dosageEvaporation)
 			this.GLP1dosage = 0;
 		else
-			this.GLP1dosage = this.GLP1dosage - GLP1dosageEvaporation; // evap of dosage equal to 95% of last dosage
+			this.GLP1dosage = this.GLP1dosage - this.currentState.getCurrentGLP1dose() * GLP1dosageEvaporation; // evap of dosage equal to 95% of last dosage
 		
 		
 		// NLRP3
@@ -215,13 +226,13 @@ public class Treatment extends PassiveAgent {
 	private List<Action> initializeDiscreteActions() {
 		List<Action> l = new LinkedList<>();
 		for (int i = 0; i < NUM_ACTIONS; i++) {
-            l.add(new Dosage(i * 5));   // 0.0 → 1.0 inclusi
+            l.add(new Dosage(i * 1));   // 0.0 → 1.0 inclusi
         }
         return l;
 	}
 	
 
-	private class SubstanciaNigraState implements State {
+	public class SubstanciaNigraState implements State {
 		
 		// perception (internal state)
 		private int degeneratedNeuronCount;
@@ -230,10 +241,12 @@ public class Treatment extends PassiveAgent {
 		private double averageNeuronHealth;
 		private double currentGLP1dose;
 		
-		public SubstanciaNigraState(int deg, int str, int inf) {
+		public SubstanciaNigraState(int deg, int str, int inf, double hea, double dos) {
 			this.degeneratedNeuronCount = deg;
 			this.inflammatedMicrogliaCount = inf;
 			this.stressedNeuronCount = str;
+			this.averageNeuronHealth = hea;
+			this.currentGLP1dose = dos;
 		}
 		
 		public void setDegeratedNeuron(int x) {
@@ -279,14 +292,24 @@ public class Treatment extends PassiveAgent {
 		@Override
 		public int hashCode(){
 	      int result = degeneratedNeuronCount;
-	      result = 31 * inflammatedMicrogliaCount;
-	      result = 31 * stressedNeuronCount;
+	      //result = result + 31 * inflammatedMicrogliaCount;
+	      result = result + 31 * stressedNeuronCount;
+	      //result = 31 * Double.valueOf(averageNeuronHealth).hashCode();
+	      result = result + 31 * Double.valueOf(currentGLP1dose).hashCode();
 	      return result;
+		}
+		
+		@Override
+		public String toString(){
+	         return("Death Neuron: " + this.getDegeneratedNeuron()
+	         + ", Stressed Neuron: " + this.getStressedNeuron()
+	         + ", AvgNeuronHealth: " + this.getAverageNeuronHealth()
+	         + ", Last Dose: " + this.getCurrentGLP1dose());
 		}
 		
 	}
 	
-	private class Dosage implements Action {
+	public class Dosage implements Action {
 		
 		private double dosage;
 		//private double dosageNLRP;
@@ -303,8 +326,13 @@ public class Treatment extends PassiveAgent {
 		@Override
 		public int hashCode(){
 	      int result;
-	      result = 31 * (int) dosage;
+	      result = 31 * Double.valueOf(dosage).hashCode();
 	      return result;
+		}
+		
+		@Override
+		public String toString(){
+	      return getLabel();
 		}
 		
 		public double getDosage() {
