@@ -168,7 +168,7 @@ public class Neuron extends Agent {
 	
 	public void loseHealth() {
 		
-		this.health = this.health - (1 / this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue());
+		this.health = this.health - (this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue());
 		System.out.println("Health del neurone scesa a: " + this.health);
 	}
 	

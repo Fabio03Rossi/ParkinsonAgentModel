@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <parameters>
-					<parameter name="cyto_microglia_threshold" displayName="Microglia Cytokine Activation Threshold" type="float" 
+					<parameter name="randomSeed" displayName="Default Random Seed" type="int" 
+						defaultValue="__NULL__"
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+											/>
+				<parameter name="micro_num" displayName="Number of Micoglias" type="int" 
+						defaultValue="30" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+											/>
+				<parameter name="cyto_microglia_threshold" displayName="Microglia Cytokine Activation Threshold" type="float" 
 						defaultValue="0.3" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
+											/>
+				<parameter name="alpha_threshold" displayName="Microglia AlphaSynuclein Activation Threshold" type="float" 
+						defaultValue="1.0" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
 											/>
@@ -21,7 +36,7 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
 				<parameter name="cyto_neuron_threshold" displayName="Neuron Cytokine Activation Threshold" type="float" 
-						defaultValue="1.0" 
+						defaultValue="0.1" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
 											/>
@@ -30,28 +45,13 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
 											/>
-				<parameter name="randomSeed" displayName="Default Random Seed" type="int" 
-						defaultValue="__NULL__"
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="micro_num" displayName="Number of Micoglias" type="int" 
-						defaultValue="30" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="alpha_threshold" displayName="Microglia AlphaSynuclein Activation Threshold" type="float" 
-						defaultValue="1.0" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
-											/>
 				<parameter name="cytokine_release_rate" displayName="Microglia Cytokine Release Rate" type="float" 
-						defaultValue="1.0" 
+						defaultValue="0.1" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
 											/>
 				<parameter name="astro_num" displayName="Number of Astrocytes" type="int" 
-						defaultValue="5" 
+						defaultValue="0" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>

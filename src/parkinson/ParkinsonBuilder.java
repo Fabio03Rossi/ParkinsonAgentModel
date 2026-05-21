@@ -44,7 +44,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 
 		int neuronHealth = Math.abs((Integer) params.getValue("neuron_health"));
 		float cytoMicrogliaThr = Math.abs((Float) params.getValue("cyto_microglia_threshold"));
-		int cytoRate = Math.abs((Integer) params.getValue("cytokine_release_rate"));
+		float cytoRate = Math.abs((Float) params.getValue("cytokine_release_rate"));
 		float alphaThr = Math.abs((Float) params.getValue("alpha_threshold"));
 		float cytoThr = Math.abs((Float) params.getValue("cyto_neuron_threshold"));
 		float neuronDegenRate = Math.abs((Float) params.getValue("neuron_degeneration_rate"));
@@ -79,7 +79,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		ValueLayerDiffuser cytoDiffuser = new ValueLayerDiffuser(cytoLayer, 1.0, 1.0, false);
 		// Impostazioni diffuserLayer
 		cytoDiffuser.setDiffusionConst(diffusionConstant); 		// 1 = [0, 10, 0] gives [5, 0, 5].
-		cytoDiffuser.setEvaporationConst(diffusionEvaporation); 	// 1 = no evaporation
+		cytoDiffuser.setEvaporationConst(diffusionEvaporation - 0.1); 	// 1 = no evaporation
 		cytoDiffuser.setMinValue(0f);
 		cytoDiffuser.setMaxValue(1.0f);
 		
@@ -92,7 +92,6 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		alphaDiffuser.setMaxValue(1.0f);
 		
 		Environment env = new Environment(cytoDiffuser, alphaDiffuser);
-		env.setEvaporationRate(alphaDiffuser, 0.7);
 		context.add(env);
 		
 				

@@ -126,15 +126,16 @@ public class Treatment extends PassiveAgent {
 		return dosage;
 	}
 	
-	//@ScheduledMethod(start = 1, interval = 1, priority = 4)
+	@ScheduledMethod(start = 1, interval = 1, priority = 4)
 	public void stepAction() {
 		if(this.currentState.getDegeneratedNeuron() > 0) {
 			somministrateGLP1(dosageAction());
 		}
 	}
 	
-	@ScheduledMethod(start = 1, interval = 1, priority = 4)
+	//@ScheduledMethod(start = 1, interval = 1, priority = 4)
 	public void stepQAction() {
+		/*
 		if(this.currentState.getDegeneratedNeuron() > 0) {
 			lastAction = (Dosage) decideAction();
 			somministrateGLP1(lastAction.getDosage());
@@ -146,7 +147,7 @@ public class Treatment extends PassiveAgent {
 		{
 			this.save();
 			RunEnvironment.getInstance().endRun();
-		}
+		}*/
 	}
 	
 	public Action decideAction() {
@@ -258,15 +259,15 @@ public class Treatment extends PassiveAgent {
 		double rateModifier = (1 + Math.log(1 + this.GLP1dosage));
 		
 		// Cytokine rate update
-		this.policy.getParam(StatType.CYTO_RELEASE_RATE).setModifier(rateModifier);
+		this.policy.getParam(StatType.CYTO_RELEASE_RATE).setModifier(1 / rateModifier);
 		// DegenerateNeuronRate
-		this.policy.getParam(StatType.DEGENERATION_RATE).setModifier(rateModifier);
+		this.policy.getParam(StatType.DEGENERATION_RATE).setModifier(1 / rateModifier);
 		
 		// 1 / (1 + e ^ -dosaggio)
 		
 		this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).setModifier(rateModifier);
-		
-		
+		this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).setModifier(rateModifier);
+
 		
 		System.out.println("Dosaggio " + this.GLP1dosage);
 		
