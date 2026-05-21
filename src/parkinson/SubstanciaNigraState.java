@@ -8,15 +8,17 @@ public class SubstanciaNigraState implements State {
 	private int degeneratedNeuronCount;
 	private int stressedNeuronCount;
 	private int inflammatedMicrogliaCount;
+	private int healthyNeuronCount;
 	private double averageNeuronHealth;
 	private double currentGLP1dose;
 	
-	public SubstanciaNigraState(int deg, int str, int inf, double hea, double dos) {
+	public SubstanciaNigraState(int deg, int str, int inf, int neu, double hea, double dos) {
 		this.degeneratedNeuronCount = deg;
 		this.inflammatedMicrogliaCount = inf;
 		this.stressedNeuronCount = str;
 		this.averageNeuronHealth = hea;
 		this.currentGLP1dose = dos;
+		this.healthyNeuronCount = neu;
 	}
 	
 	public void setDegeratedNeuron(int x) {
@@ -25,6 +27,14 @@ public class SubstanciaNigraState implements State {
 	
 	public double getCurrentGLP1dose() {
 		return currentGLP1dose;
+	}
+	
+	public int getHealthyNeuronCount() {
+		return healthyNeuronCount;
+	}
+	
+	public void setHealthyNeuronCount(int healthyNeuronCount) {
+		this.healthyNeuronCount = healthyNeuronCount;
 	}
 	
 	public void setCurrentGLP1dose(double currentGLP1dose) {
@@ -84,5 +94,6 @@ public class SubstanciaNigraState implements State {
       SubstanciaNigraState player = (SubstanciaNigraState) obj;
       return this.hashCode() == player.hashCode();
    }
+	
 	
 }

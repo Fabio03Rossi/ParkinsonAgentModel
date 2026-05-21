@@ -25,7 +25,7 @@ public class Treatment extends PassiveAgent {
 	private double GLP1dosage = 0;
 	private double NLRP3dosage = 0;
 	private double efficacy;
-	private final double GLP1dosageEvaporation = 0.95f;
+	private final double GLP1dosageEvaporation = 1f;
 	private double NLRP3dosageEvaporation;
 	private double glialRedutionTreshold; // Tasso di riduzione del treshold 
 	private double neuronDegenerationRateMod;
@@ -36,7 +36,8 @@ public class Treatment extends PassiveAgent {
 	// Learning Model
 	private SubstanciaNigraState currentState;
 	private List<Action> possibleActions;
-	private final int NUM_ACTIONS = 20;     
+	private final int NUM_ACTIONS = MAX_DOSE;
+	private static final int MAX_DOSE = 20;
 	private Dosage lastAction = null;
 	private LearningModel rlModel;   
 	
@@ -51,7 +52,7 @@ public class Treatment extends PassiveAgent {
 		
 		// Initializing rl model	
 		this.possibleActions = initializeDiscreteActions();	
-		this.currentState = new SubstanciaNigraState(0, 0, 0, 0, 0);
+		this.currentState = new SubstanciaNigraState(0, 0, 0, 0, 0, 0);
 		this.rlModel = new TreatmentModel(this.possibleActions);
 		
 		currentNeurons = context.getObjects(Neuron.class);
@@ -93,7 +94,7 @@ public class Treatment extends PassiveAgent {
 		this.currentState.setDegeratedNeuron(x);
 		System.out.println("NEURONI MORTI: " + x);
 		this.currentState.setAverageNeuronHealth(avgNeuronHealth / healthyCount);
-		
+		this.currentState.setHealthyNeuronCount(healthyCount);
 		IndexedIterable<Object> currentMicroglias = context.getObjects(Microglia.class);
 		
 		for(Object s : currentMicroglias) {
@@ -153,14 +154,14 @@ public class Treatment extends PassiveAgent {
 	         }
 	      }
 	      
-	      //if(bestValue == 0) epsilonProb = 1.0;
-	      //else epsilonProb = epsilonProb + (zeroCount * 0.02);
+
+	      epsilonProb = epsilonProb + (zeroCount * 0.02);
 	      
 	    
-	      //boolean epsilonExp = new Random().nextInt(1, 11) <= epsilonProb * 10;
+	      boolean epsilonExp = new Random().nextInt(1, 11) <= epsilonProb * 10;
 	      
 
-	      //if(epsilonExp) bestAction = possibleActions.get(new Random().nextInt(possibleActions.size()));
+	      if(epsilonExp) bestAction = possibleActions.get(new Random().nextInt(possibleActions.size()));
 	      
 	      return bestAction != null ? bestAction : possibleActions.get(new Random().nextInt(possibleActions.size()));
 	}
@@ -168,10 +169,11 @@ public class Treatment extends PassiveAgent {
 	@ScheduledMethod(start = 1, interval = 1, priority = 5)
 	public void updateModel() {
 		SubstanciaNigraState oldState = new SubstanciaNigraState(currentState.getDegeneratedNeuron(), currentState.getStressedNeuron(), 
-				currentState.getInflammatedMicroglia(), currentState.getAverageNeuronHealth(), currentState.getCurrentGLP1dose());
+				currentState.getInflammatedMicroglia(), currentState.getHealthyNeuronCount(),
+				currentState.getAverageNeuronHealth(), currentState.getCurrentGLP1dose());
 		stepPerception();
 		if(lastAction != null) {
-			double reward = this.reward(oldState);
+			double reward = this.calculateReward(oldState);
 			rlModel.updateValue(new StateAction(oldState, lastAction), currentState, reward);
 		}
 	}
@@ -179,13 +181,58 @@ public class Treatment extends PassiveAgent {
 	public double reward(SubstanciaNigraState oldState) {
 		double deathWeight = 0.9;
 		double stressedWeight = 0.2;
+		double healthyWeight = 0.3;
 		double dosageWeight = 0.5;
 		double avgHealthDiff = currentState.getAverageNeuronHealth() - oldState.getAverageNeuronHealth();
 		double reward = - (deathWeight * this.currentState.getDegeneratedNeuron() + stressedWeight * this.currentState.getStressedNeuron())
-				- (dosageWeight * this.currentState.getCurrentGLP1dose());
+				- (dosageWeight * this.currentState.getCurrentGLP1dose()) + (healthyWeight * this.currentState.getHealthyNeuronCount());
 		
 		return reward;
 		
+	}
+	
+	public double calculateReward(SubstanciaNigraState oldState) {
+		double deathWeight = -2.9;
+		double stressedWeight = 0.2;
+		double healthyWeight = 2.3;
+		double dosageWeight = -0.5;
+		double reward = 0.0;
+		
+		// 1. Penalità per dose (ma non troppo aggressiva)
+		double doseCost = dosageWeight * (this.currentState.getCurrentGLP1dose() / MAX_DOSE);                    // tra -0.8 e 0
+		
+		// 2. Penalità per cellule morte assolute
+		double deathPenalty = deathWeight * (this.currentState.getDegeneratedNeuron() / (double) 31);
+		
+		// 3. Ricompensa per cellule vive (o penalità per perdita di popolazione)
+		double liveReward = healthyWeight * (this.currentState.getHealthyNeuronCount() / (double) 31);
+		
+		// 4. SEGNALE FORTEMENTE IMPORTANTE: Trend della morte (differenza temporale)
+		int deltaD = this.currentState.getDegeneratedNeuron() - oldState.getDegeneratedNeuron();
+		double trendPenalty = -3.5 * Math.max(0, deltaD / (double) 31);   // forte penalità se morte aumenta
+		
+		// 5. Bonus per riduzione della morte o dello stress
+		int deltaS = this.currentState.getStressedNeuron() - oldState.getStressedNeuron();
+		double improvementBonus = 0.0;
+		if (deltaD < 0) improvementBonus += 2.8;           // morte diminuisce → buon segnale
+		if (deltaS < -5) improvementBonus += 1.5;          // stress diminuisce
+		
+		// 6. Bonus di controllo (quando la dose sta funzionando)
+		if (this.currentState.getCurrentGLP1dose() > 0.1 * MAX_DOSE && deltaD <= 0) {
+		improvementBonus += 1.8;   // "hai fatto la cosa giusta"
+		}
+		
+		// Composizione finale
+		reward = doseCost 
+		+ deathPenalty 
+		+ liveReward 
+		+ trendPenalty 
+		+ improvementBonus;
+		
+		// Bonus terminale (da applicare solo alla fine dell'episodio)
+		// if (episodio finito) reward += 5.0 * (L_current / (double) totalCells);
+		
+		return reward;
 	}
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 3)

@@ -52,9 +52,10 @@ public abstract class LearningModel {
 				int deg = Integer.parseInt(parts[0]);
 				int str = Integer.parseInt(parts[1]);
 				int inf = (int) Double.parseDouble(parts[2]);
-				double hea = Double.parseDouble(parts[3]);
-				double dos = Double.parseDouble(parts[4]);
-				return new SubstanciaNigraState(deg, str, inf, hea, dos);
+				int neu = (int) Double.parseDouble(parts[3]);
+				double hea = Double.parseDouble(parts[4]);
+				double dos = Double.parseDouble(parts[5]);
+				return new SubstanciaNigraState(deg, str, inf, neu, hea, dos);
 			}
 			@Override
 			public void write(JsonWriter writer, SubstanciaNigraState value) throws IOException {
@@ -65,6 +66,7 @@ public abstract class LearningModel {
 				String xy = value.getDegeneratedNeuron() 
 						+ "," + value.getStressedNeuron() 
 						+ "," + value.getInflammatedMicroglia() 
+						+ "," + value.getHealthyNeuronCount() 
 						+ "," + value.getAverageNeuronHealth() 
 						+ "," + value.getCurrentGLP1dose();
 				writer.value(xy);
