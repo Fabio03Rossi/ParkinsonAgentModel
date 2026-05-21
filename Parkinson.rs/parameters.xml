@@ -1,56 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <parameters>
-					<parameter name="neuro_health" displayName="Neuron Max Health" type="int" 
-						defaultValue="30" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="cytokine_range" displayName="Range Cytokines" type="int" 
-						defaultValue="5" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="activation_threshold" displayName="Activation Threshold for Microglias" type="float" 
-						defaultValue="0.1" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
-											/>
-				<parameter name="cytokines_threshold" displayName="Cytokines Threshold" type="int" 
-						defaultValue="3" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="space_size" displayName="Space Size" type="int" 
-						defaultValue="30" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="range" displayName="Range" type="int" 
-						defaultValue="5" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="debris_strength" displayName="Debris Moving Strength" type="double" 
-						defaultValue="1.0" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-											/>
-				<parameter name="neuro_num" displayName="Number of Neurons" type="int" 
-						defaultValue="30" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="cytokines_strength" displayName="Cytokines Moving Strength" type="double" 
-						defaultValue="1.0" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-											/>
-				<parameter name="debris_released" displayName="Number of Debris Released" type="int" 
-						defaultValue="5" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="randomSeed" displayName="Default Random Seed" type="int" 
+					<parameter name="randomSeed" displayName="Default Random Seed" type="int" 
 						defaultValue="__NULL__"
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
@@ -60,24 +10,48 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
-				<parameter name="condition" displayName="Condition" type="java.lang.String" 
-						defaultValue="normale" 
+				<parameter name="cyto_microglia_threshold" displayName="Microglia Cytokine Activation Threshold" type="float" 
+						defaultValue="0.3" 
 						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter"
-												values="normale , raffreddore, cancro "
+						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
 											/>
-				<parameter name="alpha_threshold" displayName="Alpha Threshold" type="int" 
-						defaultValue="5" 
+				<parameter name="alpha_threshold" displayName="Microglia AlphaSynuclein Activation Threshold" type="float" 
+						defaultValue="1.0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
+											/>
+				<parameter name="neuron_health" displayName="Vita base dei Neuroni" type="int" 
+						defaultValue="30" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
-				<parameter name="cytokines_released" displayName="Number of Cytokines Released" type="int" 
-						defaultValue="5" 
+				<parameter name="space_size" displayName="Space Size" type="int" 
+						defaultValue="30" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+											/>
+				<parameter name="neuro_num" displayName="Number of Neurons" type="int" 
+						defaultValue="30" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+											/>
+				<parameter name="cyto_neuron_threshold" displayName="Neuron Cytokine Activation Threshold" type="float" 
+						defaultValue="1.0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
+											/>
+				<parameter name="neuron_degeneration_rate" displayName="Neuron Degeneration Rate" type="float" 
+						defaultValue="1.0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
+											/>
+				<parameter name="cytokine_release_rate" displayName="Microglia Cytokine Release Rate" type="float" 
+						defaultValue="1.0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
 											/>
 				<parameter name="astro_num" displayName="Number of Astrocytes" type="int" 
-						defaultValue="5" 
+						defaultValue="0" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>

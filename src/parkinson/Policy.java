@@ -14,9 +14,7 @@ public class Policy {
 
 	// Treatment
 	protected boolean NLRB3inibitor;	 // Utilizzata per indicare se nel sistema è presente una quantità 
-										 //sufficiente di inibitore per bloccare lo stato infiammatorio delle cellule gliali
-	// Valori default
-	protected double cytoRelease = 1;	
+										 //sufficiente di inibitore per bloccare lo stato infiammatorio delle cellule gliali	
 	
 	private Policy(int age, boolean gender, HealthDisease healthAlteration, double cytoActTre, double cytoRelease, double alphaTre, double cytoTre, double degenRate) {
 		params.put(StatType.CYTO_MICROGLIA_THRESHOLD, new ModifiableParameter(cytoActTre));

@@ -41,23 +41,17 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		int microNum = Math.abs((Integer) params.getValue("micro_num"));
 		int astroNum = Math.abs((Integer) params.getValue("astro_num"));
 		int neuroNum = Math.abs((Integer) params.getValue("neuro_num"));
-		int perceptionRange = Math.abs((Integer) params.getValue("range"));
-		int cytoRange = Math.abs((Integer) params.getValue("cytokine_range"));
 
-		int neuroHealth = Math.abs((Integer) params.getValue("neuro_health"));
-		float actThr = Math.abs((Float) params.getValue("activation_threshold"));
-		int cytoThr = Math.abs((Integer) params.getValue("cytokines_threshold"));
-		int alphaThr = Math.abs((Integer) params.getValue("alpha_threshold"));
-		int debris = Math.abs((Integer) params.getValue("debris_released"));
-		int cytoRate = Math.abs((Integer) params.getValue("cytokines_released"));
+		int neuronHealth = Math.abs((Integer) params.getValue("neuron_health"));
+		float cytoMicrogliaThr = Math.abs((Float) params.getValue("cyto_microglia_threshold"));
+		int cytoRate = Math.abs((Integer) params.getValue("cytokine_release_rate"));
+		float alphaThr = Math.abs((Float) params.getValue("alpha_threshold"));
+		float cytoThr = Math.abs((Float) params.getValue("cyto_neuron_threshold"));
+		float neuronDegenRate = Math.abs((Float) params.getValue("neuron_degeneration_rate"));
 		int diffusionConstant = 1;
 		int diffusionEvaporation = 1;
 		
-		
-		double debrisStr = Math.abs((Double) params.getValue("debris_strength"));
-		double cytoStr = Math.abs((Double) params.getValue("cytokines_strength"));
-		
-		Policy policy = Policy.createInstance(70, true, null, actThr, 1, alphaThr, cytoThr, 1.0f);
+		Policy policy = Policy.createInstance(70, true, null, cytoMicrogliaThr, cytoRate, alphaThr, cytoThr, neuronDegenRate);
 		
 		ContinuousSpaceFactory spaceFactory = ContinuousSpaceFactoryFinder
 				.createContinuousSpaceFactory(null);
