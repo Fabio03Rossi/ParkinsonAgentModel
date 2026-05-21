@@ -17,11 +17,16 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
+import com.google.gson.stream.JsonWriter;
 
 public abstract class LearningModel {
 	
    public final Gson gson = new GsonBuilder()
+		   /*
 		   .registerTypeAdapter(new TypeToken<HashMap<StateAction, Double>>(){}.getType(), new JsonDeserializer<HashMap<StateAction, Double>>() {
 				    @Override
 				    public HashMap<StateAction, Double> deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
@@ -34,9 +39,59 @@ public abstract class LearningModel {
 				        }
 				        return map;
 				    }
-			    })
-		   .registerTypeAdapter(State.class, new StateInstanceCreator())
-		   .registerTypeAdapter(Action.class, new ActionInstanceCreator())
+			    })*/
+		   .registerTypeAdapter(State.class, new TypeAdapter<SubstanciaNigraState>() {
+			@Override
+			public SubstanciaNigraState read(JsonReader reader) throws IOException {
+				if (reader.peek() == JsonToken.NULL) {
+					reader.nextNull();
+					return null;
+				}
+				String string = reader.nextString();
+				String[] parts = string.split(",");
+				int deg = Integer.parseInt(parts[0]);
+				int str = Integer.parseInt(parts[1]);
+				int inf = (int) Double.parseDouble(parts[2]);
+				double hea = Double.parseDouble(parts[3]);
+				double dos = Double.parseDouble(parts[4]);
+				return new SubstanciaNigraState(deg, str, inf, hea, dos);
+			}
+			@Override
+			public void write(JsonWriter writer, SubstanciaNigraState value) throws IOException {
+				if (value == null) {
+					writer.nullValue();
+					return;
+				}
+				String xy = value.getDegeneratedNeuron() 
+						+ "," + value.getStressedNeuron() 
+						+ "," + value.getInflammatedMicroglia() 
+						+ "," + value.getAverageNeuronHealth() 
+						+ "," + value.getCurrentGLP1dose();
+				writer.value(xy);
+			}
+		   })
+		   .registerTypeAdapter(Action.class, new TypeAdapter<Dosage>() {
+				@Override
+				public Dosage read(JsonReader reader) throws IOException {
+					if (reader.peek() == JsonToken.NULL) {
+						reader.nextNull();
+						return null;
+					}
+					String string = reader.nextString();
+					String[] parts = string.split(",");
+					double dos = Double.parseDouble(parts[0]);
+					return new Dosage(dos);
+				}
+				@Override
+				public void write(JsonWriter writer, Dosage value) throws IOException {
+					if (value == null) {
+						writer.nullValue();
+						return;
+					}
+					Double xy = value.getDosage();
+					writer.value(xy);
+				}
+			   })
 		   .enableComplexMapKeySerialization()
 		   .create();
    
@@ -73,7 +128,7 @@ public abstract class LearningModel {
 
    public void printValues() {
       for (StateAction sa : actionValues.keySet()) {
-         System.out.println("State: " + sa.getState().toString() + ", Action: " + sa.getAgentAction().toString() + ", Value: " + actionValues.get(sa));
+         System.out.println("State: " + sa.getState().toString() + ", Action: " + sa.getAgentAction().toString() + ", Value: " + actionValues.get(sa) + sa.toString());
       }
    }
    
@@ -99,7 +154,8 @@ public abstract class LearningModel {
        
 		try (Scanner myReader = new Scanner(f)) {
 			while (myReader.hasNextLine()) {
-			   data = myReader.nextLine();
+			   data += myReader.nextLine();
+			   
 			}
 		  } catch (FileNotFoundException e) {
 		    e.printStackTrace();
