@@ -97,10 +97,10 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		
 				
 		for(int i = 0; i < neuroNum; i++) {
-			new Neuron(context, neuroHealth);
+			new Neuron(context, neuronHealth);
 		}
 		
-		var x = new Neuron(context, neuroHealth);
+		var x = new Neuron(context, neuronHealth);
 		x.setHealth(0);
 		alphaLayer.set(10, grid.getLocation(x).getX(), grid.getLocation(x).getY());
 		
