@@ -7,6 +7,7 @@ import java.util.Random;
 
 import parkinson.Policy.StatType;
 import repast.simphony.context.Context;
+import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.essentials.RepastEssentials;
 import repast.simphony.query.space.continuous.ContinuousWithin;
@@ -43,6 +44,7 @@ public class Treatment extends PassiveAgent {
 	
 	private IndexedIterable<Object> currentNeurons;
 	private int totNeurons;
+	private int degenCount = 0;
 	
 	
 	
@@ -79,6 +81,7 @@ public class Treatment extends PassiveAgent {
 		this.currentState.setStressedNeuron(0);
 		this.currentState.setInflammatedMicroglia(0);
 		int healthyCount = 0;
+		degenCount = 0;
 		double avgNeuronHealth = 0;
 		for(Object s : currentNeurons) {
 			Neuron d = (Neuron) s;
@@ -87,12 +90,17 @@ public class Treatment extends PassiveAgent {
 				healthyCount++;
 				avgNeuronHealth += d.getHealth();
 			}
+			
+			if(d.getState() == NeuronState.DEGENERATED_DEATH) {
+				degenCount++;
+			}
 			if(d.getState() == NeuronState.STRESSED) this.currentState.setStressedNeuron(this.currentState.getStressedNeuron()+1);
 		}
 		
 		var x = totNeurons - healthyCount - this.currentState.getStressedNeuron();
 		this.currentState.setDegeratedNeuron(x);
-		System.out.println("NEURONI MORTI: " + x);
+
+
 		this.currentState.setAverageNeuronHealth(avgNeuronHealth / healthyCount);
 		this.currentState.setHealthyNeuronCount(healthyCount);
 		IndexedIterable<Object> currentMicroglias = context.getObjects(Microglia.class);
@@ -100,8 +108,13 @@ public class Treatment extends PassiveAgent {
 		for(Object s : currentMicroglias) {
 			Microglia d = (Microglia) s;
 			
-			if(d.isInflammated()) this.currentState.setInflammatedMicroglia(this.currentState.getInflammatedMicroglia()+1);
+			if(d.isInflammated()) 
+				this.currentState.setInflammatedMicroglia(this.currentState.getInflammatedMicroglia()+1);
 		}
+		
+		System.out.println("NEURONI MORTI: " + degenCount);
+		System.out.println("NEURONI STRESSATI: " + this.currentState.getStressedNeuron());
+		System.out.println("MICROGLIE MORTI: " + this.currentState.getInflammatedMicroglia());
 	}
 	
 	private double dosageAction() {
@@ -127,9 +140,12 @@ public class Treatment extends PassiveAgent {
 			somministrateGLP1(lastAction.getDosage());
 			this.currentState.setCurrentGLP1dose(lastAction.getDosage());
 		}
-		if(RepastEssentials.GetTickCount() == 1200)
+		if(RepastEssentials.GetTickCount() == 1200 || 
+				(degenCount == 0 && this.currentState.getStressedNeuron() == 0 
+				&& this.currentState.getInflammatedMicroglia() == 0 && RepastEssentials.GetTickCount() > 20))
 		{
 			this.save();
+			RunEnvironment.getInstance().endRun();
 		}
 	}
 	
@@ -260,7 +276,7 @@ public class Treatment extends PassiveAgent {
 		else
 			this.GLP1dosage = this.GLP1dosage - this.currentState.getCurrentGLP1dose() * GLP1dosageEvaporation; // evap of dosage equal to 95% of last dosage
 		
-		
+		/*
 		// NLRP3
 		if(this.NLRP3dosage >= 0) {
 			this.policy.setNLRB3inibitor(true);
@@ -270,7 +286,7 @@ public class Treatment extends PassiveAgent {
 				this.NLRP3dosage = this.NLRP3dosage - this.NLRP3dosageEvaporation;
 		}else {
 			this.policy.setNLRB3inibitor(false);
-		}
+		}*/
 	}
 	
 	private List<Action> initializeDiscreteActions() {

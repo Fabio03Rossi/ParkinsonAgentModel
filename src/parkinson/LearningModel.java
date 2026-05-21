@@ -119,7 +119,7 @@ public abstract class LearningModel {
       System.out.println(stateAction.getState().toString());
       System.out.println(stateAction.hashCode());
       actionValues.put(stateAction, newValue);
-      printValues();
+      //printValues();
    }
 
    public abstract double getMaxFutureValue(State nextState);

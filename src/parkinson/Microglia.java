@@ -65,7 +65,8 @@ public class Microglia extends GlialCell {
             case PHAGOCITATION:
             	this.phagocitation();
             	this.cytokineRelease();
-            	this.policy.setNLRB3inibitor(true);
+            	//this.policy.setNLRB3inibitor(true);
+            	this.infiammatoryState = true;
                 break;
             default:
             	break;
