@@ -22,6 +22,8 @@ public class Policy {
 		params.put(StatType.ALPHA_SINUCLEIN_THRESHOLD, new ModifiableParameter(alphaTre));
 		params.put(StatType.CYTO_NEURON_THRESHOLD, new ModifiableParameter(cytoTre));
 		params.put(StatType.DEGENERATION_RATE, new ModifiableParameter(degenRate));
+		
+		NLRB3inibitor = false;
 	}
 	
 	public synchronized static Policy createInstance(
