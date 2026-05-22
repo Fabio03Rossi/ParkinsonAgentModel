@@ -1,0 +1,22 @@
+BatchSchedule.execute: error when running the schedule
+Current tick (2.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
+	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375)
+	at repast.simphony.batch.BatchScheduleRunner$ScheduleLoopRunnable.run(BatchScheduleRunner.java:37)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.reflect.InvocationTargetException
+	at parkinson.Treatment$$FastClassByCGLIB$$5fbe9ccd.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
+	... 7 more
+Caused by: repast.simphony.parameter.IllegalParameterException: Parameter 'run' not found in the schema.
+	at repast.simphony.parameter.DefaultParameters.getValue(DefaultParameters.java:211)
+	at parkinson.Treatment.getBatchRunNumber(Treatment.java:325)
+	at parkinson.Treatment.decideAction(Treatment.java:179)
+	at parkinson.Treatment.stepQAction(Treatment.java:143)
+	... 10 more

@@ -1,5 +1,10 @@
 package parkinson;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.lang.reflect.Type;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -8,16 +13,20 @@ import java.util.Random;
 import parkinson.Policy.StatType;
 import repast.simphony.context.Context;
 import repast.simphony.engine.environment.RunEnvironment;
+import repast.simphony.engine.environment.RunState;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.essentials.RepastEssentials;
+import repast.simphony.parameter.Parameters;
 import repast.simphony.query.space.continuous.ContinuousWithin;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
+import repast.simphony.util.ContextUtils;
 import repast.simphony.util.collections.IndexedIterable;
 import repast.simphony.valueLayer.GridValueLayer;
 import repast.simphony.valueLayer.ValueLayerDiffuser;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 public class Treatment extends PassiveAgent {
 	protected double resistence;
@@ -46,7 +55,7 @@ public class Treatment extends PassiveAgent {
 	private int totNeurons;
 	private int degenCount = 0;
 	
-	
+	private double cumulativeReward = 0.0;
 	
 	public Treatment(Context<Object> context) {
 		super(context);
@@ -126,28 +135,28 @@ public class Treatment extends PassiveAgent {
 		return dosage;
 	}
 	
-	@ScheduledMethod(start = 1, interval = 1, priority = 4)
+	//@ScheduledMethod(start = 1, interval = 1, priority = 4)
 	public void stepAction() {
 		if(this.currentState.getDegeneratedNeuron() > 0) {
 			somministrateGLP1(dosageAction());
 		}
 	}
 	
-	//@ScheduledMethod(start = 1, interval = 1, priority = 4)
+	@ScheduledMethod(start = 1, interval = 1, priority = 4)
 	public void stepQAction() {
-		/*
 		if(this.currentState.getDegeneratedNeuron() > 0) {
 			lastAction = (Dosage) decideAction();
 			somministrateGLP1(lastAction.getDosage());
 			this.currentState.setCurrentGLP1dose(lastAction.getDosage());
 		}
-		if(RepastEssentials.GetTickCount() == 1200 || 
-				(degenCount == 0 && this.currentState.getStressedNeuron() == 0 
-				&& this.currentState.getInflammatedMicroglia() == 0 && RepastEssentials.GetTickCount() > 20))
+		if(RepastEssentials.GetTickCount() == 1199 
+				//|| (degenCount == 0 && this.currentState.getStressedNeuron() == 0 
+				//&& this.currentState.getInflammatedMicroglia() == 0 && RepastEssentials.GetTickCount() > 20)
+				)
 		{
 			this.save();
-			RunEnvironment.getInstance().endRun();
-		}*/
+			this.logEpisodeData();
+		}
 	}
 	
 	public Action decideAction() {
@@ -171,9 +180,10 @@ public class Treatment extends PassiveAgent {
 	         }
 	      }
 	      
-
-	      epsilonProb = epsilonProb + (zeroCount * 0.02);
+	      double decadimento = Math.pow(0.98, this.getBatchRunNumber()); // Diminuisce a ogni run
+	      epsilonProb = Math.max(0.05, epsilonProb * decadimento);
 	      
+	      epsilonProb += zeroCount * 0.02;
 	    
 	      boolean epsilonExp = new Random().nextInt(1, 11) <= epsilonProb * 10;
 	      
@@ -191,8 +201,22 @@ public class Treatment extends PassiveAgent {
 		stepPerception();
 		if(lastAction != null) {
 			double reward = this.calculateReward(oldState);
+			cumulativeReward += reward;
 			rlModel.updateValue(new StateAction(oldState, lastAction), currentState, reward);
 		}
+	}
+	
+	private void logEpisodeData() {
+		var path = "rl_convergence.csv";
+		var f = new File(path);
+		try {
+			f.createNewFile();
+    	    FileWriter f2 = new FileWriter(f, false);
+    	    f2.write(this.getBatchRunNumber() + "," + cumulativeReward + "," + this.currentState.getHealthyNeuronCount());
+    	    f2.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+    	}
 	}
 	
 	public double reward(SubstanciaNigraState oldState) {
@@ -304,7 +328,12 @@ public class Treatment extends PassiveAgent {
 		this.rlModel.save("learnMap.json");
 	}
 	
-	
+	public int getBatchRunNumber() {
+	    if(RunEnvironment.getInstance().isBatch()) {
+	    	RunState.getInstance().getRunInfo().getBatchNumber();
+	    }
+	    return 1; 
+	}
 
 	/* 
 	 TODO Parametri
