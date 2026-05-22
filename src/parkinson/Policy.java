@@ -11,7 +11,7 @@ import java.util.Map;
 public class Policy {
 	private static Policy instance = null;
 	private final Map<StatType, ModifiableParameter> params = new EnumMap<>(StatType.class);
-
+	
 	// Treatment
 	protected boolean NLRB3inibitor;	 // Utilizzata per indicare se nel sistema è presente una quantità 
 										 //sufficiente di inibitore per bloccare lo stato infiammatorio delle cellule gliali	

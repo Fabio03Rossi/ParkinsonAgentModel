@@ -46,7 +46,11 @@
 						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
 											/>
 				<parameter name="cytokine_release_rate" displayName="Microglia Cytokine Release Rate" type="float" 
+<<<<<<< HEAD
 						defaultValue="3.0" 
+=======
+						defaultValue="5.0" 
+>>>>>>> 9cd559ef9a762cdc6ee7f350fb12607d157c457b
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
 											/>
