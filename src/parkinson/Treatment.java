@@ -24,9 +24,10 @@ public class Treatment extends PassiveAgent {
 	protected Policy policy;
 	
 	private double GLP1dosage = 0;
+	private double toxicity = 0;
 	private double NLRP3dosage = 0;
 	private double efficacy;
-	private final double GLP1dosageEvaporation = 1f;
+	private final double GLP1dosageEvaporation = 0.9f;
 	private double NLRP3dosageEvaporation;
 	private double glialRedutionTreshold; // Tasso di riduzione del treshold 
 	private double neuronDegenerationRateMod;
@@ -38,7 +39,7 @@ public class Treatment extends PassiveAgent {
 	private SubstanciaNigraState currentState;
 	private List<Action> possibleActions;
 	private final int NUM_ACTIONS = MAX_DOSE;
-	private static final int MAX_DOSE = 20;
+	private static final int MAX_DOSE = 10;
 	private Dosage lastAction = null;
 	private LearningModel rlModel;   
 	
@@ -61,9 +62,23 @@ public class Treatment extends PassiveAgent {
 		this.totNeurons = currentNeurons.size();
 	}
 	
+	public double getGLP1dosage() {
+		return GLP1dosage;
+	}
+	
+	public double getToxicity() {
+		return toxicity;
+	}
+	
+
 	
 	public void somministrateGLP1(double dosage) {
-		this.GLP1dosage = this.GLP1dosage + dosage;
+		//this.GLP1dosage = this.GLP1dosage + dosage;
+        // Smoothing forte (importantissimo!)
+		System.out.println("Dosaggio " + this.GLP1dosage);
+		System.out.println("Dosaggio " + this.currentState.getCurrentGLP1dose());
+		this.GLP1dosage = this.GLP1dosage * 0.65 + 
+				this.currentState.getCurrentGLP1dose() * (1 - 0.65);
 		// Per le statistiche
 		this.GLP1somministrationNumber++;
 	}
@@ -126,40 +141,41 @@ public class Treatment extends PassiveAgent {
 		return dosage;
 	}
 	
-	@ScheduledMethod(start = 1, interval = 1, priority = 4)
+	//@ScheduledMethod(start = 1, interval = 1, priority = 4)
 	public void stepAction() {
 		if(this.currentState.getDegeneratedNeuron() > 0) {
 			somministrateGLP1(dosageAction());
 		}
 	}
 	
-	//@ScheduledMethod(start = 1, interval = 1, priority = 4)
+	@ScheduledMethod(start = 1, interval = 1, priority = 4)
 	public void stepQAction() {
-		/*
+		
 		if(this.currentState.getDegeneratedNeuron() > 0) {
 			lastAction = (Dosage) decideAction();
 			somministrateGLP1(lastAction.getDosage());
 			this.currentState.setCurrentGLP1dose(lastAction.getDosage());
 		}
-		if(RepastEssentials.GetTickCount() == 1200 || 
-				(degenCount == 0 && this.currentState.getStressedNeuron() == 0 
-				&& this.currentState.getInflammatedMicroglia() == 0 && RepastEssentials.GetTickCount() > 20))
+		//(degenCount == 0 && this.currentState.getStressedNeuron() == 0 
+				//&& this.currentState.getInflammatedMicroglia() == 0 && RepastEssentials.GetTickCount() > 20))
+		if(RepastEssentials.GetTickCount() == 1200)
 		{
 			this.save();
 			RunEnvironment.getInstance().endRun();
-		}*/
+		}
 	}
 	
 	public Action decideAction() {
 	      Action bestAction = null;
-	      double bestValue = Double.MIN_VALUE; 
+	      double bestValue = Double.NEGATIVE_INFINITY; 
 	      int zeroCount = 0;
 	      double epsilonProb = 0.2;
 	      
 	      // Per ogni azione possibile
 	      for (Action myAction : possibleActions) {
+	    	 System.out.println("lol" + this.currentState.toString() + "lol" + myAction.toString());
 	         double actionValue = rlModel.getValue(new StateAction(this.currentState, myAction));
-	         
+	         System.out.println(actionValue);
 	         // counting how many paths are currently not explored
 	         if(actionValue == 0.0) {
 	        	 zeroCount++;
@@ -209,20 +225,20 @@ public class Treatment extends PassiveAgent {
 	}
 	
 	public double calculateReward(SubstanciaNigraState oldState) {
-		double deathWeight = -2.9;
+		double deathWeight = -0.9;
 		double stressedWeight = 0.2;
-		double healthyWeight = 2.3;
-		double dosageWeight = -0.5;
+		double healthyWeight = 1.3;
+		double dosageWeight = -0.3;
 		double reward = 0.0;
 		
 		// 1. Penalità per dose (ma non troppo aggressiva)
-		double doseCost = dosageWeight * (this.currentState.getCurrentGLP1dose() / MAX_DOSE);                    // tra -0.8 e 0
+		double doseCost = dosageWeight * (this.currentState.getCurrentGLP1dose() / 1.0);                    // tra -0.8 e 0
 		
 		// 2. Penalità per cellule morte assolute
 		double deathPenalty = deathWeight * (this.currentState.getDegeneratedNeuron() / (double) 31);
 		
 		// 3. Ricompensa per cellule vive (o penalità per perdita di popolazione)
-		double liveReward = healthyWeight * (this.currentState.getHealthyNeuronCount() / (double) 31);
+		//double liveReward = healthyWeight * (this.currentState.getHealthyNeuronCount() / (double) 31);
 		
 		// 4. SEGNALE FORTEMENTE IMPORTANTE: Trend della morte (differenza temporale)
 		int deltaD = this.currentState.getDegeneratedNeuron() - oldState.getDegeneratedNeuron();
@@ -235,14 +251,14 @@ public class Treatment extends PassiveAgent {
 		if (deltaS < -5) improvementBonus += 1.5;          // stress diminuisce
 		
 		// 6. Bonus di controllo (quando la dose sta funzionando)
-		if (this.currentState.getCurrentGLP1dose() > 0.1 * MAX_DOSE && deltaD <= 0) {
+		if (this.currentState.getCurrentGLP1dose() > 0.1 * 1.0 && deltaD <= 0) {
 		improvementBonus += 1.8;   // "hai fatto la cosa giusta"
 		}
 		
 		// Composizione finale
 		reward = doseCost 
 		+ deathPenalty 
-		+ liveReward 
+		//+ liveReward 
 		+ trendPenalty 
 		+ improvementBonus;
 		
@@ -255,6 +271,7 @@ public class Treatment extends PassiveAgent {
 	@ScheduledMethod(start = 1, interval = 1, priority = 3)
 	public void step()
 	{
+
 		// GLP1
 		double rateModifier = (1 + Math.log(1 + this.GLP1dosage));
 		
@@ -268,15 +285,18 @@ public class Treatment extends PassiveAgent {
 		this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).setModifier(rateModifier);
 		this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).setModifier(rateModifier);
 
-		
-		System.out.println("Dosaggio " + this.GLP1dosage);
-		
+		//System.out.println("Dosaggio " + this.GLP1dosage);
+		toxicity = (Math.exp((this.GLP1dosage/2 - 1/4) - 1)) / 128;
+		toxicity = Math.min(toxicity, 4.0);
+		System.out.println("toxic a: " + toxicity);
+		/*
 		// Evaporazione/assorbimento farmaco (riduzione dose)
 		if(this.GLP1dosage <= this.GLP1dosageEvaporation)
 			this.GLP1dosage = 0;
 		else
 			this.GLP1dosage = this.GLP1dosage - this.currentState.getCurrentGLP1dose() * GLP1dosageEvaporation; // evap of dosage equal to 95% of last dosage
-		
+		*/
+
 		/*
 		// NLRP3
 		if(this.NLRP3dosage >= 0) {
@@ -293,7 +313,7 @@ public class Treatment extends PassiveAgent {
 	private List<Action> initializeDiscreteActions() {
 		List<Action> l = new LinkedList<>();
 		for (int i = 0; i < NUM_ACTIONS; i++) {
-            l.add(new Dosage(i * 1));   // 0.0 → 1.0 inclusi
+            l.add(new Dosage(i * 0.1));   // 0.0 → 1.0 inclusi
         }
         return l;
 	}

@@ -75,7 +75,7 @@ public class SubstanciaNigraState implements State {
       //result = result + 31 * inflammatedMicrogliaCount;
       result = result + 31 * stressedNeuronCount;
       //result = 31 * Double.valueOf(averageNeuronHealth).hashCode();
-      result = result + 31 * Double.valueOf(currentGLP1dose).hashCode();
+      //result = result + 31 * Double.valueOf(currentGLP1dose).hashCode();
       return result;
 	}
 	
@@ -83,8 +83,9 @@ public class SubstanciaNigraState implements State {
 	public String toString(){
          return("Death Neuron: " + this.getDegeneratedNeuron()
          + ", Stressed Neuron: " + this.getStressedNeuron()
-         + ", AvgNeuronHealth: " + this.getAverageNeuronHealth()
-         + ", Last Dose: " + this.getCurrentGLP1dose());
+         //+ ", AvgNeuronHealth: " + this.getAverageNeuronHealth()
+         //+ ", Inflammed Microglia: " + this.getInflammatedMicroglia()
+         );
 	}
 	
    @Override

@@ -32,8 +32,7 @@ public class Neuron extends Agent {
 	
 	private boolean flag;
 
-	private Policy policy;
-	
+	private Policy policy;	
 	
 	
 	@SuppressWarnings("unchecked")
@@ -82,25 +81,29 @@ public class Neuron extends Agent {
 		}
 	}
 	
-    @ScheduledMethod(start = 1, interval = 1, priority = 3)
+	
+	
+	@ScheduledMethod(start = 1, interval = 1, priority = 3)
     public void step1() {
         switch (this.state) {
             case HEALTHY:
             	if(health <= 0) this.state = NeuronState.DEGENERATED_DEATH;
             	if(alphaValue >= alphaSinucleinThreshold || cytokineValue >= cytokineThreshold) this.state = NeuronState.STRESSED;
-            		
+            	Treatment x = (Treatment) this.context.getObjectsAsStream(Treatment.class).findFirst().get();
+            	if(x.getToxicity() >= 1) this.state = NeuronState.STRESSED;
             break;
                 
             case STRESSED:
-            	if(alphaValue < alphaSinucleinThreshold && cytokineValue < cytokineThreshold) this.state = NeuronState.HEALTHY;
+            	if(alphaValue < alphaSinucleinThreshold && cytokineValue < cytokineThreshold && this.health > 25) this.state = NeuronState.HEALTHY;
             	
             	if(this.health > 0){
             		this.loseHealth();
+            		this.regenHealth();
                 }
             	else {
-                    	this.state = NeuronState.DEGENERATED_DEATH;
-                    	System.out.println("Il neurone è morto");
-            		}
+                	this.state = NeuronState.DEGENERATED_DEATH;
+                	System.out.println("Il neurone è morto");
+        		}
             	
             break;
 
@@ -166,9 +169,19 @@ public class Neuron extends Agent {
 		   }else return false;
 	}
 	
+	public void regenHealth() {
+		Treatment x = (Treatment) this.context.getObjectsAsStream(Treatment.class).findFirst().get();
+		if(health < 30) {
+			if(x.getToxicity() < 1 && alphaValue < alphaSinucleinThreshold && cytokineValue < cytokineThreshold) 
+				this.health = this.health + 0.5;
+		}
+	
+	
+	}
+	
 	public void loseHealth() {
-		
-		this.health = this.health - (this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue());
+		Treatment x = (Treatment) this.context.getObjectsAsStream(Treatment.class).findFirst().get();
+		this.health = this.health - (this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue()) - x.getToxicity();
 		System.out.println("Health del neurone scesa a: " + this.health);
 	}
 	

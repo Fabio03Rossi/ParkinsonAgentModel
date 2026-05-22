@@ -116,8 +116,7 @@ public abstract class LearningModel {
    public void updateValue(StateAction stateAction, State nextState, double reward) {
       double currentValue = actionValues.getOrDefault(stateAction, 0.0);
       double newValue = currentValue + learningRate * (reward + discountFactor * getMaxFutureValue(nextState) - currentValue);
-      System.out.println(stateAction.getState().toString());
-      System.out.println(stateAction.hashCode());
+      System.out.println(nextState.toString());
       actionValues.put(stateAction, newValue);
       //printValues();
    }
