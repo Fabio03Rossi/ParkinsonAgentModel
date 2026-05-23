@@ -227,8 +227,8 @@ public class Treatment extends PassiveAgent {
 		var f = new File(path);
 		try {
 			f.createNewFile();
-    	    FileWriter f2 = new FileWriter(f, false);
-    	    f2.write(this.getBatchRunNumber() + "," + cumulativeReward + "," + this.currentState.getHealthyNeuronCount());
+    	    FileWriter f2 = new FileWriter(f, true);
+    	    f2.write(this.getBatchRunNumber() + "," + cumulativeReward + "," + this.currentState.getHealthyNeuronCount() + "," + currentState.getCurrentGLP1dose() + "\n");
     	    f2.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -310,7 +310,7 @@ public class Treatment extends PassiveAgent {
 		this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).setModifier(rateModifier);
 
 		//System.out.println("Dosaggio " + this.GLP1dosage);
-		toxicity = (Math.exp((this.GLP1dosage/2 - 1/4) - 1)) / 128;
+		toxicity = (Math.exp((this.GLP1dosage - 1/4) - 1)) / 128;
 		toxicity = Math.min(toxicity, 4.0);
 		System.out.println("toxic a: " + toxicity);
 		/*
@@ -349,8 +349,8 @@ public class Treatment extends PassiveAgent {
 	}
 	
 	public int getBatchRunNumber() {
-	    if(RunEnvironment.getInstance().isBatch()) {
-	    	RunState.getInstance().getRunInfo().getBatchNumber();
+	    if(RunState.getInstance().getRunInfo().isBatch()) {
+	    	return RunState.getInstance().getRunInfo().getRunNumber();
 	    }
 	    return 1; 
 	}

@@ -1,1047 +1,124 @@
-INFO  [Thread-0] 2026-05-22T15:54:35,570 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,571 LocalSession - Dosaggio 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,571 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,571 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,571 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,571 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,571 LocalSession - 67109825
-INFO  [Thread-0] 2026-05-22T15:54:35,573 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,575 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,575 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,575 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,575 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,575 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,575 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,576 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,576 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,576 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,576 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,576 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,576 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,576 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,576 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,576 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,576 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,576 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,576 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,579 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,579 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,579 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,579 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,579 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,579 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,580 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,580 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,580 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,580 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,580 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,580 LocalSession - Dosaggio 12.0
-INFO  [Thread-0] 2026-05-22T15:54:35,580 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,581 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,581 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,581 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 12.0
-INFO  [Thread-0] 2026-05-22T15:54:35,581 LocalSession - -989854783
-INFO  [Thread-0] 2026-05-22T15:54:35,581 LocalSession - Dosaggio 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,583 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,583 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,583 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,583 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,583 LocalSession - 1983906753
-INFO  [Thread-0] 2026-05-22T15:54:35,583 LocalSession - Dosaggio 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,583 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,583 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,583 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,583 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,583 LocalSession - 1983906753
-INFO  [Thread-0] 2026-05-22T15:54:35,583 LocalSession - Dosaggio 16.0
-INFO  [Thread-0] 2026-05-22T15:54:35,585 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,585 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,585 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,585 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 16.0
-INFO  [Thread-0] 2026-05-22T15:54:35,585 LocalSession - -2046819391
-INFO  [Thread-0] 2026-05-22T15:54:35,585 LocalSession - Dosaggio 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,587 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,587 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,587 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,587 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,587 LocalSession - -31456319
-INFO  [Thread-0] 2026-05-22T15:54:35,587 LocalSession - Dosaggio 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,587 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,587 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,587 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,587 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,587 LocalSession - -1782578239
-INFO  [Thread-0] 2026-05-22T15:54:35,588 LocalSession - Dosaggio 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,588 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,588 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,588 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,588 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,589 LocalSession - -1782578239
-INFO  [Thread-0] 2026-05-22T15:54:35,590 LocalSession - Dosaggio 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,590 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,590 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,590 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,590 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,590 LocalSession - -1782578239
-INFO  [Thread-0] 2026-05-22T15:54:35,591 LocalSession - Dosaggio 12.0
-INFO  [Thread-0] 2026-05-22T15:54:35,591 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,591 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,591 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,591 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 12.0
-INFO  [Thread-0] 2026-05-22T15:54:35,591 LocalSession - -989854783
-INFO  [Thread-0] 2026-05-22T15:54:35,593 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,593 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,593 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,593 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,593 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,593 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,594 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,594 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,594 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,594 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,594 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,594 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,595 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,595 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,595 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,595 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,595 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,595 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,597 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,597 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,597 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,597 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,597 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,597 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,598 LocalSession - Dosaggio 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,600 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,600 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,600 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,600 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,600 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,600 LocalSession - Dosaggio 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,600 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,600 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,600 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,600 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,600 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,600 LocalSession - Dosaggio 12.0
-INFO  [Thread-0] 2026-05-22T15:54:35,601 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,601 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,601 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,601 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 12.0
-INFO  [Thread-0] 2026-05-22T15:54:35,601 LocalSession - -989854783
-INFO  [Thread-0] 2026-05-22T15:54:35,602 LocalSession - Dosaggio 12.0
-INFO  [Thread-0] 2026-05-22T15:54:35,602 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,602 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,602 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,602 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 12.0
-INFO  [Thread-0] 2026-05-22T15:54:35,602 LocalSession - -989854783
-INFO  [Thread-0] 2026-05-22T15:54:35,603 LocalSession - Dosaggio 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,603 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,603 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,603 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,603 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,603 LocalSession - -1254095935
-INFO  [Thread-0] 2026-05-22T15:54:35,603 LocalSession - Dosaggio 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,605 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,605 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,605 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,605 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,605 LocalSession - -1254095935
-INFO  [Thread-0] 2026-05-22T15:54:35,605 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,605 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,605 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,605 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,605 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,605 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,605 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,607 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,607 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,607 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,607 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,607 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,608 LocalSession - Dosaggio 2.0
-INFO  [Thread-0] 2026-05-22T15:54:35,610 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,610 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,610 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,610 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 2.0
-INFO  [Thread-0] 2026-05-22T15:54:35,610 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,610 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,611 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,611 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,611 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,611 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,611 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,611 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,611 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,611 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,611 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,611 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,611 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,612 LocalSession - Dosaggio 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,613 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,613 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,613 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,613 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,613 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,614 LocalSession - Dosaggio 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,614 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,614 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,614 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,614 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,614 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,614 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,616 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,616 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,616 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,616 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,616 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,616 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,617 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,617 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,617 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,617 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,617 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,618 LocalSession - Dosaggio 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,618 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,618 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,618 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,618 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,618 LocalSession - -31456319
-INFO  [Thread-0] 2026-05-22T15:54:35,618 LocalSession - Dosaggio 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,621 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,621 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,621 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,621 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,621 LocalSession - -1254095935
-INFO  [Thread-0] 2026-05-22T15:54:35,621 LocalSession - Dosaggio 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,621 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,621 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,621 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,621 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,621 LocalSession - -1254095935
-INFO  [Thread-0] 2026-05-22T15:54:35,621 LocalSession - Dosaggio 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,624 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,624 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,624 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,624 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,624 LocalSession - -1254095935
-INFO  [Thread-0] 2026-05-22T15:54:35,624 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,625 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,625 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,625 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,625 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,625 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,625 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,625 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,625 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,625 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,625 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,625 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,625 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,626 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,626 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,626 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,627 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,627 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,628 LocalSession - Dosaggio 4.0
-INFO  [Thread-0] 2026-05-22T15:54:35,628 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,628 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,628 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,628 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 4.0
-INFO  [Thread-0] 2026-05-22T15:54:35,628 LocalSession - -2113928255
-INFO  [Thread-0] 2026-05-22T15:54:35,629 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,629 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,629 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,629 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,629 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,629 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,629 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,632 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,632 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,632 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,632 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,632 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,632 LocalSession - Dosaggio 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,632 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,632 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,632 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,632 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,632 LocalSession - -1056963647
-INFO  [Thread-0] 2026-05-22T15:54:35,632 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,633 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,633 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,633 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,633 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,633 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,633 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,634 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,635 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,635 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,635 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,635 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,636 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,636 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,636 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,636 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,636 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,636 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,637 LocalSession - Dosaggio 2.0
-INFO  [Thread-0] 2026-05-22T15:54:35,639 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,639 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,639 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,639 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 2.0
-INFO  [Thread-0] 2026-05-22T15:54:35,639 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,639 LocalSession - Dosaggio 2.0
-INFO  [Thread-0] 2026-05-22T15:54:35,640 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,640 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,640 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,640 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 2.0
-INFO  [Thread-0] 2026-05-22T15:54:35,640 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,640 LocalSession - Dosaggio 2.0
-INFO  [Thread-0] 2026-05-22T15:54:35,640 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,640 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,640 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,640 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 2.0
-INFO  [Thread-0] 2026-05-22T15:54:35,640 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,641 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,642 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,642 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,642 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,642 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,642 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,642 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,643 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,643 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,643 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,643 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,643 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,643 LocalSession - Dosaggio 19.0
-INFO  [Thread-0] 2026-05-22T15:54:35,643 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,643 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,643 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,643 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 19.0
-INFO  [Thread-0] 2026-05-22T15:54:35,643 LocalSession - -295697471
-INFO  [Thread-0] 2026-05-22T15:54:35,644 LocalSession - Dosaggio 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,644 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,644 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,644 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,644 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,644 LocalSession - -1782578239
-INFO  [Thread-0] 2026-05-22T15:54:35,645 LocalSession - Dosaggio 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,645 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,645 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,645 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,645 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,645 LocalSession - -1782578239
-INFO  [Thread-0] 2026-05-22T15:54:35,645 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,647 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,647 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,647 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,647 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,647 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,648 LocalSession - Dosaggio 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,648 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,648 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,648 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,648 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,648 LocalSession - 67109825
-INFO  [Thread-0] 2026-05-22T15:54:35,649 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,651 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,651 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,651 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,651 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,651 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,651 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,651 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,651 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,651 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,651 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,651 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,651 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,653 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,653 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,653 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,653 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,653 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,653 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,653 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,653 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,653 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,653 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,653 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,654 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,654 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,654 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,654 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,654 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,654 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,654 LocalSession - Dosaggio 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,656 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,656 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,656 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,656 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,656 LocalSession - -461372479
-INFO  [Thread-0] 2026-05-22T15:54:35,656 LocalSession - Dosaggio 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,657 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,657 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,657 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,657 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,657 LocalSession - 67109825
-INFO  [Thread-0] 2026-05-22T15:54:35,657 LocalSession - Dosaggio 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,659 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,659 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,659 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,659 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,659 LocalSession - 67109825
-INFO  [Thread-0] 2026-05-22T15:54:35,659 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,660 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,660 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,660 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,660 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,660 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,661 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,663 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,663 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,663 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,663 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,663 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,663 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,663 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,663 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,663 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,663 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,663 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,663 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,664 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,664 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,664 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,664 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,664 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,665 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,666 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,666 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,666 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,666 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,666 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,666 LocalSession - Dosaggio 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,667 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,667 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,667 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,667 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 1.0
-INFO  [Thread-0] 2026-05-22T15:54:35,667 LocalSession - 2113930177
-INFO  [Thread-0] 2026-05-22T15:54:35,668 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,668 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,668 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,668 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,668 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,668 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,670 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,670 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,670 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,670 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,670 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,670 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,670 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,671 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,671 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,671 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,671 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,671 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,671 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,672 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,673 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,673 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,673 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,673 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,673 LocalSession - Dosaggio 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,676 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,676 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,676 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,676 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,676 LocalSession - -1056963647
-INFO  [Thread-0] 2026-05-22T15:54:35,676 LocalSession - Dosaggio 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,676 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,676 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,676 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,676 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,676 LocalSession - -1056963647
-INFO  [Thread-0] 2026-05-22T15:54:35,676 LocalSession - Dosaggio 19.0
-INFO  [Thread-0] 2026-05-22T15:54:35,677 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,677 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,677 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,677 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 19.0
-INFO  [Thread-0] 2026-05-22T15:54:35,677 LocalSession - -295697471
-INFO  [Thread-0] 2026-05-22T15:54:35,679 LocalSession - Dosaggio 19.0
-INFO  [Thread-0] 2026-05-22T15:54:35,679 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,679 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,679 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,679 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 19.0
-INFO  [Thread-0] 2026-05-22T15:54:35,679 LocalSession - -295697471
-INFO  [Thread-0] 2026-05-22T15:54:35,680 LocalSession - Dosaggio 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,681 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,681 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,681 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,681 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,681 LocalSession - 67109825
-INFO  [Thread-0] 2026-05-22T15:54:35,681 LocalSession - Dosaggio 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,683 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,683 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,683 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,683 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,683 LocalSession - -1254095935
-INFO  [Thread-0] 2026-05-22T15:54:35,683 LocalSession - Dosaggio 16.0
-INFO  [Thread-0] 2026-05-22T15:54:35,684 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,684 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,684 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,684 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 16.0
-INFO  [Thread-0] 2026-05-22T15:54:35,684 LocalSession - -2046819391
-INFO  [Thread-0] 2026-05-22T15:54:35,684 LocalSession - Dosaggio 11.0
-INFO  [Thread-0] 2026-05-22T15:54:35,684 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,684 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,684 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,684 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 11.0
-INFO  [Thread-0] 2026-05-22T15:54:35,684 LocalSession - -725613631
-INFO  [Thread-0] 2026-05-22T15:54:35,684 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,686 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,686 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,686 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,686 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,686 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,686 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,687 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,687 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,687 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,687 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,687 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,688 LocalSession - Dosaggio 9.0
-INFO  [Thread-0] 2026-05-22T15:54:35,688 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,688 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,688 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,688 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 9.0
-INFO  [Thread-0] 2026-05-22T15:54:35,688 LocalSession - -197131327
-INFO  [Thread-0] 2026-05-22T15:54:35,689 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,690 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,690 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,690 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,690 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,690 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,691 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,692 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,692 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,692 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,692 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,692 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,692 LocalSession - Dosaggio 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,692 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,692 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,692 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,692 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,692 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,693 LocalSession - Dosaggio 4.0
-INFO  [Thread-0] 2026-05-22T15:54:35,694 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,694 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,694 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,694 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 4.0
-INFO  [Thread-0] 2026-05-22T15:54:35,694 LocalSession - -2113928255
-INFO  [Thread-0] 2026-05-22T15:54:35,695 LocalSession - Dosaggio 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,696 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,696 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,696 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,696 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,696 LocalSession - 1983906753
-INFO  [Thread-0] 2026-05-22T15:54:35,696 LocalSession - Dosaggio 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,696 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,696 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,696 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,697 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,697 LocalSession - 1983906753
-INFO  [Thread-0] 2026-05-22T15:54:35,697 LocalSession - Dosaggio 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,698 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,698 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,698 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,698 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,698 LocalSession - 1983906753
-INFO  [Thread-0] 2026-05-22T15:54:35,699 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,699 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,699 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,699 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,699 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,699 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,699 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,702 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,702 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,702 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,702 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,702 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,702 LocalSession - Dosaggio 12.0
-INFO  [Thread-0] 2026-05-22T15:54:35,702 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,702 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,702 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,702 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 12.0
-INFO  [Thread-0] 2026-05-22T15:54:35,702 LocalSession - -989854783
-INFO  [Thread-0] 2026-05-22T15:54:35,702 LocalSession - Dosaggio 12.0
-INFO  [Thread-0] 2026-05-22T15:54:35,704 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,704 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,704 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,704 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 12.0
-INFO  [Thread-0] 2026-05-22T15:54:35,704 LocalSession - -989854783
-INFO  [Thread-0] 2026-05-22T15:54:35,704 LocalSession - Dosaggio 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,704 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,704 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,704 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,704 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,704 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,705 LocalSession - Dosaggio 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,705 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,705 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,705 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,705 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,705 LocalSession - 67109825
-INFO  [Thread-0] 2026-05-22T15:54:35,705 LocalSession - Dosaggio 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,707 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,707 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,707 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,707 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,707 LocalSession - 67109825
-INFO  [Thread-0] 2026-05-22T15:54:35,707 LocalSession - Dosaggio 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,708 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,709 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,709 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,709 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,709 LocalSession - 67109825
-INFO  [Thread-0] 2026-05-22T15:54:35,709 LocalSession - Dosaggio 9.0
-INFO  [Thread-0] 2026-05-22T15:54:35,709 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,709 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,709 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,709 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 9.0
-INFO  [Thread-0] 2026-05-22T15:54:35,709 LocalSession - -197131327
-INFO  [Thread-0] 2026-05-22T15:54:35,710 LocalSession - Dosaggio 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,710 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,710 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,710 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,710 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,710 LocalSession - -1056963647
-INFO  [Thread-0] 2026-05-22T15:54:35,712 LocalSession - Dosaggio 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,712 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,712 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,712 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,712 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,712 LocalSession - -1056963647
-INFO  [Thread-0] 2026-05-22T15:54:35,712 LocalSession - Dosaggio 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,713 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,713 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,713 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,713 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,714 LocalSession - -1056963647
-INFO  [Thread-0] 2026-05-22T15:54:35,714 LocalSession - Dosaggio 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,714 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,715 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,715 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,715 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,715 LocalSession - -1056963647
-INFO  [Thread-0] 2026-05-22T15:54:35,715 LocalSession - Dosaggio 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,715 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,715 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,715 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,715 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,715 LocalSession - -1056963647
-INFO  [Thread-0] 2026-05-22T15:54:35,716 LocalSession - Dosaggio 9.0
-INFO  [Thread-0] 2026-05-22T15:54:35,716 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,716 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,716 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,716 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 9.0
-INFO  [Thread-0] 2026-05-22T15:54:35,716 LocalSession - -197131327
-INFO  [Thread-0] 2026-05-22T15:54:35,717 LocalSession - Dosaggio 9.0
-INFO  [Thread-0] 2026-05-22T15:54:35,718 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,718 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,718 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,718 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 9.0
-INFO  [Thread-0] 2026-05-22T15:54:35,718 LocalSession - -197131327
-INFO  [Thread-0] 2026-05-22T15:54:35,718 LocalSession - Dosaggio 9.0
-INFO  [Thread-0] 2026-05-22T15:54:35,719 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,719 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,719 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,719 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 9.0
-INFO  [Thread-0] 2026-05-22T15:54:35,719 LocalSession - -197131327
-INFO  [Thread-0] 2026-05-22T15:54:35,719 LocalSession - Dosaggio 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,720 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,720 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,720 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,720 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,720 LocalSession - 67109825
-INFO  [Thread-0] 2026-05-22T15:54:35,720 LocalSession - Dosaggio 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,721 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,721 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,721 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,721 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,721 LocalSession - 67109825
-INFO  [Thread-0] 2026-05-22T15:54:35,721 LocalSession - Dosaggio 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,722 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,722 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,722 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,722 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 8.0
-INFO  [Thread-0] 2026-05-22T15:54:35,722 LocalSession - 67109825
-INFO  [Thread-0] 2026-05-22T15:54:35,723 LocalSession - Dosaggio 2.0
-INFO  [Thread-0] 2026-05-22T15:54:35,724 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,724 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,724 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,724 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 2.0
-INFO  [Thread-0] 2026-05-22T15:54:35,724 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,724 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,724 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,724 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,724 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,724 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,724 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,725 LocalSession - Dosaggio 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,726 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,726 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,726 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,726 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,726 LocalSession - -461372479
-INFO  [Thread-0] 2026-05-22T15:54:35,726 LocalSession - Dosaggio 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,726 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,726 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,726 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,726 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,726 LocalSession - -461372479
-INFO  [Thread-0] 2026-05-22T15:54:35,726 LocalSession - Dosaggio 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,727 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,727 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,727 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,727 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,727 LocalSession - -461372479
-INFO  [Thread-0] 2026-05-22T15:54:35,728 LocalSession - Dosaggio 2.0
-INFO  [Thread-0] 2026-05-22T15:54:35,729 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,729 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,729 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,729 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 2.0
-INFO  [Thread-0] 2026-05-22T15:54:35,729 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,729 LocalSession - Dosaggio 11.0
-INFO  [Thread-0] 2026-05-22T15:54:35,729 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,729 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,729 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,729 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 11.0
-INFO  [Thread-0] 2026-05-22T15:54:35,729 LocalSession - -725613631
-INFO  [Thread-0] 2026-05-22T15:54:35,731 LocalSession - Dosaggio 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,731 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,731 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,731 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,731 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,731 LocalSession - -31456319
-INFO  [Thread-0] 2026-05-22T15:54:35,732 LocalSession - Dosaggio 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,733 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,733 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,733 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,733 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,733 LocalSession - -31456319
-INFO  [Thread-0] 2026-05-22T15:54:35,733 LocalSession - Dosaggio 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,733 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,733 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,733 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,733 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,733 LocalSession - -461372479
-INFO  [Thread-0] 2026-05-22T15:54:35,733 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,735 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,735 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,735 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,735 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,735 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,735 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,736 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,736 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,736 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,736 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,736 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,736 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,738 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,739 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,739 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,739 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,739 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,739 LocalSession - Dosaggio 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,739 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,739 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,739 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,739 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,739 LocalSession - 1983906753
-INFO  [Thread-0] 2026-05-22T15:54:35,740 LocalSession - Dosaggio 16.0
-INFO  [Thread-0] 2026-05-22T15:54:35,740 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,740 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,740 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,740 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 16.0
-INFO  [Thread-0] 2026-05-22T15:54:35,740 LocalSession - -2046819391
-INFO  [Thread-0] 2026-05-22T15:54:35,741 LocalSession - Dosaggio 16.0
-INFO  [Thread-0] 2026-05-22T15:54:35,742 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,742 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,742 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,742 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 16.0
-INFO  [Thread-0] 2026-05-22T15:54:35,742 LocalSession - -2046819391
-INFO  [Thread-0] 2026-05-22T15:54:35,742 LocalSession - Dosaggio 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,743 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,743 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,743 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,743 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,743 LocalSession - -1254095935
-INFO  [Thread-0] 2026-05-22T15:54:35,744 LocalSession - Dosaggio 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,745 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,745 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,745 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,745 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 13.0
-INFO  [Thread-0] 2026-05-22T15:54:35,745 LocalSession - -1254095935
-INFO  [Thread-0] 2026-05-22T15:54:35,745 LocalSession - Dosaggio 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,745 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,745 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,745 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,745 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,745 LocalSession - 1652556737
-INFO  [Thread-0] 2026-05-22T15:54:35,747 LocalSession - Dosaggio 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,749 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,749 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,749 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,749 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,749 LocalSession - 1652556737
-INFO  [Thread-0] 2026-05-22T15:54:35,749 LocalSession - Dosaggio 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,750 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,750 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,750 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,750 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,750 LocalSession - 1652556737
-INFO  [Thread-0] 2026-05-22T15:54:35,750 LocalSession - Dosaggio 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,750 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,750 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,750 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,750 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,750 LocalSession - -31456319
-INFO  [Thread-0] 2026-05-22T15:54:35,751 LocalSession - Dosaggio 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,751 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,751 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,751 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,751 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,751 LocalSession - -31456319
-INFO  [Thread-0] 2026-05-22T15:54:35,751 LocalSession - Dosaggio 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,753 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,753 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,753 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,753 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,753 LocalSession - -31456319
-INFO  [Thread-0] 2026-05-22T15:54:35,754 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,755 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,755 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,755 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,755 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,755 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,755 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,755 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,755 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,755 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,755 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,755 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,756 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,758 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,758 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,758 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,758 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,758 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,758 LocalSession - Dosaggio 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,758 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,758 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,758 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,758 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,758 LocalSession - 1652556737
-INFO  [Thread-0] 2026-05-22T15:54:35,759 LocalSession - Dosaggio 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,759 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,759 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,759 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,759 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,759 LocalSession - 1652556737
-INFO  [Thread-0] 2026-05-22T15:54:35,760 LocalSession - Dosaggio 19.0
-INFO  [Thread-0] 2026-05-22T15:54:35,760 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,760 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,760 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,760 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 19.0
-INFO  [Thread-0] 2026-05-22T15:54:35,760 LocalSession - -295697471
-INFO  [Thread-0] 2026-05-22T15:54:35,761 LocalSession - Dosaggio 19.0
-INFO  [Thread-0] 2026-05-22T15:54:35,762 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,762 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,762 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,762 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 19.0
-INFO  [Thread-0] 2026-05-22T15:54:35,763 LocalSession - -295697471
-INFO  [Thread-0] 2026-05-22T15:54:35,763 LocalSession - Dosaggio 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,763 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,763 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,763 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,763 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,763 LocalSession - 1652556737
-INFO  [Thread-0] 2026-05-22T15:54:35,764 LocalSession - Dosaggio 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,764 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,764 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,764 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,764 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,764 LocalSession - 1652556737
-INFO  [Thread-0] 2026-05-22T15:54:35,764 LocalSession - Dosaggio 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,766 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,766 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,766 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,766 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 3.0
-INFO  [Thread-0] 2026-05-22T15:54:35,766 LocalSession - -1056963647
-INFO  [Thread-0] 2026-05-22T15:54:35,767 LocalSession - Dosaggio 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,768 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,768 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,768 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,768 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,768 LocalSession - 1983906753
-INFO  [Thread-0] 2026-05-22T15:54:35,768 LocalSession - Dosaggio 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,768 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,768 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,768 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,768 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 18.0
-INFO  [Thread-0] 2026-05-22T15:54:35,768 LocalSession - 1983906753
-INFO  [Thread-0] 2026-05-22T15:54:35,768 LocalSession - Dosaggio 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,769 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,769 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,769 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,769 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,769 LocalSession - -461372479
-INFO  [Thread-0] 2026-05-22T15:54:35,770 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,770 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,770 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,770 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,770 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,770 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,771 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,772 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,772 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,772 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,772 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,772 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,773 LocalSession - Dosaggio 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,773 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,773 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,773 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,773 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,773 LocalSession - -31456319
-INFO  [Thread-0] 2026-05-22T15:54:35,773 LocalSession - Dosaggio 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,774 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,774 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,774 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,774 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,774 LocalSession - -31456319
-INFO  [Thread-0] 2026-05-22T15:54:35,774 LocalSession - Dosaggio 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,776 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,776 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,776 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,776 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,776 LocalSession - -31456319
-INFO  [Thread-0] 2026-05-22T15:54:35,776 LocalSession - Dosaggio 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,776 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,776 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,776 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,776 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 17.0
-INFO  [Thread-0] 2026-05-22T15:54:35,776 LocalSession - -31456319
-INFO  [Thread-0] 2026-05-22T15:54:35,776 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,777 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,777 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,777 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,777 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,777 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,778 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,778 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,778 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,778 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,778 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,778 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,779 LocalSession - Dosaggio 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,779 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,779 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,779 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,779 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,779 LocalSession - -1782578239
-INFO  [Thread-0] 2026-05-22T15:54:35,781 LocalSession - Dosaggio 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,782 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,782 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,782 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,782 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,782 LocalSession - -1782578239
-INFO  [Thread-0] 2026-05-22T15:54:35,782 LocalSession - Dosaggio 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,783 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,783 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,783 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,783 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,783 LocalSession - -1782578239
-INFO  [Thread-0] 2026-05-22T15:54:35,784 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,784 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,784 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,784 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,784 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,784 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,784 LocalSession - Dosaggio 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,786 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,786 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,786 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,786 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 6.0
-INFO  [Thread-0] 2026-05-22T15:54:35,786 LocalSession - 1124074433
-INFO  [Thread-0] 2026-05-22T15:54:35,786 LocalSession - Dosaggio 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,787 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,787 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,787 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,787 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,787 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,787 LocalSession - Dosaggio 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,788 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,788 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,788 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,788 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,788 LocalSession - -461372479
-INFO  [Thread-0] 2026-05-22T15:54:35,788 LocalSession - Dosaggio 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,789 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,789 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,789 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,789 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,789 LocalSession - -461372479
-INFO  [Thread-0] 2026-05-22T15:54:35,790 LocalSession - Dosaggio 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,791 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,791 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,791 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,791 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 10.0
-INFO  [Thread-0] 2026-05-22T15:54:35,791 LocalSession - -461372479
-INFO  [Thread-0] 2026-05-22T15:54:35,791 LocalSession - Dosaggio 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,791 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,791 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,791 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,791 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 0.0
-INFO  [Thread-0] 2026-05-22T15:54:35,791 LocalSession - 961
-INFO  [Thread-0] 2026-05-22T15:54:35,792 LocalSession - Dosaggio 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,793 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,793 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,793 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,793 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 14.0
-INFO  [Thread-0] 2026-05-22T15:54:35,793 LocalSession - -1518337087
-INFO  [Thread-0] 2026-05-22T15:54:35,793 LocalSession - Dosaggio 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,793 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,793 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,793 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,793 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 5.0
-INFO  [Thread-0] 2026-05-22T15:54:35,793 LocalSession - 1652556737
-INFO  [Thread-0] 2026-05-22T15:54:35,794 LocalSession - Dosaggio 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,794 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,794 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,794 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,794 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 7.0
-INFO  [Thread-0] 2026-05-22T15:54:35,794 LocalSession - 595592129
-INFO  [Thread-0] 2026-05-22T15:54:35,794 LocalSession - Dosaggio 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,796 LocalSession - NEURONI MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,796 LocalSession - NEURONI STRESSATI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,796 LocalSession - MICROGLIE MORTI: 0
-INFO  [Thread-0] 2026-05-22T15:54:35,796 LocalSession - Death Neuron: 1, Stressed Neuron: 0, AvgNeuronHealth: 30.0, Last Dose: 15.0
-INFO  [Thread-0] 2026-05-22T15:54:35,796 LocalSession - -1782578239
-INFO  [Thread-0] 2026-05-22T15:54:35,796 LocalSession - Map has been saved.
-INFO  [Thread-0] 2026-05-22T15:54:35,804 LocalSession - Dosaggio 18.0
-INFO  [pool-4-thread-1] 2026-05-22T15:54:51,164 LocalDonePoller - Polled C:\Users\fabir\AppData\Local\Temp\simphony_model_1779457906946 for DONE:  yes
-INFO  [SwingWorker-pool-3-thread-1] 2026-05-22T15:54:51,166 SessionsDriver - Run Time: 3,0139
-INFO  [SwingWorker-pool-3-thread-1] 2026-05-22T15:54:51,277 LocalSession - Finding output on localhost in C:\Users\fabir\AppData\Local\Temp\simphony_model_1779457906946
-INFO  [SwingWorker-pool-3-thread-1] 2026-05-22T15:54:51,288 SessionsDriver - Aggregating output into E:/projects/eclipse-workspace/Parkinson/output
-INFO  [SwingWorker-pool-3-thread-1] 2026-05-22T15:54:51,288 SessionsDriver - Get Output Time: 0,0020
-INFO  [SwingWorker-pool-3-thread-1] 2026-05-22T15:54:51,289 SessionsDriver - Finished. Elapsed Time: 3,0728
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:523)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at org.apache.logging.log4j.core.config.DefaultReliabilityStrategy.log(DefaultReliabilityStrategy.java:49)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at org.apache.logging.log4j.core.Logger.logMessage(Logger.java:153)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at org.apache.log4j.Category.forcedLog(Category.java:316)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at org.apache.log4j.Category.log(Category.java:550)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at simphony.util.messages.Log4jMessageListener.messageReceived(Log4jMessageListener.java:83)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at simphony.util.messages.MessageCenter.fireMessageEvent(MessageCenter.java:150)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at simphony.util.messages.MessageCenter.error(MessageCenter.java:132)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at repast.simphony.batch.LocalDriver.run(LocalDriver.java:162)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at repast.simphony.batch.LocalDriver.main(LocalDriver.java:318)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - Caused by: java.io.IOException: Spazio su disco insufficiente
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.writeToDestination(OutputStreamManager.java:250)
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	... 25 more
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - java.io.IOException: Spazio su disco insufficiente
+INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:234)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/sun.nio.cs.StreamEncoder.implClose(StreamEncoder.java:340)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/sun.nio.cs.StreamEncoder.close(StreamEncoder.java:169)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.io.OutputStreamWriter.close(OutputStreamWriter.java:252)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.io.BufferedWriter.close(BufferedWriter.java:269)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.ProcessOutputWriter.captureOutput(ProcessOutputWriter.java:48)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.LocalDriver$ProcessRunner.call(LocalDriver.java:72)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.LocalDriver$ProcessRunner.call(LocalDriver.java:1)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.lang.Thread.run(Thread.java:840)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - ERROR [main] 02:27:50,834 LocalDriver - 
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - java.util.concurrent.ExecutionException: java.io.IOException: Spazio su disco insufficiente
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.util.concurrent.FutureTask.report(FutureTask.java:122) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.util.concurrent.FutureTask.get(FutureTask.java:191) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.LocalDriver.run(LocalDriver.java:159) ~[repast.simphony.distributed.batch.jar:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.LocalDriver.main(LocalDriver.java:318) ~[repast.simphony.distributed.batch.jar:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - Caused by: java.io.IOException: Spazio su disco insufficiente
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.io.FileOutputStream.writeBytes(Native Method) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.io.FileOutputStream.write(FileOutputStream.java:349) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:234) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at sun.nio.cs.StreamEncoder.implClose(StreamEncoder.java:340) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at sun.nio.cs.StreamEncoder.close(StreamEncoder.java:169) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.io.OutputStreamWriter.close(OutputStreamWriter.java:252) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.io.BufferedWriter.close(BufferedWriter.java:269) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.ProcessOutputWriter.captureOutput(ProcessOutputWriter.java:48) ~[repast.simphony.distributed.batch.jar:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.LocalDriver$ProcessRunner.call(LocalDriver.java:72) ~[repast.simphony.distributed.batch.jar:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.LocalDriver$ProcessRunner.call(LocalDriver.java:1) ~[repast.simphony.distributed.batch.jar:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 2026-05-23 02:27:50,840 main ERROR Unable to write to stream debug.log for appender R org.apache.logging.log4j.core.appender.AppenderLoggingException: Error writing to stream debug.log
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.writeToDestination(OutputStreamManager.java:252)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.FileManager.writeToDestination(FileManager.java:277)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.rolling.RollingFileManager.writeToDestination(RollingFileManager.java:275)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.flushBuffer(OutputStreamManager.java:283)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.flush(OutputStreamManager.java:294)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.directEncodeEvent(AbstractOutputStreamAppender.java:217)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.tryAppend(AbstractOutputStreamAppender.java:208)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.append(AbstractOutputStreamAppender.java:199)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.RollingFileAppender.append(RollingFileAppender.java:312)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:134)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:125)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:89)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:675)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:633)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:616)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:523)
+INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.DefaultReliabilityStrategy.log(DefaultReliabilityStrategy.java:49)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.Logger.logMessage(Logger.java:153)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.log4j.Category.forcedLog(Category.java:316)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.log4j.Category.log(Category.java:550)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at simphony.util.messages.Log4jMessageListener.messageReceived(Log4jMessageListener.java:83)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at simphony.util.messages.MessageCenter.fireMessageEvent(MessageCenter.java:150)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at simphony.util.messages.MessageCenter.error(MessageCenter.java:132)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at repast.simphony.batch.LocalDriver.run(LocalDriver.java:162)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at repast.simphony.batch.LocalDriver.main(LocalDriver.java:318)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - Caused by: java.io.IOException: Spazio su disco insufficiente
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.writeToDestination(OutputStreamManager.java:250)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	... 25 more
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 2026-05-23 02:27:50,842 main ERROR An exception occurred processing Appender R org.apache.logging.log4j.core.appender.AppenderLoggingException: Error writing to stream debug.log
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.writeToDestination(OutputStreamManager.java:252)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.FileManager.writeToDestination(FileManager.java:277)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.rolling.RollingFileManager.writeToDestination(RollingFileManager.java:275)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.flushBuffer(OutputStreamManager.java:283)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.flush(OutputStreamManager.java:294)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.directEncodeEvent(AbstractOutputStreamAppender.java:217)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.tryAppend(AbstractOutputStreamAppender.java:208)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.append(AbstractOutputStreamAppender.java:199)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.RollingFileAppender.append(RollingFileAppender.java:312)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:134)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:125)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:89)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:675)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:633)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:616)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:523)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.DefaultReliabilityStrategy.log(DefaultReliabilityStrategy.java:49)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.Logger.logMessage(Logger.java:153)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.log4j.Category.forcedLog(Category.java:316)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.log4j.Category.log(Category.java:550)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at simphony.util.messages.Log4jMessageListener.messageReceived(Log4jMessageListener.java:83)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at simphony.util.messages.MessageCenter.fireMessageEvent(MessageCenter.java:150)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at simphony.util.messages.MessageCenter.error(MessageCenter.java:132)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at repast.simphony.batch.LocalDriver.run(LocalDriver.java:162)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at repast.simphony.batch.LocalDriver.main(LocalDriver.java:318)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - Caused by: java.io.IOException: Spazio su disco insufficiente
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.writeToDestination(OutputStreamManager.java:250)
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	... 25 more
+INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 
+INFO  [pool-6-thread-1] 2026-05-23T02:27:56,775 LocalDonePoller - Polled C:\Users\fabir\AppData\Local\Temp\simphony_model_1779494572214 for DONE:  yes
+INFO  [SwingWorker-pool-3-thread-3] 2026-05-23T02:27:56,791 SessionsDriver - Run Time: 25,0209
+INFO  [SwingWorker-pool-3-thread-3] 2026-05-23T02:27:56,823 LocalSession - Finding output on localhost in C:\Users\fabir\AppData\Local\Temp\simphony_model_1779494572214
+INFO  [SwingWorker-pool-3-thread-3] 2026-05-23T02:27:56,830 SessionsDriver - Aggregating output into E:/projects/eclipse-workspace/Parkinson/output
+INFO  [SwingWorker-pool-3-thread-3] 2026-05-23T02:27:56,831 SessionsDriver - Get Output Time: 0,0007
+INFO  [SwingWorker-pool-3-thread-3] 2026-05-23T02:27:56,831 SessionsDriver - Finished. Elapsed Time: 25,0774

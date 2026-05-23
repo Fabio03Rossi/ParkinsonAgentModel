@@ -1,5 +1,5 @@
 <repast.simphony.data2.engine.DataSetDescriptor simphonyVersion="2.11.0">
-  <name>MicrogliaDataSet</name>
+  <name>NeuronDataSet</name>
   <type>AGGREGATE</type>
   <inclTick>true</inclTick>
   <inclBatchRun>false</inclBatchRun>
@@ -11,17 +11,26 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>731676136</hashCode>
+    <hashCode>1649822507</hashCode>
   </scheduleParams>
   <atEnd>false</atEnd>
   <methodDataSources class="linked-hash-map">
     <entry>
-      <string>Inflammation</string>
+      <string>MeanAlphaValue</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
-        <id>Inflammation</id>
-        <className>parkinson.Microglia</className>
-        <methodName>isInflammated</methodName>
+        <id>MeanAlphaValue</id>
+        <className>parkinson.Neuron</className>
+        <methodName>getAlphaValue</methodName>
         <aggType>MEAN</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>NeuronOverallHealth</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>NeuronOverallHealth</id>
+        <className>parkinson.Neuron</className>
+        <methodName>getHealth</methodName>
+        <aggType>SUM</aggType>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
   </methodDataSources>
