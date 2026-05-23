@@ -11,7 +11,7 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
 				<parameter name="cyto_microglia_threshold" displayName="Microglia Cytokine Activation Threshold" type="float" 
-						defaultValue="0.3" 
+						defaultValue="0.2" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
 											/>
@@ -36,7 +36,7 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
 				<parameter name="cyto_neuron_threshold" displayName="Neuron Cytokine Activation Threshold" type="float" 
-						defaultValue="0.1" 
+						defaultValue="0.2" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
 											/>
@@ -46,11 +46,7 @@
 						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
 											/>
 				<parameter name="cytokine_release_rate" displayName="Microglia Cytokine Release Rate" type="float" 
-<<<<<<< HEAD
 						defaultValue="3.0" 
-=======
-						defaultValue="5.0" 
->>>>>>> 9cd559ef9a762cdc6ee7f350fb12607d157c457b
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$FloatConverter"
 											/>

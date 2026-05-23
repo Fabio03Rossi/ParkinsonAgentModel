@@ -8,7 +8,7 @@ public class SubstanciaNigraState implements State {
 	private int degeneratedNeuronCount;
 	private int stressedNeuronCount;
 	private int inflammatedMicrogliaCount;
-	private int healthyNeuronCount;
+	private int actualDegenNeuron; // degen count
 	private double averageNeuronHealth;
 	private double currentGLP1dose;
 	
@@ -18,7 +18,7 @@ public class SubstanciaNigraState implements State {
 		this.stressedNeuronCount = str;
 		this.averageNeuronHealth = hea;
 		this.currentGLP1dose = dos;
-		this.healthyNeuronCount = neu;
+		this.actualDegenNeuron = neu;
 	}
 	
 	public void setDegeratedNeuron(int x) {
@@ -29,12 +29,12 @@ public class SubstanciaNigraState implements State {
 		return currentGLP1dose;
 	}
 	
-	public int getHealthyNeuronCount() {
-		return healthyNeuronCount;
+	public int getActualDegenNeuron() {
+		return actualDegenNeuron;
 	}
 	
-	public void setHealthyNeuronCount(int healthyNeuronCount) {
-		this.healthyNeuronCount = healthyNeuronCount;
+	public void setActualDegenNeuron(int healthyNeuronCount) {
+		this.actualDegenNeuron = healthyNeuronCount;
 	}
 	
 	public void setCurrentGLP1dose(double currentGLP1dose) {
@@ -72,7 +72,7 @@ public class SubstanciaNigraState implements State {
 	@Override
 	public int hashCode(){
       int result = degeneratedNeuronCount;
-      //result = result + 31 * inflammatedMicrogliaCount;
+      result = result + 31 * actualDegenNeuron;
       result = result + 31 * stressedNeuronCount;
       //result = 31 * Double.valueOf(averageNeuronHealth).hashCode();
       //result = result + 31 * Double.valueOf(currentGLP1dose).hashCode();
@@ -83,6 +83,7 @@ public class SubstanciaNigraState implements State {
 	public String toString(){
          return("Death Neuron: " + this.getDegeneratedNeuron()
          + ", Stressed Neuron: " + this.getStressedNeuron()
+         + ", Actual Degen Neuron: " + this.getActualDegenNeuron()
          //+ ", AvgNeuronHealth: " + this.getAverageNeuronHealth()
          //+ ", Inflammed Microglia: " + this.getInflammatedMicroglia()
          );

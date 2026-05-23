@@ -66,7 +66,7 @@ public abstract class LearningModel {
 				String xy = value.getDegeneratedNeuron() 
 						+ "," + value.getStressedNeuron() 
 						+ "," + value.getInflammatedMicroglia() 
-						+ "," + value.getHealthyNeuronCount() 
+						+ "," + value.getActualDegenNeuron() 
 						+ "," + value.getAverageNeuronHealth() 
 						+ "," + value.getCurrentGLP1dose();
 				writer.value(xy);

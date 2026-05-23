@@ -25,7 +25,7 @@ public class TreatmentModel extends LearningModel {
 
       }
       
-      return bestValue;
+      return bestValue == Double.NEGATIVE_INFINITY ? 0.0 : bestValue;
    }
    
 }

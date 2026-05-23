@@ -79,7 +79,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		ValueLayerDiffuser cytoDiffuser = new ValueLayerDiffuser(cytoLayer, 1.0, 1.0, false);
 		// Impostazioni diffuserLayer
 		cytoDiffuser.setDiffusionConst(diffusionConstant); 		// 1 = [0, 10, 0] gives [5, 0, 5].
-		cytoDiffuser.setEvaporationConst(diffusionEvaporation - 0.1); 	// 1 = no evaporation
+		cytoDiffuser.setEvaporationConst(diffusionEvaporation - 0.2); 	// 1 = no evaporation
 		cytoDiffuser.setMinValue(0f);
 		cytoDiffuser.setMaxValue(1.0f);
 		
