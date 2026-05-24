@@ -1,124 +1,666 @@
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:523)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at org.apache.logging.log4j.core.config.DefaultReliabilityStrategy.log(DefaultReliabilityStrategy.java:49)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at org.apache.logging.log4j.core.Logger.logMessage(Logger.java:153)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at org.apache.log4j.Category.forcedLog(Category.java:316)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at org.apache.log4j.Category.log(Category.java:550)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at simphony.util.messages.Log4jMessageListener.messageReceived(Log4jMessageListener.java:83)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at simphony.util.messages.MessageCenter.fireMessageEvent(MessageCenter.java:150)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at simphony.util.messages.MessageCenter.error(MessageCenter.java:132)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at repast.simphony.batch.LocalDriver.run(LocalDriver.java:162)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at repast.simphony.batch.LocalDriver.main(LocalDriver.java:318)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - Caused by: java.io.IOException: Spazio su disco insufficiente
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.writeToDestination(OutputStreamManager.java:250)
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	... 25 more
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - java.io.IOException: Spazio su disco insufficiente
-INFO  [Thread-2] 2026-05-23T02:27:50,834 LocalSession - 	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:234)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/sun.nio.cs.StreamEncoder.implClose(StreamEncoder.java:340)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/sun.nio.cs.StreamEncoder.close(StreamEncoder.java:169)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.io.OutputStreamWriter.close(OutputStreamWriter.java:252)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.io.BufferedWriter.close(BufferedWriter.java:269)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.ProcessOutputWriter.captureOutput(ProcessOutputWriter.java:48)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.LocalDriver$ProcessRunner.call(LocalDriver.java:72)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.LocalDriver$ProcessRunner.call(LocalDriver.java:1)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.base/java.lang.Thread.run(Thread.java:840)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - ERROR [main] 02:27:50,834 LocalDriver - 
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - java.util.concurrent.ExecutionException: java.io.IOException: Spazio su disco insufficiente
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.util.concurrent.FutureTask.report(FutureTask.java:122) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.util.concurrent.FutureTask.get(FutureTask.java:191) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.LocalDriver.run(LocalDriver.java:159) ~[repast.simphony.distributed.batch.jar:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.LocalDriver.main(LocalDriver.java:318) ~[repast.simphony.distributed.batch.jar:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - Caused by: java.io.IOException: Spazio su disco insufficiente
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.io.FileOutputStream.writeBytes(Native Method) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.io.FileOutputStream.write(FileOutputStream.java:349) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:234) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at sun.nio.cs.StreamEncoder.implClose(StreamEncoder.java:340) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at sun.nio.cs.StreamEncoder.close(StreamEncoder.java:169) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.io.OutputStreamWriter.close(OutputStreamWriter.java:252) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.io.BufferedWriter.close(BufferedWriter.java:269) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.ProcessOutputWriter.captureOutput(ProcessOutputWriter.java:48) ~[repast.simphony.distributed.batch.jar:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.LocalDriver$ProcessRunner.call(LocalDriver.java:72) ~[repast.simphony.distributed.batch.jar:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at repast.simphony.batch.LocalDriver$ProcessRunner.call(LocalDriver.java:1) ~[repast.simphony.distributed.batch.jar:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at java.lang.Thread.run(Thread.java:840) ~[?:?]
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 2026-05-23 02:27:50,840 main ERROR Unable to write to stream debug.log for appender R org.apache.logging.log4j.core.appender.AppenderLoggingException: Error writing to stream debug.log
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.writeToDestination(OutputStreamManager.java:252)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.FileManager.writeToDestination(FileManager.java:277)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.rolling.RollingFileManager.writeToDestination(RollingFileManager.java:275)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.flushBuffer(OutputStreamManager.java:283)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.flush(OutputStreamManager.java:294)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.directEncodeEvent(AbstractOutputStreamAppender.java:217)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.tryAppend(AbstractOutputStreamAppender.java:208)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.append(AbstractOutputStreamAppender.java:199)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.appender.RollingFileAppender.append(RollingFileAppender.java:312)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:134)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:125)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:89)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:675)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:633)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:616)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:523)
-INFO  [Thread-2] 2026-05-23T02:27:50,840 LocalSession - 	at org.apache.logging.log4j.core.config.DefaultReliabilityStrategy.log(DefaultReliabilityStrategy.java:49)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.Logger.logMessage(Logger.java:153)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.log4j.Category.forcedLog(Category.java:316)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.log4j.Category.log(Category.java:550)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at simphony.util.messages.Log4jMessageListener.messageReceived(Log4jMessageListener.java:83)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at simphony.util.messages.MessageCenter.fireMessageEvent(MessageCenter.java:150)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at simphony.util.messages.MessageCenter.error(MessageCenter.java:132)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at repast.simphony.batch.LocalDriver.run(LocalDriver.java:162)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at repast.simphony.batch.LocalDriver.main(LocalDriver.java:318)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - Caused by: java.io.IOException: Spazio su disco insufficiente
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.writeToDestination(OutputStreamManager.java:250)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	... 25 more
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 2026-05-23 02:27:50,842 main ERROR An exception occurred processing Appender R org.apache.logging.log4j.core.appender.AppenderLoggingException: Error writing to stream debug.log
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.writeToDestination(OutputStreamManager.java:252)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.FileManager.writeToDestination(FileManager.java:277)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.rolling.RollingFileManager.writeToDestination(RollingFileManager.java:275)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.flushBuffer(OutputStreamManager.java:283)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.flush(OutputStreamManager.java:294)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.directEncodeEvent(AbstractOutputStreamAppender.java:217)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.tryAppend(AbstractOutputStreamAppender.java:208)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.AbstractOutputStreamAppender.append(AbstractOutputStreamAppender.java:199)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.RollingFileAppender.append(RollingFileAppender.java:312)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:161)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:134)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:125)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:89)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:675)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:633)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:616)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:523)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.config.DefaultReliabilityStrategy.log(DefaultReliabilityStrategy.java:49)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.Logger.logMessage(Logger.java:153)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.log4j.Category.forcedLog(Category.java:316)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.log4j.Category.log(Category.java:550)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at simphony.util.messages.Log4jMessageListener.messageReceived(Log4jMessageListener.java:83)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at simphony.util.messages.MessageCenter.fireMessageEvent(MessageCenter.java:150)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at simphony.util.messages.MessageCenter.error(MessageCenter.java:132)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at repast.simphony.batch.LocalDriver.run(LocalDriver.java:162)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at repast.simphony.batch.LocalDriver.main(LocalDriver.java:318)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - Caused by: java.io.IOException: Spazio su disco insufficiente
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	at org.apache.logging.log4j.core.appender.OutputStreamManager.writeToDestination(OutputStreamManager.java:250)
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 	... 25 more
-INFO  [Thread-2] 2026-05-23T02:27:50,842 LocalSession - 
-INFO  [pool-6-thread-1] 2026-05-23T02:27:56,775 LocalDonePoller - Polled C:\Users\fabir\AppData\Local\Temp\simphony_model_1779494572214 for DONE:  yes
-INFO  [SwingWorker-pool-3-thread-3] 2026-05-23T02:27:56,791 SessionsDriver - Run Time: 25,0209
-INFO  [SwingWorker-pool-3-thread-3] 2026-05-23T02:27:56,823 LocalSession - Finding output on localhost in C:\Users\fabir\AppData\Local\Temp\simphony_model_1779494572214
-INFO  [SwingWorker-pool-3-thread-3] 2026-05-23T02:27:56,830 SessionsDriver - Aggregating output into E:/projects/eclipse-workspace/Parkinson/output
-INFO  [SwingWorker-pool-3-thread-3] 2026-05-23T02:27:56,831 SessionsDriver - Get Output Time: 0,0007
-INFO  [SwingWorker-pool-3-thread-3] 2026-05-23T02:27:56,831 SessionsDriver - Finished. Elapsed Time: 25,0774
+INFO  [Thread-0] 2026-05-25T00:37:07,428 LocalSession - -0.2617306025221792
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.266491012281593
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.2651156421024817
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - Dosaggio 0.536749296875755
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - Dosaggio 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - Valore CYTO_RELEASE_RATE 3.4102324519141174
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - Valore DEGENERATION_RATE 0.6820464903828235
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.14661757358209915
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.14661757358209915
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - toxic a: 0.004053627089700187
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,70 | doseCost: -0,021 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,105 | TOTAL: -0,161
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.27008903866690886
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.2717234139597933
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.26069568571251756
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.2695741628753205
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.2748021868080612
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.2720735940037122
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.2725657007396083
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.2739931247266604
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.2617306025221792
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.266491012281593
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - -0.2651156421024817
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - Dosaggio 0.5938870429692408
+INFO  [Thread-0] 2026-05-25T00:37:07,430 LocalSession - Dosaggio 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - Valore CYTO_RELEASE_RATE 3.6344837394814884
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - Valore DEGENERATION_RATE 0.7268967478962977
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.13757112241803918
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.13757112241803918
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - toxic a: 0.0035316020022314264
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,20 | doseCost: -0,006 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,030 | TOTAL: -0,221
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - -0.27008903866690886
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - -0.2717234139597933
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - -0.2695741628753205
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - -0.2748021868080612
+INFO  [Thread-0] 2026-05-25T00:37:07,432 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - -0.2720735940037122
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - -0.2725657007396083
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - -0.2739931247266604
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - -0.2617306025221792
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - -0.266491012281593
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - -0.2651156421024817
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - Dosaggio 0.4560265779300065
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - Dosaggio 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - Valore CYTO_RELEASE_RATE 3.436060724943879
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - Valore DEGENERATION_RATE 0.6872121449887758
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.1455154746890415
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.1455154746890415
+INFO  [Thread-0] 2026-05-25T00:37:07,433 LocalSession - toxic a: 0.0039834261500950215
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,80 | doseCost: -0,024 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,120 | TOTAL: -0,149
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - -0.27008903866690886
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - -0.2717234139597933
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - -0.2695741628753205
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - -0.2748021868080612
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - -0.2720735940037122
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - -0.2725657007396083
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - -0.2739931247266604
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - -0.2740552319808284
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - -0.266491012281593
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - -0.2651156421024817
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - Dosaggio 0.5764172756545043
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - Dosaggio 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - Valore CYTO_RELEASE_RATE 3.2361696260479667
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - Valore DEGENERATION_RATE 0.6472339252095933
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.15450364635588776
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.15450364635588776
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - toxic a: 0.00462000711085214
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 1,00 | doseCost: -0,030 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,150 | TOTAL: -0,125
+INFO  [Thread-0] 2026-05-25T00:37:07,435 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - -0.27008903866690886
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - -0.2717234139597933
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - -0.2695741628753205
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - -0.2748021868080612
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - -0.2720735940037122
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - -0.2725657007396083
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - -0.2739931247266604
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - -0.2740552319808284
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - -0.266491012281593
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - -0.27501287277823105
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - Dosaggio 0.7246712291754278
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - Dosaggio 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - Valore CYTO_RELEASE_RATE 3.164559352638076
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - Valore DEGENERATION_RATE 0.6329118705276152
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.157999882995958
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.157999882995958
+INFO  [Thread-0] 2026-05-25T00:37:07,437 LocalSession - toxic a: 0.0049123935808358075
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,90 | doseCost: -0,027 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,135 | TOTAL: -0,137
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - -0.27008903866690886
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - -0.2717234139597933
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - -0.2695741628753205
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - -0.2748021868080612
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - -0.2720735940037122
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - -0.2725657007396083
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - -0.2739931247266604
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - -0.2740552319808284
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - -0.27757126344909966
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - -0.27501287277823105
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - Dosaggio 0.7860362989640282
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - Dosaggio 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - Valore CYTO_RELEASE_RATE 3.378591416275889
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - Valore DEGENERATION_RATE 0.6757182832551778
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.14799067002949834
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.14799067002949834
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - toxic a: 0.004143946561110589
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,30 | doseCost: -0,009 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,045 | TOTAL: -0,209
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,440 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - -0.27008903866690886
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - -0.2717234139597933
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - -0.2748021868080612
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - -0.2720735940037122
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - -0.2725657007396083
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - -0.2739931247266604
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - -0.2740552319808284
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - -0.27757126344909966
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - -0.27501287277823105
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - Dosaggio 0.6159235943266183
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - Dosaggio 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - Valore CYTO_RELEASE_RATE 3.7404922889450627
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - Valore DEGENERATION_RATE 0.7480984577890125
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.13367224654581403
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.13367224654581403
+INFO  [Thread-0] 2026-05-25T00:37:07,441 LocalSession - toxic a: 0.0033403491965028993
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,00 | doseCost: -0,000 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,000 | TOTAL: -0,245
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - -0.2717234139597933
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - -0.2748021868080612
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - -0.2720735940037122
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - -0.2725657007396083
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - -0.2739931247266604
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - -0.2740552319808284
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - -0.27757126344909966
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - -0.27501287277823105
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - Dosaggio 0.4003503363123019
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - Dosaggio 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - Valore CYTO_RELEASE_RATE 3.9723949561485843
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - Valore DEGENERATION_RATE 0.7944789912297169
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.12586865429296415
+INFO  [Thread-0] 2026-05-25T00:37:07,444 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.12586865429296415
+INFO  [Thread-0] 2026-05-25T00:37:07,445 LocalSession - toxic a: 0.003007029557930258
+INFO  [Thread-0] 2026-05-25T00:37:07,445 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,445 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,445 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,445 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,10 | doseCost: -0,003 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,015 | TOTAL: -0,233
+INFO  [Thread-0] 2026-05-25T00:37:07,445 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - -0.2923255346589051
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - -0.2748021868080612
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - -0.2720735940037122
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - -0.2725657007396083
+INFO  [Thread-0] 2026-05-25T00:37:07,446 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - -0.2739931247266604
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - -0.2740552319808284
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - -0.27757126344909966
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - -0.27501287277823105
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - Dosaggio 0.2952277186029962
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - Dosaggio 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - Valore CYTO_RELEASE_RATE 3.8093962447731187
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - Valore DEGENERATION_RATE 0.7618792489546238
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.13125439710731898
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.13125439710731898
+INFO  [Thread-0] 2026-05-25T00:37:07,447 LocalSession - toxic a: 0.0032304551226527665
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,50 | doseCost: -0,015 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,075 | TOTAL: -0,185
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - -0.2923255346589051
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,448 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.2748021868080612
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.28788511612819123
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.2725657007396083
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.2739931247266604
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.2740552319808284
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.27757126344909966
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.27501287277823105
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - Dosaggio 0.3668980170919475
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - Dosaggio 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - Valore CYTO_RELEASE_RATE 3.6482575055551285
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - Valore DEGENERATION_RATE 0.7296515011110257
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.13705173132358137
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.13705173132358137
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - toxic a: 0.0035050638115093563
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,60 | doseCost: -0,018 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,090 | TOTAL: -0,173
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.2923255346589051
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.2748021868080612
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.28788511612819123
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.28717552760317994
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.2739931247266604
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.2740552319808284
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - -0.27757126344909966
+INFO  [Thread-0] 2026-05-25T00:37:07,449 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - -0.27501287277823105
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - Dosaggio 0.4484837111097659
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - Dosaggio 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - Valore CYTO_RELEASE_RATE 3.497686148703119
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - Valore DEGENERATION_RATE 0.6995372297406238
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.14295165037491195
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.14295165037491195
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - toxic a: 0.0038276055590606064
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,70 | doseCost: -0,021 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,105 | TOTAL: -0,161
+INFO  [Thread-0] 2026-05-25T00:37:07,450 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - -0.2923255346589051
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - -0.2748021868080612
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - -0.28788511612819123
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - -0.28717552760317994
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - -0.2873919031568131
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - -0.2740552319808284
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - -0.27757126344909966
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - -0.27501287277823105
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - Dosaggio 0.5365144122213479
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - Dosaggio 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - Valore CYTO_RELEASE_RATE 3.360659411009051
+INFO  [Thread-0] 2026-05-25T00:37:07,451 LocalSession - Valore DEGENERATION_RATE 0.6721318822018102
+INFO  [Thread-0] 2026-05-25T00:37:07,452 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.14878032740022698
+INFO  [Thread-0] 2026-05-25T00:37:07,452 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.14878032740022698
+INFO  [Thread-0] 2026-05-25T00:37:07,452 LocalSession - toxic a: 0.004197375222926755
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,80 | doseCost: -0,024 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,120 | TOTAL: -0,149
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - -0.2923255346589051
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - -0.2748021868080612
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - -0.28788511612819123
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - -0.28717552760317994
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - -0.2873919031568131
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - -0.28625661514489104
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - -0.27757126344909966
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,453 LocalSession - -0.27501287277823105
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - Dosaggio 0.6287343679438762
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - Dosaggio 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - Valore CYTO_RELEASE_RATE 3.478499858678906
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - Valore DEGENERATION_RATE 0.6956999717357812
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.14374012584852447
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.14374012584852447
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - toxic a: 0.0038744447190445378
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,40 | doseCost: -0,012 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,060 | TOTAL: -0,197
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - -0.2923255346589051
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - -0.2917831971980451
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - -0.28788511612819123
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - -0.28717552760317994
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - -0.2873919031568131
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - -0.28625661514489104
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - -0.27757126344909966
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - -0.27501287277823105
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - Dosaggio 0.5486773391635195
+INFO  [Thread-0] 2026-05-25T00:37:07,454 LocalSession - Dosaggio 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,455 LocalSession - Valore CYTO_RELEASE_RATE 3.2583336953338575
+INFO  [Thread-0] 2026-05-25T00:37:07,455 LocalSession - Valore DEGENERATION_RATE 0.6516667390667715
+INFO  [Thread-0] 2026-05-25T00:37:07,455 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.15345267066004092
+INFO  [Thread-0] 2026-05-25T00:37:07,455 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.15345267066004092
+INFO  [Thread-0] 2026-05-25T00:37:07,455 LocalSession - toxic a: 0.004537450477667813
+INFO  [Thread-0] 2026-05-25T00:37:07,455 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,455 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,455 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 1,00 | doseCost: -0,030 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,150 | TOTAL: -0,125
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - -0.2923255346589051
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - -0.2917831971980451
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - -0.28788511612819123
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - -0.28717552760317994
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - -0.2873919031568131
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - -0.28625661514489104
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - -0.27757126344909966
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - -0.28481113114722295
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - Dosaggio 0.7066402704562876
+INFO  [Thread-0] 2026-05-25T00:37:07,456 LocalSession - Dosaggio 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,457 LocalSession - Valore CYTO_RELEASE_RATE 3.177800959136397
+INFO  [Thread-0] 2026-05-25T00:37:07,457 LocalSession - Valore DEGENERATION_RATE 0.6355601918272794
+INFO  [Thread-0] 2026-05-25T00:37:07,457 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.15734151190717155
+INFO  [Thread-0] 2026-05-25T00:37:07,457 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.15734151190717155
+INFO  [Thread-0] 2026-05-25T00:37:07,457 LocalSession - toxic a: 0.004855155795156951
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,90 | doseCost: -0,027 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,135 | TOTAL: -0,137
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - -0.2923255346589051
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - -0.2802113095005537
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - -0.2917831971980451
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - -0.28788511612819123
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - -0.28717552760317994
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - -0.2873919031568131
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - -0.28625661514489104
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - -0.28854071210493126
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - -0.28481113114722295
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - Dosaggio 0.774316175796587
+INFO  [Thread-0] 2026-05-25T00:37:07,458 LocalSession - Dosaggio 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - Valore CYTO_RELEASE_RATE 3.440732757494083
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - Valore DEGENERATION_RATE 0.6881465514988166
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.14531788508176238
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.14531788508176238
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - toxic a: 0.0039710499443005726
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,20 | doseCost: -0,006 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,030 | TOTAL: -0,221
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - -0.2923255346589051
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - -0.29953177705070944
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,459 LocalSession - -0.2917831971980451
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - -0.28788511612819123
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - -0.28717552760317994
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - -0.2873919031568131
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - -0.28625661514489104
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - -0.28854071210493126
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - -0.28481113114722295
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - Dosaggio 0.5733055142677815
+INFO  [Thread-0] 2026-05-25T00:37:07,460 LocalSession - Dosaggio 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,461 LocalSession - Valore CYTO_RELEASE_RATE 3.2386293741702223
+INFO  [Thread-0] 2026-05-25T00:37:07,461 LocalSession - Valore DEGENERATION_RATE 0.6477258748340444
+INFO  [Thread-0] 2026-05-25T00:37:07,461 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.15438630040175155
+INFO  [Thread-0] 2026-05-25T00:37:07,461 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.15438630040175155
+INFO  [Thread-0] 2026-05-25T00:37:07,461 LocalSession - toxic a: 0.004610671921094658
+INFO  [Thread-0] 2026-05-25T00:37:07,461 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,461 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,461 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,461 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 1,00 | doseCost: -0,030 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,150 | TOTAL: -0,125
+INFO  [Thread-0] 2026-05-25T00:37:07,461 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.2923255346589051
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.29953177705070944
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.2917831971980451
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.28788511612819123
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.28717552760317994
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.2873919031568131
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.28625661514489104
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.28854071210493126
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.2945114069325249
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - Dosaggio 0.722648584274058
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - Dosaggio 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - Valore CYTO_RELEASE_RATE 3.2062448867674354
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - Valore DEGENERATION_RATE 0.6412489773534871
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.1559456701246189
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.1559456701246189
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - toxic a: 0.004737201662641215
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,80 | doseCost: -0,024 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,120 | TOTAL: -0,149
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.2923255346589051
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.29953177705070944
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.2917831971980451
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.28788511612819123
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,463 LocalSession - -0.28717552760317994
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - -0.2873919031568131
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - -0.2983359844773131
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - -0.28854071210493126
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - -0.2945114069325249
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - Dosaggio 0.7497215797781377
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - Dosaggio 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - Valore CYTO_RELEASE_RATE 3.2700043297164685
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - Valore DEGENERATION_RATE 0.6540008659432937
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.15290499859794804
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.15290499859794804
+INFO  [Thread-0] 2026-05-25T00:37:07,464 LocalSession - toxic a: 0.004495352304911884
+INFO  [Thread-0] 2026-05-25T00:37:07,465 LocalSession - NEURONI MORTI: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,465 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-0] 2026-05-25T00:37:07,465 LocalSession - MICROGLIE MORTI: 29
+INFO  [Thread-0] 2026-05-25T00:37:07,465 LocalSession - [REWARD BREAKDOWN] Run 101 | Dose: 0,60 | doseCost: -0,018 | deathPenalty: -0,058 | trendPenalty: -0,000 | doseBonus: 0,090 | TOTAL: -0,173
+INFO  [Thread-0] 2026-05-25T00:37:07,465 LocalSession - EPISODE WON at step: 1199.0
+INFO  [Thread-0] 2026-05-25T00:37:07,465 LocalSession - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2
+INFO  [Thread-0] 2026-05-25T00:37:07,465 LocalSession - Map has been saved.
+INFO  [Thread-0] 2026-05-25T00:37:07,475 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.0
+INFO  [Thread-0] 2026-05-25T00:37:07,475 LocalSession - -0.29190427731249785
+INFO  [Thread-0] 2026-05-25T00:37:07,475 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.1
+INFO  [Thread-0] 2026-05-25T00:37:07,475 LocalSession - -0.2923255346589051
+INFO  [Thread-0] 2026-05-25T00:37:07,475 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.2
+INFO  [Thread-0] 2026-05-25T00:37:07,475 LocalSession - -0.29953177705070944
+INFO  [Thread-0] 2026-05-25T00:37:07,475 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.30000000000000004
+INFO  [Thread-0] 2026-05-25T00:37:07,475 LocalSession - -0.2878042276981802
+INFO  [Thread-0] 2026-05-25T00:37:07,475 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.4
+INFO  [Thread-0] 2026-05-25T00:37:07,475 LocalSession - -0.2917831971980451
+INFO  [Thread-0] 2026-05-25T00:37:07,475 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.5
+INFO  [Thread-0] 2026-05-25T00:37:07,475 LocalSession - -0.28788511612819123
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - 0.19836074380188412
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.7000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - -0.2873919031568131
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.8
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - -0.2983359844773131
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 0.9
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - -0.28854071210493126
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - - Death Neuron: 29, Stressed Neuron: 0, Actual Degen Neuron: 2 1.0
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - -0.2945114069325249
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - Dosaggio 0.6973190268557896
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - Dosaggio 0.6000000000000001
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - Valore CYTO_RELEASE_RATE 3.3139402671565223
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - Valore DEGENERATION_RATE 0.6627880534313044
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - Valore CYTO_NEURON_THRESHOLD 0.15087779716669375
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - Valore CYTO_MICROGLIA_THRESHOLD 0.15087779716669375
+INFO  [Thread-0] 2026-05-25T00:37:07,476 LocalSession - toxic a: 0.004344811534504692
+INFO  [pool-4-thread-1] 2026-05-25T00:37:39,103 LocalDonePoller - Polled C:\Users\fabir\AppData\Local\Temp\simphony_model_1779662010685 for DONE:  yes
+INFO  [SwingWorker-pool-3-thread-1] 2026-05-25T00:37:39,105 SessionsDriver - Run Time: 4,0310
+INFO  [SwingWorker-pool-3-thread-1] 2026-05-25T00:37:39,264 LocalSession - Finding output on localhost in C:\Users\fabir\AppData\Local\Temp\simphony_model_1779662010685
+INFO  [SwingWorker-pool-3-thread-1] 2026-05-25T00:37:39,281 SessionsDriver - Aggregating output into E:/projects/eclipse-workspace/Parkinson/output
+INFO  [SwingWorker-pool-3-thread-1] 2026-05-25T00:37:39,282 SessionsDriver - Get Output Time: 0,0029
+INFO  [SwingWorker-pool-3-thread-1] 2026-05-25T00:37:39,282 SessionsDriver - Finished. Elapsed Time: 4,1439

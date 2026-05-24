@@ -26,20 +26,6 @@ import com.google.gson.stream.JsonWriter;
 public abstract class LearningModel {
 	
    public final Gson gson = new GsonBuilder()
-		   /*
-		   .registerTypeAdapter(new TypeToken<HashMap<StateAction, Double>>(){}.getType(), new JsonDeserializer<HashMap<StateAction, Double>>() {
-				    @Override
-				    public HashMap<StateAction, Double> deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-				        HashMap<StateAction, Double> map = new HashMap<>();
-				        for (JsonElement element : json.getAsJsonArray()) {
-				            JsonArray entry = element.getAsJsonArray();
-				            StateAction key = context.deserialize(entry.get(0), StateAction.class);
-				            Double value = context.deserialize(entry.get(1), Double.class);
-				            map.put(key, value); 
-				        }
-				        return map;
-				    }
-			    })*/
 		   .registerTypeAdapter(State.class, new TypeAdapter<SubstanciaNigraState>() {
 			@Override
 			public SubstanciaNigraState read(JsonReader reader) throws IOException {
@@ -135,7 +121,7 @@ public abstract class LearningModel {
    
 	
 	public void save(String path) {
-       var f = new File(path);
+       var f = new File(Treatment.PATH + path);
        try {
            f.createNewFile();
     	    FileWriter f2 = new FileWriter(f, false);
@@ -148,7 +134,7 @@ public abstract class LearningModel {
    }
 
    private HashMap<StateAction, Double> load(String path) {
-	   File f = new File(path);
+	   File f = new File(Treatment.PATH + path);
        if (!f.exists()) return null;
        
        String data = "";

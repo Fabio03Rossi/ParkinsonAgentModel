@@ -29,6 +29,8 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 public class Treatment extends PassiveAgent {
+	public static final String PATH = "E:\\projects\\eclipse-workspace\\Parkinson\\tabOutput\\";
+	
 	protected double resistence;
 	protected Policy policy;
 	
@@ -272,7 +274,7 @@ public class Treatment extends PassiveAgent {
 	
 	private void logEpisodeData() {
 		var path = "rl_convergence.csv";
-		var f = new File(path);
+		var f = new File(PATH + path);
 		try {
 			f.createNewFile();
     	    FileWriter f2 = new FileWriter(f, true);
