@@ -1,5 +1,6 @@
 package parkinson.agent.passive;
 
+import parkinson.Environment;
 import repast.simphony.context.Context;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;

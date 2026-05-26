@@ -110,7 +110,7 @@ public class GlialCell extends Agent{
 		
 		this.cytokineReleaseRate = this.policy.getParam(Policy.StatType.CYTO_RELEASE_RATE).getEffectiveValue();
 		this.activationThreshold = this.policy.getParam(Policy.StatType.CYTO_MICROGLIA_THRESHOLD).getEffectiveValue();
-		this.infiammatoryState = this.policy.isNLRB3inibitor();
+		this.infiammatoryState = false;
 		
 		this.cytokineLayer = (GridValueLayer) context.getValueLayer("cytoLayer");
 

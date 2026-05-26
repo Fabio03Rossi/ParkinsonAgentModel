@@ -1,14 +1,7 @@
 package parkinson.agent.passive;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
+import java.util.stream.Stream;
 
 import org.apache.commons.lang3.RandomUtils;
 
@@ -28,17 +21,7 @@ import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.environment.RunState;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.essentials.RepastEssentials;
-import repast.simphony.parameter.Parameters;
-import repast.simphony.query.space.continuous.ContinuousWithin;
-import repast.simphony.space.continuous.ContinuousSpace;
-import repast.simphony.space.grid.Grid;
-import repast.simphony.util.ContextUtils;
 import repast.simphony.util.collections.IndexedIterable;
-import repast.simphony.valueLayer.GridValueLayer;
-import repast.simphony.valueLayer.ValueLayerDiffuser;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
 /*
  * TODO
@@ -66,6 +49,15 @@ public class Treatment extends PassiveAgent {
 	
 	
 	// Learning Model
+	final double DEATH_WEIGHT = -0.3;
+	final double DEATH_WEIGHT_TOTAL = -0.4;
+	final double STRESSED_WEIGHT = -0.2;  
+	final double HEALTHY_WEIGHT = 1.3;
+	final double DOSAGE_WEIGHT = -0.3;
+	final double TREND_WEIGHT = -2.0;     // Ridurre aggressività
+	final double IMPROVEMENT_BONUS = 1.0; // Normalizzare
+	final double DOSE_BONUS = 0.8; // Normalizzare
+	
 	private static final int MAX_DOSE = 10;
 	private final int NUM_ACTIONS = MAX_DOSE;
 	private final int TOTAL_NEURONS;
@@ -139,15 +131,9 @@ public class Treatment extends PassiveAgent {
 	public void stepQAction() {
 		// initial state fire up  
 		if(this.currentState.getDegeneratedNeuron() >= 2 
-		&& this.currentState.getStressedNeuron() >= 1 
-		//&& this.currentState.getInflammatedMicroglia() == 0) 
-	)	{
-			modelActive = true;
-		}
-		
-		if(modelActive
+				&& this.currentState.getStressedNeuron() >= 1 
+				//&& this.currentState.getInflammatedMicroglia() == 0)
 		) {
-
 			lastAction = (Dosage) decideAction();
 			this.currentState.setCurrentGLP1dose(lastAction.getDosage());
 			somministrateGLP1(lastAction.getDosage());
@@ -231,14 +217,15 @@ public class Treatment extends PassiveAgent {
 
 		this.currentState.setAverageNeuronHealth(avgNeuronHealth / healthyCount);
 		this.currentState.setActualDegenNeuron(degenCount);
-		IndexedIterable<Object> currentMicroglias = context.getObjects(Microglia.class);
 		
-		for(Object s : currentMicroglias) {
-			Microglia d = (Microglia) s;
-			
-			if(d.isInflammated()) 
-				this.currentState.setInflammatedMicroglia(this.currentState.getInflammatedMicroglia()+1);
-		}
+		@SuppressWarnings("unchecked")
+		Stream<Microglia> stream = context.getObjectsAsStream(Microglia.class)
+			.map(Microglia.class::cast);
+		
+		int count = (int) stream.filter(m -> m.isInflammated()).count();
+		
+		this.currentState.setInflammatedMicroglia(this.currentState.getInflammatedMicroglia() + count);
+
 		
 		System.out.println("NEURONI MORTI: " + degenCount);
 		System.out.println("NEURONI STRESSATI: " + this.currentState.getStressedNeuron());
@@ -264,7 +251,7 @@ public class Treatment extends PassiveAgent {
 		if (RandomUtils.nextDouble() < this.epsilonProb) {
 	        return possibleActions.get(RandomUtils.nextInt(0, possibleActions.size()));
 	    }
-		
+	
 		// Per ogni azione possibile
 		for (Action myAction : possibleActions) {
 			System.out.println("- " + this.currentState.toString() + " " + myAction.toString());
@@ -296,15 +283,6 @@ public class Treatment extends PassiveAgent {
 	}
 	
 	public double calculateReward(SubstanciaNigraState oldState) {
-		final double DEATH_WEIGHT = -0.3;
-		final double DEATH_WEIGHT_TOTAL = -0.4;
-		final double STRESSED_WEIGHT = -0.2;  
-		final double HEALTHY_WEIGHT = 1.3;
-		final double DOSAGE_WEIGHT = -0.3;
-		final double TREND_WEIGHT = -2.0;     // Ridurre aggressività
-		final double IMPROVEMENT_BONUS = 1.0; // Normalizzare
-		final double DOSE_BONUS = 0.8; // Normalizzare
-		
 		double doseCost = DOSAGE_WEIGHT * (this.currentState.getCurrentGLP1dose() / MAX_DOSE);
 		double deathPenalty = DEATH_WEIGHT * (this.currentState.getActualDegenNeuron() / (double) TOTAL_NEURONS);
 		double deathPenalty2 = DEATH_WEIGHT_TOTAL * (this.currentState.getDegeneratedNeuron() / (double) TOTAL_NEURONS);
@@ -382,9 +360,7 @@ public class Treatment extends PassiveAgent {
 	}
 	
 	public int getBatchRunNumber() {
-	    if(RunState.getInstance().getRunInfo().isBatch()) {
-	    	return RunState.getInstance().getRunInfo().getRunNumber();
-	    }
-	    return 1; 
+		var info = RunState.getInstance().getRunInfo();
+	    return info.isBatch() ? info.getRunNumber() : 1;
 	}
 }

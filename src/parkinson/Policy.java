@@ -12,11 +12,7 @@ import parkinson.utils.HealthDisease;
   */
 public class Policy {
 	private static Policy instance = null;
-	private final Map<StatType, ModifiableParameter> params = new EnumMap<>(StatType.class);
-	
-	// Treatment
-	protected boolean NLRB3inibitor;	 // Utilizzata per indicare se nel sistema è presente una quantità 
-										 //sufficiente di inibitore per bloccare lo stato infiammatorio delle cellule gliali	
+	private final Map<StatType, ModifiableParameter> params = new EnumMap<>(StatType.class);	
 	
 	private Policy(int age, boolean gender, HealthDisease healthAlteration, double cytoActTre, double cytoRelease, double alphaTre, double cytoTre, double degenRate) {
 		params.put(StatType.CYTO_MICROGLIA_THRESHOLD, new ModifiableParameter(cytoActTre));
@@ -25,7 +21,6 @@ public class Policy {
 		params.put(StatType.CYTO_NEURON_THRESHOLD, new ModifiableParameter(cytoTre));
 		params.put(StatType.DEGENERATION_RATE, new ModifiableParameter(degenRate));
 		params.put(StatType.EVAPORATION_RATE, new ModifiableParameter(1));
-		NLRB3inibitor = false;
 	}
 	
 	public synchronized static Policy createInstance(
@@ -51,14 +46,6 @@ public class Policy {
 
 	public ModifiableParameter getParam(StatType type) {
 		return this.params.get(type);
-	}
-	
-	public boolean isNLRB3inibitor() {
-		return NLRB3inibitor;
-	}
-	
-	public void setNLRB3inibitor(boolean nLRB3inibitor) {
-		NLRB3inibitor = nLRB3inibitor;
 	}
 	
 	public enum StatType {

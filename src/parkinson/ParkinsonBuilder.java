@@ -2,7 +2,6 @@ package parkinson;
 
 import parkinson.agent.active.Microglia;
 import parkinson.agent.active.Neuron;
-import parkinson.agent.passive.Environment;
 import parkinson.agent.passive.Treatment;
 import repast.simphony.context.Context;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactory;
@@ -111,7 +110,7 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 			new Microglia(context);
 		}
 		
-		var t = new Treatment(context);
+		new Treatment(context);
 		
 		RunEnvironment.getInstance().endAt(1200);
 		

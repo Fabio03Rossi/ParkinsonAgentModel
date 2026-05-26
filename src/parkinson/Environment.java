@@ -1,9 +1,6 @@
-package parkinson.agent.passive;
+package parkinson;
 
-import parkinson.Policy;
-import repast.simphony.engine.schedule.Schedule;
 import repast.simphony.engine.schedule.ScheduledMethod;
-import repast.simphony.util.ContextUtils;
 import repast.simphony.valueLayer.ValueLayerDiffuser;
 
 public class Environment {
