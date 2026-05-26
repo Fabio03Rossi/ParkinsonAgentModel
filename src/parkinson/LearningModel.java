@@ -104,7 +104,7 @@ public abstract class LearningModel {
    public void updateValue(StateAction stateAction, State nextState, double reward) {
       double currentValue = actionValues.getOrDefault(stateAction, 0.0);
       double newValue = currentValue + learningRate * (reward + discountFactor * getMaxFutureValue(nextState) - currentValue);
-      System.out.println(nextState.toString());
+      //System.out.println(nextState.toString());
       actionValues.put(stateAction, newValue);
       //printValues();
    }
@@ -151,7 +151,7 @@ public abstract class LearningModel {
 		  }
 		Type typeObject = new TypeToken<HashMap<StateAction, Double>>(){}.getType();
 		var result = gson.fromJson(data, typeObject);
-		System.out.println("JSON: " + result);
+		//System.out.println("JSON: " + result);
 	   return (HashMap<StateAction, Double>) result;
    }
 	

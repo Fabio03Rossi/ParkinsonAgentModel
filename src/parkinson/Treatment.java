@@ -247,7 +247,7 @@ public class Treatment extends PassiveAgent {
 			if(isTerminal) {
 				reward += 5.0;  // BONUS per early termination
 				double currentStep = RepastEssentials.GetTickCount();
-				System.out.println("EPISODE WON at step: " + currentStep);
+				//System.out.println("EPISODE WON at step: " + currentStep);
 			}
 
 			rlModel.updateValue(new StateAction(oldState, lastAction), currentState, reward);
@@ -282,11 +282,12 @@ public class Treatment extends PassiveAgent {
 		try {
 			f.createNewFile();
     	    FileWriter f2 = new FileWriter(f, true);
-    	    f2.write(this.getBatchRunNumber() + "," + 
+    	    f2.write(RunEnvironment.getInstance().getParameters().getInteger("randomSeed") + "," + 
     	    		this.cumulativeReward + "," + 
-    	    		this.currentState.getActualDegenNeuron() + "," + 
-    	    		(this.cumulativeDosage / 1200) + "," + 
-    	    		this.epsilonProb 
+    	    		this.currentState.getDegeneratedNeuron() + "," + 
+    	    		(this.cumulativeDosage / RepastEssentials.GetTickCount()) + "," + 
+    	    		this.epsilonProb + "," +
+    	    		RepastEssentials.GetTickCount()
     	    		+ "\n");
     	    f2.close();
 		} catch (IOException e) {
@@ -338,13 +339,13 @@ public class Treatment extends PassiveAgent {
 		
 		// DEBUG: Log della composizione del reward
 		if (currentState.getCurrentGLP1dose() > 0 || degenCount > 0) {
-			System.out.println("[REWARD BREAKDOWN] Run " + getBatchRunNumber() 
+			/*System.out.println("[REWARD BREAKDOWN] Run " + getBatchRunNumber() 
 				+ " | Dose: " + String.format("%.2f", currentState.getCurrentGLP1dose())
 				+ " | doseCost: " + String.format("%.3f", doseCost)
 				+ " | deathPenalty: " + String.format("%.3f", deathPenalty)
 				+ " | trendPenalty: " + String.format("%.3f", trendPenalty)
 				+ " | doseBonus: " + String.format("%.3f", doseBonus)
-				+ " | TOTAL: " + String.format("%.3f", totalReward));
+				+ " | TOTAL: " + String.format("%.3f", totalReward));*/
 		}
 		
 		return totalReward;
@@ -366,14 +367,16 @@ public class Treatment extends PassiveAgent {
 		
 		this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).setModifier(rateModifier);
 		this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).setModifier(rateModifier);
+		/*
 		System.out.println("Valore CYTO_RELEASE_RATE " + this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue());	
 		System.out.println("Valore DEGENERATION_RATE " + this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue());	
 		System.out.println("Valore CYTO_NEURON_THRESHOLD " + this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).getEffectiveValue());	
-		System.out.println("Valore CYTO_MICROGLIA_THRESHOLD " + this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).getEffectiveValue());	
+		System.out.println("Valore CYTO_MICROGLIA_THRESHOLD " + this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).getEffectiveValue());
+		*/	
 		//System.out.println("Dosaggio " + this.GLP1dosage);
 		toxicity = (Math.exp((this.GLP1dosage - 1.0f/4.0f) - 1)) / 128;
 		toxicity = Math.min(toxicity, 4.0f);
-		System.out.println("toxic a: " + toxicity);
+		//System.out.println("toxic a: " + toxicity);
 		/*
 		// Evaporazione/assorbimento farmaco (riduzione dose)
 		if(this.GLP1dosage <= this.GLP1dosageEvaporation)

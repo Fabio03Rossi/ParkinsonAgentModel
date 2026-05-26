@@ -5,6 +5,7 @@ import java.util.Random;
 import parkinson.Policy.StatType;
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.parameter.Parameter;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
 import repast.simphony.valueLayer.GridValueLayer;
