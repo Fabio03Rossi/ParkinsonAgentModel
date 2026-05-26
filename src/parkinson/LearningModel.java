@@ -17,6 +17,7 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
+import com.google.gson.Strictness;
 import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
@@ -29,6 +30,7 @@ public abstract class LearningModel {
 		   .registerTypeAdapter(State.class, new TypeAdapter<SubstanciaNigraState>() {
 			@Override
 			public SubstanciaNigraState read(JsonReader reader) throws IOException {
+				reader.setStrictness(Strictness.LENIENT);
 				if (reader.peek() == JsonToken.NULL) {
 					reader.nextNull();
 					return null;

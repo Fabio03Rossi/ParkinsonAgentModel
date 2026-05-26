@@ -43,6 +43,9 @@ public class Treatment extends PassiveAgent {
 	private double glialRedutionTreshold; // Tasso di riduzione del treshold 
 	private double neuronDegenerationRateMod;
 	private boolean modelActive = false;
+	private double epsilonProb = 0.8;
+	
+	private double cumulativeDosage = 0f;
 	
 	private double GLP1somministrationNumber = 0;
 	private double NLRP3somministrationNumber = 0;
@@ -190,10 +193,22 @@ public class Treatment extends PassiveAgent {
 	}
 	
 	public Action decideAction() {
+		var rand = new Random();
 		Action bestAction = null;
 		double bestValue = Double.NEGATIVE_INFINITY; 
 		int zeroCount = 0;
-		double epsilonProb = 0.2;
+		epsilonProb = 0.8;
+		
+		double currentStep = RepastEssentials.GetTickCount();
+		double stepDecay = Math.pow(0.999, currentStep);
+		double runDecay = Math.pow(0.996, this.getBatchRunNumber());
+		epsilonProb = Math.max(0.05, epsilonProb /** stepDecay*/ * runDecay);
+		
+		//epsilonProb += zeroCount * 0.02;	   
+				
+		if (rand.nextDouble() < this.epsilonProb) {
+	        return possibleActions.get(rand.nextInt(possibleActions.size()));
+	    }
 		
 		// Per ogni azione possibile
 		for (Action myAction : possibleActions) {
@@ -201,29 +216,17 @@ public class Treatment extends PassiveAgent {
 			double actionValue = rlModel.getValue(new StateAction(this.currentState, myAction));
 			System.out.println(actionValue);
 			// counting how many paths are currently not explored
-			if(actionValue == 0.0) {
+			/*if(actionValue == 0.0) {
 				zeroCount++;
-			}
+			}*/
 			
 			if (actionValue > bestValue) {
 					bestValue = actionValue;
 					bestAction = myAction;
 			}
 		}
-		
-		double currentStep = RepastEssentials.GetTickCount();
-		double stepDecay = Math.pow(0.999, currentStep); // Step-based decay
-		double runDecay = Math.pow(0.98, this.getBatchRunNumber());
-		epsilonProb = Math.max(0.01, 0.2 * stepDecay * runDecay);
-		
-		//epsilonProb += zeroCount * 0.02;
-		
-		boolean epsilonExp = new Random().nextInt(1, 11) <= epsilonProb * 10;
-		
 
-		if(epsilonExp) bestAction = possibleActions.get(new Random().nextInt(possibleActions.size()));
-		
-		return bestAction != null ? bestAction : possibleActions.get(new Random().nextInt(possibleActions.size()));
+	    return bestAction == null ? possibleActions.get(rand.nextInt(possibleActions.size())) : bestAction;
 	}
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 5)
@@ -238,6 +241,7 @@ public class Treatment extends PassiveAgent {
 		if(lastAction != null) {
 			double reward = this.calculateReward(oldState);
 			cumulativeReward += reward;
+			cumulativeDosage += this.getGLP1dosage();
 			
 			boolean isTerminal = this.isTerminalState();
 			if(isTerminal) {
@@ -267,7 +271,7 @@ public class Treatment extends PassiveAgent {
 											currentStep > 20);
 		
 		// Stato di timeout
-		boolean timeoutTerminal = (currentStep == 1199);
+		boolean timeoutTerminal = (currentStep == 1200);
 		
 		return successTerminal || timeoutTerminal;
 	}
@@ -278,7 +282,12 @@ public class Treatment extends PassiveAgent {
 		try {
 			f.createNewFile();
     	    FileWriter f2 = new FileWriter(f, true);
-    	    f2.write(this.getBatchRunNumber() + "," + cumulativeReward + "," + this.currentState.getActualDegenNeuron() + "," + currentState.getCurrentGLP1dose() + "\n");
+    	    f2.write(this.getBatchRunNumber() + "," + 
+    	    		this.cumulativeReward + "," + 
+    	    		this.currentState.getActualDegenNeuron() + "," + 
+    	    		(this.cumulativeDosage / 1200) + "," + 
+    	    		this.epsilonProb 
+    	    		+ "\n");
     	    f2.close();
 		} catch (IOException e) {
 			e.printStackTrace();

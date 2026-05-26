@@ -1,22 +1,34 @@
-BatchSchedule.execute: error when running the schedule
-Current tick (2.0)
-java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
-	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:72)
-	at repast.simphony.engine.controller.ScheduledMethodControllerAction$ScheduleMethodAllAction.execute(ScheduledMethodControllerAction.java:336)
-	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
-	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
-	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
-	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:375)
-	at repast.simphony.batch.BatchScheduleRunner$ScheduleLoopRunnable.run(BatchScheduleRunner.java:37)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-Caused by: java.lang.reflect.InvocationTargetException
-	at parkinson.Treatment$$FastClassByCGLIB$$5fbe9ccd.invoke(<generated>)
-	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
-	at repast.simphony.engine.schedule.DynamicTargetAction.execute(DynamicTargetAction.java:69)
-	... 7 more
-Caused by: repast.simphony.parameter.IllegalParameterException: Parameter 'run' not found in the schema.
-	at repast.simphony.parameter.DefaultParameters.getValue(DefaultParameters.java:211)
-	at parkinson.Treatment.getBatchRunNumber(Treatment.java:325)
-	at parkinson.Treatment.decideAction(Treatment.java:179)
-	at parkinson.Treatment.stepQAction(Treatment.java:143)
-	... 10 more
+Error while running model
+com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Use JsonReader.setStrictness(Strictness.LENIENT) to accept malformed JSON at line 1 column 226291 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#malformed-json
+	at com.google.gson.Gson.assertFullConsumption(Gson.java:1202)
+	at com.google.gson.Gson.fromJson(Gson.java:982)
+	at com.google.gson.Gson.fromJson(Gson.java:891)
+	at com.google.gson.Gson.fromJson(Gson.java:857)
+	at parkinson.LearningModel.load(LearningModel.java:151)
+	at parkinson.LearningModel.<init>(LearningModel.java:92)
+	at parkinson.LearningModel.<init>(LearningModel.java:98)
+	at parkinson.TreatmentModel.<init>(TreatmentModel.java:12)
+	at parkinson.Treatment.<init>(Treatment.java:74)
+	at parkinson.ParkinsonBuilder.build(ParkinsonBuilder.java:110)
+	at repast.simphony.dataLoader.engine.ClassNameContextBuilder.build(ClassNameContextBuilder.java:41)
+	at repast.simphony.dataLoader.engine.DataLoaderControllerAction.runInitialize(DataLoaderControllerAction.java:48)
+	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:214)
+	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:1)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:292)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+	at repast.simphony.util.collections.NaryTree.preOrderTraversal(NaryTree.java:288)
+	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:212)
+	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:383)
+	at repast.simphony.batch.OneRunBatchRunner.run(OneRunBatchRunner.java:101)
+	at repast.simphony.batch.InstanceRunner.run(InstanceRunner.java:193)
+	at repast.simphony.batch.InstanceRunner.main(InstanceRunner.java:215)
+Caused by: com.google.gson.stream.MalformedJsonException: Use JsonReader.setStrictness(Strictness.LENIENT) to accept malformed JSON at line 1 column 226291 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#malformed-json
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1817)
+	at com.google.gson.stream.JsonReader.checkLenient(JsonReader.java:1613)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:670)
+	at com.google.gson.stream.JsonReader.peek(JsonReader.java:545)
+	at com.google.gson.Gson.assertFullConsumption(Gson.java:1198)
+	... 22 more
