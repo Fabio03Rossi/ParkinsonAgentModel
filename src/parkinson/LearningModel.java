@@ -125,7 +125,7 @@ public abstract class LearningModel {
 	public void save(String path) {
        var f = new File(Treatment.PATH + path);
        try {
-           f.createNewFile();
+            f.createNewFile();
     	    FileWriter f2 = new FileWriter(f, false);
     	    Type typeObject = new TypeToken<HashMap<StateAction, Double>>(){}.getType();
     	    f2.write(gson.toJson(actionValues, typeObject));

@@ -28,8 +28,17 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+/*
+ * TODO
+ * 
+ * 1. RISOLVERE CHE L EPISODIO TERMINA QUANDO SI INCASTRANO IN UN PUNTO
+ * 2. Il fatto che il modello impari che in certi stati sia meglio un dosaggio "apparentemente" sbagliato è semplicemente dovuto alla stocasticità
+ * delle posizioni delle cellule -> è possibile sintetizzarla nello stato?
+ * 
+ */
+
 public class Treatment extends PassiveAgent {
-	public static final String PATH = "E:\\projects\\eclipse-workspace\\Parkinson\\tabOutput\\";
+	public static final String PATH = "C:\\Users\\theca\\Desktop\\unicam\\DCC&MAS\\ParkinsonAgentModel\\tabOutput";
 	
 	protected double resistence;
 	protected Policy policy;
@@ -61,6 +70,8 @@ public class Treatment extends PassiveAgent {
 	private IndexedIterable<Object> currentNeurons;
 	private int totNeurons;
 	private int degenCount = 0;
+	
+	private int stationaryStep = 0;
 	
 	private double cumulativeReward = 0.0;
 	
@@ -144,7 +155,7 @@ public class Treatment extends PassiveAgent {
 		
 		System.out.println("NEURONI MORTI: " + degenCount);
 		System.out.println("NEURONI STRESSATI: " + this.currentState.getStressedNeuron());
-		System.out.println("MICROGLIE MORTI: " + this.currentState.getInflammatedMicroglia());
+		System.out.println("MICROGLIE INFIAMMATE: " + this.currentState.getInflammatedMicroglia());
 	}
 	
 	private double dosageAction() {
@@ -205,7 +216,7 @@ public class Treatment extends PassiveAgent {
 		epsilonProb = Math.max(0.05, epsilonProb /** stepDecay*/ * runDecay);
 		
 		//epsilonProb += zeroCount * 0.02;	   
-				
+		
 		if (rand.nextDouble() < this.epsilonProb) {
 	        return possibleActions.get(rand.nextInt(possibleActions.size()));
 	    }
@@ -242,33 +253,29 @@ public class Treatment extends PassiveAgent {
 			double reward = this.calculateReward(oldState);
 			cumulativeReward += reward;
 			cumulativeDosage += this.getGLP1dosage();
-			
-			boolean isTerminal = this.isTerminalState();
-			if(isTerminal) {
-				reward += 5.0;  // BONUS per early termination
-				double currentStep = RepastEssentials.GetTickCount();
-				//System.out.println("EPISODE WON at step: " + currentStep);
-			}
 
 			rlModel.updateValue(new StateAction(oldState, lastAction), currentState, reward);
-		
-			if(isTerminal) {
-				this.save();
-				this.logEpisodeData();
-				RunEnvironment.getInstance().endRun();
-			}
 
+		}
+		boolean isTerminal = this.isTerminalState();
+
+		if(isTerminal) {
+			this.save();
+			this.logEpisodeData();
+			RunEnvironment.getInstance().endRun();
 		}
 	}
 
 	private boolean isTerminalState() {
-		double currentStep = RepastEssentials.GetTickCount();
+		int currentStep = (int) RepastEssentials.GetTickCount();
 		
 		// Stato vincente: infiammazione contenuta dopo warmup
-		boolean successTerminal = (degenCount == 0 && 
-											this.currentState.getStressedNeuron() == 0 && 
-											this.currentState.getInflammatedMicroglia() == 0 && 
-											currentStep > 20);
+		if(degenCount > 0 || this.currentState.getStressedNeuron() > 0)
+				stationaryStep = 0;
+		else
+			stationaryStep++;
+		
+		boolean successTerminal = (stationaryStep == 50);
 		
 		// Stato di timeout
 		boolean timeoutTerminal = (currentStep == 1200);
@@ -367,16 +374,20 @@ public class Treatment extends PassiveAgent {
 		
 		this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).setModifier(rateModifier);
 		this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).setModifier(rateModifier);
-		/*
+		
+		this.policy.getParam(StatType.EVAPORATION_RATE).setModifier(1.0d - (rateModifier / 50));
+
+		this.env.setEvaporationRate(this.env.getCytokineDiffuser(), this.policy.getParam(StatType.EVAPORATION_RATE).getEffectiveValue());
 		System.out.println("Valore CYTO_RELEASE_RATE " + this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue());	
 		System.out.println("Valore DEGENERATION_RATE " + this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue());	
 		System.out.println("Valore CYTO_NEURON_THRESHOLD " + this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).getEffectiveValue());	
 		System.out.println("Valore CYTO_MICROGLIA_THRESHOLD " + this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).getEffectiveValue());
-		*/	
+		System.out.println("Valore EVAPORATION_RATE " + this.policy.getParam(StatType.EVAPORATION_RATE).getEffectiveValue());
+
 		//System.out.println("Dosaggio " + this.GLP1dosage);
 		toxicity = (Math.exp((this.GLP1dosage - 1.0f/4.0f) - 1)) / 128;
 		toxicity = Math.min(toxicity, 4.0f);
-		//System.out.println("toxic a: " + toxicity);
+		System.out.println("toxic a: " + toxicity);
 		/*
 		// Evaporazione/assorbimento farmaco (riduzione dose)
 		if(this.GLP1dosage <= this.GLP1dosageEvaporation)
@@ -401,7 +412,7 @@ public class Treatment extends PassiveAgent {
 	private List<Action> initializeDiscreteActions() {
 		List<Action> l = new LinkedList<>();
 		for (int i = 0; i <= NUM_ACTIONS; i++) {
-            l.add(new Dosage(i * 0.1));   // 0.0 → 1.0 inclusi
+            l.add(new Dosage(i * 0.2));   // 0.0 → 1.0 inclusi
         }
         return l;
 	}

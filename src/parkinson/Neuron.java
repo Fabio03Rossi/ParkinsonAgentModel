@@ -136,7 +136,7 @@ public class Neuron extends Agent {
 		double newValue = oldValue - absorbedValue;
 	
  	    cytoValueLayer.set(newValue, (int) this.x, (int) this.y);
- 	    this.cytokineValue = (this.cytokineValue * 0.9) + absorbedValue;
+ 	    this.cytokineValue = (this.cytokineValue * 0.95) + absorbedValue;
  	    //System.out.println("cytoValueInNeuron: " + cytokineValue);	 
 	}
 

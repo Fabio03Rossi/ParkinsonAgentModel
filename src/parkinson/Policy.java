@@ -22,7 +22,7 @@ public class Policy {
 		params.put(StatType.ALPHA_SINUCLEIN_THRESHOLD, new ModifiableParameter(alphaTre));
 		params.put(StatType.CYTO_NEURON_THRESHOLD, new ModifiableParameter(cytoTre));
 		params.put(StatType.DEGENERATION_RATE, new ModifiableParameter(degenRate));
-		
+		params.put(StatType.EVAPORATION_RATE, new ModifiableParameter(1));
 		NLRB3inibitor = false;
 	}
 	
@@ -64,7 +64,8 @@ public class Policy {
 	    CYTO_RELEASE_RATE, // Numero di cytokine rilasciate dalla microglia nel value layer
 	    ALPHA_SINUCLEIN_THRESHOLD, // Tossicità delle alpha necessarie per stressare il neurone
 	    CYTO_NEURON_THRESHOLD, // Numero di cytokine necessarie per stressare il neurone
-	    DEGENERATION_RATE // Vita persa del neurone stressato ad ogni step
+	    DEGENERATION_RATE, // Vita persa del neurone stressato ad ogni step
+	    EVAPORATION_RATE // Vita persa del neurone stressato ad ogni step
 	}
 	
 	public class ModifiableParameter {
