@@ -82,6 +82,10 @@ public class Neuron extends Agent {
 		}
 	}
 	
+	@Parameter(displayName = "Cytokine absorbed", usageName = "ciao")
+	public double getCytokineValue() {
+		return cytokineValue;
+	}
 	
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 3)
@@ -132,7 +136,7 @@ public class Neuron extends Agent {
 		double newValue = oldValue - absorbedValue;
 	
  	    cytoValueLayer.set(newValue, (int) this.x, (int) this.y);
- 	    this.cytokineValue = this.cytokineValue + absorbedValue;
+ 	    this.cytokineValue = (this.cytokineValue * 0.9) + absorbedValue;
  	    //System.out.println("cytoValueInNeuron: " + cytokineValue);	 
 	}
 
@@ -174,16 +178,17 @@ public class Neuron extends Agent {
 		Treatment x = (Treatment) this.context.getObjectsAsStream(Treatment.class).findFirst().get();
 		if(health < 30) {
 			if(x.getToxicity() < 1 && alphaValue < alphaSinucleinThreshold && cytokineValue < cytokineThreshold) 
-				this.health = this.health + 0.5;
+				this.health = this.health + 0.5f;
 		}
-	
 	
 	}
 	
-	public void loseHealth() {
-		Treatment x = (Treatment) this.context.getObjectsAsStream(Treatment.class).findFirst().get();
-		this.health = this.health - (this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue()) - x.getToxicity();
-		System.out.println("Health del neurone scesa a: " + this.health);
+	public void loseHealth() {	
+		if(alphaValue > alphaSinucleinThreshold || cytokineValue > cytokineThreshold) {
+			Treatment x = (Treatment) this.context.getObjectsAsStream(Treatment.class).findFirst().get();
+			this.health = this.health - (this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue()) - x.getToxicity();
+			System.out.println("Health del neurone scesa a: " + this.health);
+		}
 	}
 	
 	public void setHealth(int health) {

@@ -296,8 +296,8 @@ public class Treatment extends PassiveAgent {
 	}
 	
 	public double calculateReward(SubstanciaNigraState oldState) {
-		final double DEATH_WEIGHT = -0.9;
-		final double DEATH_WEIGHT_2 = -0.2;
+		final double DEATH_WEIGHT = -0.3;
+		final double DEATH_WEIGHT_TOTAL = -0.4;
 		final double STRESSED_WEIGHT = -0.2;  
 		final double HEALTHY_WEIGHT = 1.3;
 		final double DOSAGE_WEIGHT = -0.3;
@@ -308,7 +308,7 @@ public class Treatment extends PassiveAgent {
 		
 		double doseCost = DOSAGE_WEIGHT * (this.currentState.getCurrentGLP1dose() / MAX_DOSE);
 		double deathPenalty = DEATH_WEIGHT * (this.currentState.getActualDegenNeuron() / (double) TOTAL_NEURONS);
-		double deathPenalty2 = DEATH_WEIGHT_2 * (this.currentState.getDegeneratedNeuron() / (double) TOTAL_NEURONS);
+		double deathPenalty2 = DEATH_WEIGHT_TOTAL * (this.currentState.getDegeneratedNeuron() / (double) TOTAL_NEURONS);
 		
 		int deltaD = this.currentState.getDegeneratedNeuron() - oldState.getDegeneratedNeuron();
 		double trendPenalty = TREND_WEIGHT * Math.max(0, deltaD / (double) TOTAL_NEURONS);				

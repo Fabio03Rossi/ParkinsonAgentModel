@@ -3,11 +3,14 @@ package parkinson;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.groovy.parser.antlr4.GroovyParser.ThisFormalParameterContext;
+
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.query.space.continuous.ContinuousWithin;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
+import repast.simphony.space.grid.GridPoint;
 import repast.simphony.valueLayer.GridValueLayer;
 
 public class Microglia extends GlialCell {
@@ -16,6 +19,7 @@ public class Microglia extends GlialCell {
 	
 	private double xToReach = -1;
 	private double yToReach = -1;
+	private GridPoint restingPosition;
 	
 	private GridValueLayer alphaValueLayer;
 	
@@ -23,13 +27,16 @@ public class Microglia extends GlialCell {
 	
 	private ContinuousSpace<Object> space;
 	private Grid<Object> grid;
+	private Iterable within = null;
+	
 	
 	public Microglia(Context context) {
 		super(context);
 		
 		this.space = (ContinuousSpace<Object>) context.getProjection("space");
 		this.grid = (Grid<Object>) context.getProjection("grid");
-
+		this.restingPosition = this.grid.getLocation(this);
+		
 		this.state = GlialState.RESTING;
 		this.infiammatoryState = false;
 		
@@ -40,6 +47,9 @@ public class Microglia extends GlialCell {
     public void step1() {
         switch (this.state) {
             case RESTING:
+            	// TODO maybe make range parametric
+        		within = new ContinuousWithin(this.context, this, 8).query();
+            	//this.checkForDamages();
                 this.perceiveNeurons();
             break;
                 
@@ -74,8 +84,39 @@ public class Microglia extends GlialCell {
        
     }
     
+    private void checkForPosition() {
+    	if(!this.infiammatoryState) {
+        	var gLoc = this.grid.getLocation(this);
+        	var sLoc = this.space.getLocation(this);
 
+        	if(gLoc.getX() != (int) restingPosition.getX() || gLoc.getY() != (int) restingPosition.getY()) { 		
+        		float xDif = 0, yDif = 0;
+        		
+        		if(sLoc.getX() > restingPosition.getX()) xDif -= .1f;
+        		if(sLoc.getX() < restingPosition.getX()) xDif += .1f;
+        		if(sLoc.getY() > restingPosition.getY()) yDif -= .1f;
+        		if(sLoc.getY() < restingPosition.getY()) yDif += .1f;
+        		
+            	this.moveTo(sLoc.getX() + xDif, sLoc.getY() + yDif);
+        	}
+    	}	
+    }
 	
+    private void checkForDamages() {
+    	boolean possibleDamage = false;
+    	
+		for(var x : within) {
+			
+			if(x instanceof Neuron) {
+				Neuron n = (Neuron) x;
+				
+				possibleDamage = true;
+				break;
+			}
+		}
+		
+		
+    }
 	
     protected void linkToNeuron() {
     	if(!context.contains(targetNeuron)) {
@@ -111,11 +152,8 @@ public class Microglia extends GlialCell {
     }
 	
 	protected void perceiveNeurons() {
-		this.targetNeuron = null;
-		
-		// TODO Introdurre potenzialmente il parametro range
-		
-		Iterable within = new ContinuousWithin(this.context, this, 8).query();
+		this.targetNeuron = null;	
+
 		for(var x : within) {
 			
 			if(x instanceof Neuron) {

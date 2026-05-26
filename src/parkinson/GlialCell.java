@@ -145,7 +145,7 @@ public class GlialCell extends Agent{
 			this.cytokineRelease();
 			return;
 		 }
-		 else if(originalVal <= 0) {
+		 else if(originalVal < this.activationThreshold) {
 			 this.infiammatoryState = false;
 			 return;
 		 }
