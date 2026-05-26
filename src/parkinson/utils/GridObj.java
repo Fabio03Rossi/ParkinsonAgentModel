@@ -1,4 +1,4 @@
-package parkinson;
+package parkinson.utils;
 
 import repast.simphony.space.grid.Grid;
 import repast.simphony.util.ContextUtils;

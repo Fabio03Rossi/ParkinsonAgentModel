@@ -1,6 +1,8 @@
-package parkinson;
+package parkinson.agent.active;
 
+import parkinson.Policy;
 import parkinson.Policy.StatType;
+import parkinson.utils.GlialState;
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.space.continuous.ContinuousSpace;

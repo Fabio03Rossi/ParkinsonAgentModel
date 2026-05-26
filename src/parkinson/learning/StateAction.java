@@ -1,4 +1,4 @@
-package parkinson;
+package parkinson.learning;
 
 import java.util.List;
 

@@ -1,5 +1,6 @@
-package parkinson;
+package parkinson.agent.active;
 
+import parkinson.utils.GlialState;
 import repast.simphony.context.Context;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;

@@ -1,4 +1,4 @@
-package parkinson;
+package parkinson.agent.passive;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,7 +10,19 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+import org.apache.commons.lang3.RandomUtils;
+
+import parkinson.Policy;
 import parkinson.Policy.StatType;
+import parkinson.agent.active.Microglia;
+import parkinson.agent.active.Neuron;
+import parkinson.learning.Action;
+import parkinson.learning.Dosage;
+import parkinson.learning.LearningModel;
+import parkinson.learning.StateAction;
+import parkinson.learning.SubstanciaNigraState;
+import parkinson.learning.TreatmentModel;
+import parkinson.utils.NeuronState;
 import repast.simphony.context.Context;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.environment.RunState;
@@ -38,37 +50,32 @@ import com.google.gson.reflect.TypeToken;
  */
 
 public class Treatment extends PassiveAgent {
-	public static final String PATH = "C:\\Users\\theca\\Desktop\\unicam\\DCC&MAS\\ParkinsonAgentModel\\tabOutput";
+	public static final String PATH = "C:\\Users\\theca\\Desktop\\unicam\\DCC&MAS\\ParkinsonAgentModel\\tabOutput\\";
+	public static final String JSON_NAME = "learnMap.csv";
+	public static final String CSV_NAME = "rlConvergence.csv";
 	
 	protected double resistence;
 	protected Policy policy;
 	
 	private double GLP1dosage = 0;
 	private double toxicity = 0;
-	private double NLRP3dosage = 0;
-	private double efficacy;
-	private final double GLP1dosageEvaporation = 0.9f;
-	private double NLRP3dosageEvaporation;
-	private double glialRedutionTreshold; // Tasso di riduzione del treshold 
-	private double neuronDegenerationRateMod;
 	private boolean modelActive = false;
 	private double epsilonProb = 0.8;
 	
 	private double cumulativeDosage = 0f;
 	
-	private double GLP1somministrationNumber = 0;
-	private double NLRP3somministrationNumber = 0;
 	
 	// Learning Model
+	private static final int MAX_DOSE = 10;
+	private final int NUM_ACTIONS = MAX_DOSE;
+	private final int TOTAL_NEURONS;
+	
 	private SubstanciaNigraState currentState;
 	private List<Action> possibleActions;
-	private final int NUM_ACTIONS = MAX_DOSE;
-	private static final int MAX_DOSE = 10;
 	private Dosage lastAction = null;
 	private LearningModel rlModel;   
 	
 	private IndexedIterable<Object> currentNeurons;
-	private int totNeurons;
 	private int degenCount = 0;
 	
 	private int stationaryStep = 0;
@@ -85,86 +92,30 @@ public class Treatment extends PassiveAgent {
 		this.rlModel = new TreatmentModel(this.possibleActions);
 		
 		currentNeurons = context.getObjects(Neuron.class);
-		this.totNeurons = currentNeurons.size();
+		this.TOTAL_NEURONS = currentNeurons.size();
 	}
 	
-	public double getGLP1dosage() {
-		return GLP1dosage;
-	}
 	
-	public double getToxicity() {
-		return toxicity;
-	}
-	
+	@ScheduledMethod(start = 1, interval = 1, priority = 5)
+	public void updateModel() {
+		SubstanciaNigraState oldState = new SubstanciaNigraState(currentState.getDegeneratedNeuron(), currentState.getStressedNeuron(), 
+				currentState.getInflammatedMicroglia(), currentState.getActualDegenNeuron(),
+				currentState.getAverageNeuronHealth(), currentState.getCurrentGLP1dose());
 
-	
-	public void somministrateGLP1(double dosage) {
-		//this.GLP1dosage = this.GLP1dosage + dosage;
-      // Smoothing forte 
-		System.out.println("Dosaggio " + this.GLP1dosage);
-		System.out.println("Dosaggio " + this.currentState.getCurrentGLP1dose());
-		this.GLP1dosage = this.GLP1dosage * 0.65 + 
-				this.currentState.getCurrentGLP1dose() * (1 - 0.65);
-		// Per le statistiche
-		this.GLP1somministrationNumber++;
-	}
-	
-	public void somministrateNLRB3(double dosage) {
-		this.NLRP3dosage = this.NLRP3dosage + dosage;
-		// Per le statistiche
-		this.NLRP3somministrationNumber++;
-	}
-	
-	//@ScheduledMethod(start = 1, interval = 1, priority = 5)
-	public void stepPerception() {
-		// TODO update it with new state stuff except for the dose
-		this.currentState.setDegeratedNeuron(0);
-		this.currentState.setStressedNeuron(0);
-		this.currentState.setInflammatedMicroglia(0);
-		int healthyCount = 0;
-		degenCount = 0;
-		double avgNeuronHealth = 0;
-		for(Object s : currentNeurons) {
-			Neuron d = (Neuron) s;
-			
-			if(d.getState() == NeuronState.HEALTHY) {
-				healthyCount++;
-				avgNeuronHealth += d.getHealth();
-			}
-			
-			if(d.getState() == NeuronState.DEGENERATED_DEATH) {
-				degenCount++;
-			}
-			if(d.getState() == NeuronState.STRESSED) this.currentState.setStressedNeuron(this.currentState.getStressedNeuron()+1);
+		// observe new state
+		stepPerception();
+
+		if(lastAction != null) {
+			double reward = this.calculateReward(oldState);
+			cumulativeReward += reward;
+			cumulativeDosage += this.getGLP1dosage();
+
+			rlModel.updateValue(new StateAction(oldState, lastAction), currentState, reward);
 		}
 		
-		var x = totNeurons - healthyCount - this.currentState.getStressedNeuron();
-		this.currentState.setDegeratedNeuron(x);
-
-
-		this.currentState.setAverageNeuronHealth(avgNeuronHealth / healthyCount);
-		this.currentState.setActualDegenNeuron(degenCount);
-		IndexedIterable<Object> currentMicroglias = context.getObjects(Microglia.class);
+		if(!this.isTerminalState()) return;
 		
-		for(Object s : currentMicroglias) {
-			Microglia d = (Microglia) s;
-			
-			if(d.isInflammated()) 
-				this.currentState.setInflammatedMicroglia(this.currentState.getInflammatedMicroglia()+1);
-		}
-		
-		System.out.println("NEURONI MORTI: " + degenCount);
-		System.out.println("NEURONI STRESSATI: " + this.currentState.getStressedNeuron());
-		System.out.println("MICROGLIE INFIAMMATE: " + this.currentState.getInflammatedMicroglia());
-	}
-	
-	private double dosageAction() {
-		double deathWeight = 0.9;
-		double stressedWeight = 0.2;
-		double base = 0.5;
-		double dosage = (deathWeight * this.currentState.getDegeneratedNeuron() + stressedWeight * this.currentState.getStressedNeuron()) * base;
-		dosage = Math.max(dosage, 1.0f);
-		return dosage;
+		this.dataWrite();
 	}
 	
 	//@ScheduledMethod(start = 1, interval = 1, priority = 4)
@@ -203,22 +154,115 @@ public class Treatment extends PassiveAgent {
 		}
 	}
 	
+	@ScheduledMethod(start = 1, interval = 1, priority = 3)
+	public void step()
+	{
+
+		// GLP1
+		double rateModifier = (1 + Math.log(1 + this.GLP1dosage));
+		
+		// Cytokine rate update
+		this.policy.getParam(StatType.CYTO_RELEASE_RATE).setModifier(1 / rateModifier);
+		// DegenerateNeuronRate
+		this.policy.getParam(StatType.DEGENERATION_RATE).setModifier(1 / rateModifier);
+		
+		// 1 / (1 + e ^ -dosaggio)
+		
+		this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).setModifier(rateModifier);
+		this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).setModifier(rateModifier);
+		
+		this.policy.getParam(StatType.EVAPORATION_RATE).setModifier(1.0d - (rateModifier / 50));
+
+		this.env.setEvaporationRate(this.env.getCytokineDiffuser(), this.policy.getParam(StatType.EVAPORATION_RATE).getEffectiveValue());
+		System.out.println("Valore CYTO_RELEASE_RATE " + this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue());	
+		System.out.println("Valore DEGENERATION_RATE " + this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue());	
+		System.out.println("Valore CYTO_NEURON_THRESHOLD " + this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).getEffectiveValue());	
+		System.out.println("Valore CYTO_MICROGLIA_THRESHOLD " + this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).getEffectiveValue());
+		System.out.println("Valore EVAPORATION_RATE " + this.policy.getParam(StatType.EVAPORATION_RATE).getEffectiveValue());
+
+		//System.out.println("Dosaggio " + this.GLP1dosage);
+		toxicity = (Math.exp((this.getGLP1dosage() - 1.0f/4.0f) - 1)) / 128;
+		toxicity = Math.min(toxicity, 4.0f);
+		System.out.println("toxic a: " + toxicity);
+		/*
+		// Evaporazione/assorbimento farmaco (riduzione dose)
+		if(this.GLP1dosage <= this.GLP1dosageEvaporation)
+			this.GLP1dosage = 0;
+		else
+			this.GLP1dosage = this.GLP1dosage - this.currentState.getCurrentGLP1dose() * GLP1dosageEvaporation; // evap of dosage equal to 95% of last dosage
+		*/
+	}
+	
+	
+	public void somministrateGLP1(double dosage) {
+		//this.GLP1dosage = this.GLP1dosage + dosage;
+      // Smoothing forte 
+		System.out.println("Dosaggio " + this.getGLP1dosage());
+		System.out.println("Dosaggio " + this.currentState.getCurrentGLP1dose());
+		this.GLP1dosage = this.getGLP1dosage() * 0.65 + 
+				this.currentState.getCurrentGLP1dose() * (1 - 0.65);
+	}
+	
+	public void stepPerception() {
+		// TODO update it with new state stuff except for the dose
+		this.currentState.setDegeratedNeuron(0);
+		this.currentState.setStressedNeuron(0);
+		this.currentState.setInflammatedMicroglia(0);
+		int healthyCount = 0;
+		degenCount = 0;
+		double avgNeuronHealth = 0;
+		for(Object s : currentNeurons) {
+			Neuron d = (Neuron) s;
+			
+			if(d.getState() == NeuronState.HEALTHY) {
+				healthyCount++;
+				avgNeuronHealth += d.getHealth();
+			}
+			
+			if(d.getState() == NeuronState.DEGENERATED_DEATH) {
+				degenCount++;
+			}
+			if(d.getState() == NeuronState.STRESSED) this.currentState.setStressedNeuron(this.currentState.getStressedNeuron()+1);
+		}
+		
+		var x = TOTAL_NEURONS - healthyCount - this.currentState.getStressedNeuron();
+		this.currentState.setDegeratedNeuron(x);
+
+
+		this.currentState.setAverageNeuronHealth(avgNeuronHealth / healthyCount);
+		this.currentState.setActualDegenNeuron(degenCount);
+		IndexedIterable<Object> currentMicroglias = context.getObjects(Microglia.class);
+		
+		for(Object s : currentMicroglias) {
+			Microglia d = (Microglia) s;
+			
+			if(d.isInflammated()) 
+				this.currentState.setInflammatedMicroglia(this.currentState.getInflammatedMicroglia()+1);
+		}
+		
+		System.out.println("NEURONI MORTI: " + degenCount);
+		System.out.println("NEURONI STRESSATI: " + this.currentState.getStressedNeuron());
+		System.out.println("MICROGLIE INFIAMMATE: " + this.currentState.getInflammatedMicroglia());
+	}
+	
+	private double dosageAction() {
+		double deathWeight = 0.9;
+		double stressedWeight = 0.2;
+		double base = 0.5;
+		double dosage = (deathWeight * this.currentState.getDegeneratedNeuron() + stressedWeight * this.currentState.getStressedNeuron()) * base;
+		dosage = Math.max(dosage, 1.0f);
+		return dosage;
+	}
+	
 	public Action decideAction() {
-		var rand = new Random();
 		Action bestAction = null;
 		double bestValue = Double.NEGATIVE_INFINITY; 
-		int zeroCount = 0;
-		epsilonProb = 0.8;
 		
-		double currentStep = RepastEssentials.GetTickCount();
-		double stepDecay = Math.pow(0.999, currentStep);
 		double runDecay = Math.pow(0.996, this.getBatchRunNumber());
-		epsilonProb = Math.max(0.05, epsilonProb /** stepDecay*/ * runDecay);
-		
-		//epsilonProb += zeroCount * 0.02;	   
-		
-		if (rand.nextDouble() < this.epsilonProb) {
-	        return possibleActions.get(rand.nextInt(possibleActions.size()));
+		epsilonProb = Math.max(0.05, 0.8 * runDecay);
+				
+		if (RandomUtils.nextDouble() < this.epsilonProb) {
+	        return possibleActions.get(RandomUtils.nextInt(0, possibleActions.size()));
 	    }
 		
 		// Per ogni azione possibile
@@ -226,10 +270,6 @@ public class Treatment extends PassiveAgent {
 			System.out.println("- " + this.currentState.toString() + " " + myAction.toString());
 			double actionValue = rlModel.getValue(new StateAction(this.currentState, myAction));
 			System.out.println(actionValue);
-			// counting how many paths are currently not explored
-			/*if(actionValue == 0.0) {
-				zeroCount++;
-			}*/
 			
 			if (actionValue > bestValue) {
 					bestValue = actionValue;
@@ -237,69 +277,22 @@ public class Treatment extends PassiveAgent {
 			}
 		}
 
-	    return bestAction == null ? possibleActions.get(rand.nextInt(possibleActions.size())) : bestAction;
+	    return bestAction == null ? possibleActions.get(RandomUtils.nextInt(0, possibleActions.size())) : bestAction;
 	}
 	
-	@ScheduledMethod(start = 1, interval = 1, priority = 5)
-	public void updateModel() {
-		SubstanciaNigraState oldState = new SubstanciaNigraState(currentState.getDegeneratedNeuron(), currentState.getStressedNeuron(), 
-				currentState.getInflammatedMicroglia(), currentState.getActualDegenNeuron(),
-				currentState.getAverageNeuronHealth(), currentState.getCurrentGLP1dose());
 
-		// observe new state
-		stepPerception();
 
-		if(lastAction != null) {
-			double reward = this.calculateReward(oldState);
-			cumulativeReward += reward;
-			cumulativeDosage += this.getGLP1dosage();
-
-			rlModel.updateValue(new StateAction(oldState, lastAction), currentState, reward);
-
-		}
-		boolean isTerminal = this.isTerminalState();
-
-		if(isTerminal) {
-			this.save();
-			this.logEpisodeData();
-			RunEnvironment.getInstance().endRun();
-		}
-	}
-
-	private boolean isTerminalState() {
-		int currentStep = (int) RepastEssentials.GetTickCount();
-		
+	private boolean isTerminalState() {		
 		// Stato vincente: infiammazione contenuta dopo warmup
 		if(degenCount > 0 || this.currentState.getStressedNeuron() > 0)
-				stationaryStep = 0;
+			stationaryStep = 0;
 		else
 			stationaryStep++;
 		
 		boolean successTerminal = (stationaryStep == 50);
-		
-		// Stato di timeout
-		boolean timeoutTerminal = (currentStep == 1200);
+		boolean timeoutTerminal = (RepastEssentials.GetTickCount() == 1200);
 		
 		return successTerminal || timeoutTerminal;
-	}
-	
-	private void logEpisodeData() {
-		var path = "rl_convergence.csv";
-		var f = new File(PATH + path);
-		try {
-			f.createNewFile();
-    	    FileWriter f2 = new FileWriter(f, true);
-    	    f2.write(RunEnvironment.getInstance().getParameters().getInteger("randomSeed") + "," + 
-    	    		this.cumulativeReward + "," + 
-    	    		this.currentState.getDegeneratedNeuron() + "," + 
-    	    		(this.cumulativeDosage / RepastEssentials.GetTickCount()) + "," + 
-    	    		this.epsilonProb + "," +
-    	    		RepastEssentials.GetTickCount()
-    	    		+ "\n");
-    	    f2.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-    	}
 	}
 	
 	public double calculateReward(SubstanciaNigraState oldState) {
@@ -311,7 +304,6 @@ public class Treatment extends PassiveAgent {
 		final double TREND_WEIGHT = -2.0;     // Ridurre aggressività
 		final double IMPROVEMENT_BONUS = 1.0; // Normalizzare
 		final double DOSE_BONUS = 0.8; // Normalizzare
-		final int TOTAL_NEURONS = totNeurons; // Usare variabile anziché hardcoded 31
 		
 		double doseCost = DOSAGE_WEIGHT * (this.currentState.getCurrentGLP1dose() / MAX_DOSE);
 		double deathPenalty = DEATH_WEIGHT * (this.currentState.getActualDegenNeuron() / (double) TOTAL_NEURONS);
@@ -358,57 +350,6 @@ public class Treatment extends PassiveAgent {
 		return totalReward;
 	}
 	
-	@ScheduledMethod(start = 1, interval = 1, priority = 3)
-	public void step()
-	{
-
-		// GLP1
-		double rateModifier = (1 + Math.log(1 + this.GLP1dosage));
-		
-		// Cytokine rate update
-		this.policy.getParam(StatType.CYTO_RELEASE_RATE).setModifier(1 / rateModifier);
-		// DegenerateNeuronRate
-		this.policy.getParam(StatType.DEGENERATION_RATE).setModifier(1 / rateModifier);
-		
-		// 1 / (1 + e ^ -dosaggio)
-		
-		this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).setModifier(rateModifier);
-		this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).setModifier(rateModifier);
-		
-		this.policy.getParam(StatType.EVAPORATION_RATE).setModifier(1.0d - (rateModifier / 50));
-
-		this.env.setEvaporationRate(this.env.getCytokineDiffuser(), this.policy.getParam(StatType.EVAPORATION_RATE).getEffectiveValue());
-		System.out.println("Valore CYTO_RELEASE_RATE " + this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue());	
-		System.out.println("Valore DEGENERATION_RATE " + this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue());	
-		System.out.println("Valore CYTO_NEURON_THRESHOLD " + this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).getEffectiveValue());	
-		System.out.println("Valore CYTO_MICROGLIA_THRESHOLD " + this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).getEffectiveValue());
-		System.out.println("Valore EVAPORATION_RATE " + this.policy.getParam(StatType.EVAPORATION_RATE).getEffectiveValue());
-
-		//System.out.println("Dosaggio " + this.GLP1dosage);
-		toxicity = (Math.exp((this.GLP1dosage - 1.0f/4.0f) - 1)) / 128;
-		toxicity = Math.min(toxicity, 4.0f);
-		System.out.println("toxic a: " + toxicity);
-		/*
-		// Evaporazione/assorbimento farmaco (riduzione dose)
-		if(this.GLP1dosage <= this.GLP1dosageEvaporation)
-			this.GLP1dosage = 0;
-		else
-			this.GLP1dosage = this.GLP1dosage - this.currentState.getCurrentGLP1dose() * GLP1dosageEvaporation; // evap of dosage equal to 95% of last dosage
-		*/
-
-		/*
-		// NLRP3
-		if(this.NLRP3dosage >= 0) {
-			this.policy.setNLRB3inibitor(true);
-			if(this.NLRP3dosage <= this.NLRP3dosageEvaporation)
-				this.NLRP3dosage = 0;
-			else
-				this.NLRP3dosage = this.NLRP3dosage - this.NLRP3dosageEvaporation;
-		}else {
-			this.policy.setNLRB3inibitor(false);
-		}*/
-	}
-	
 	private List<Action> initializeDiscreteActions() {
 		List<Action> l = new LinkedList<>();
 		for (int i = 0; i <= NUM_ACTIONS; i++) {
@@ -417,9 +358,27 @@ public class Treatment extends PassiveAgent {
         return l;
 	}
 	
-	public void save() {
+	public void dataWrite() {
+		this.rlModel.save(PATH + JSON_NAME);
 		System.out.println("Map has been saved.");
-		this.rlModel.save("learnMap.json");
+
+		this.rlModel.logEpisodeData(
+			PATH + CSV_NAME,
+			RunEnvironment.getInstance().getParameters().getInteger("randomSeed") + "," + 
+    	    		this.cumulativeReward + "," + 
+    	    		this.currentState.getDegeneratedNeuron() + "," + 
+    	    		(this.cumulativeDosage / RepastEssentials.GetTickCount()) + "," + 
+    	    		this.epsilonProb + "," +
+    	    		RepastEssentials.GetTickCount() + "\n"
+		);
+	}
+	
+	public double getGLP1dosage() {
+		return GLP1dosage;
+	}
+	
+	public double getToxicity() {
+		return toxicity;
 	}
 	
 	public int getBatchRunNumber() {
@@ -428,42 +387,4 @@ public class Treatment extends PassiveAgent {
 	    }
 	    return 1; 
 	}
-
-	/* 
-	 TODO Parametri
-	 context:
-	 - numero di neuroni in stato stressato/morte
-	 - numero di glial cells in stato infiammatorio
-	
-	Parametri del treatment:
-	-dosaggio
-	-numero di somministrazioni effettuate???
-	
-	Parametri dei farmaci:
-	GLP-1:
-	- tasso di riduzione della produzione di citochine
-	- tasso di riduzione dei treshold delle cellule gliali
-	- tasso di riduzione della perdita di health dei neuroni
-	
-	Inibitori NLRB3:
-	- Sospensione dello stato infiammatorio delle cellule gliali con il conseguente stop della produzione di citochine
-	
-	 */
-	
-	// TODO Perception
-	/*
-	 - numero di neuroni in stato stressato/morte
-	 - numero di glial cells in stato infiammatorio
-	*/
-	
-	// TODO Azioni
-	/*
-	 * - somministra GLP-1
-		 * 	- modifica il treshold di rilevazione citochine nelle cellule gliali
-		 *  - modifica il rate di produzione citochine nelle cellule gliali
-		 *  - modifica il rate di health reduction nei neuroni
-	 * - somministra inibitori NLRB3
-	 * 		- forza il blocco dello stato infiammatorio nelle cellule gliali
-	 */
-	
 }

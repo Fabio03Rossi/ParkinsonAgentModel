@@ -2,7 +2,7 @@ package parkinson.style;
 
 import java.io.IOException;
 
-import parkinson.Microglia;
+import parkinson.agent.active.Microglia;
 import repast.simphony.visualizationOGL2D.DefaultStyleOGL2D;
 import saf.v3d.scene.VSpatial;
 

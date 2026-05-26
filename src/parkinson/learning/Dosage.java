@@ -1,4 +1,4 @@
-package parkinson;
+package parkinson.learning;
 
 public class Dosage implements Action {
 	

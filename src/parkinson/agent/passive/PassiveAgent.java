@@ -1,4 +1,4 @@
-package parkinson;
+package parkinson.agent.passive;
 
 import repast.simphony.context.Context;
 import repast.simphony.space.continuous.ContinuousSpace;

@@ -1,5 +1,6 @@
-package parkinson;
+package parkinson.agent.passive;
 
+import parkinson.Policy;
 import repast.simphony.engine.schedule.Schedule;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.util.ContextUtils;

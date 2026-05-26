@@ -1,8 +1,9 @@
-package parkinson;
+package parkinson.agent.active;
 
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
 import repast.simphony.util.ContextUtils;
+import parkinson.agent.passive.Environment;
 import repast.simphony.context.Context;
 
 public class Agent {

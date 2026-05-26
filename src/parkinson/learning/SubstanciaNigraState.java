@@ -1,4 +1,4 @@
-package parkinson;
+package parkinson.learning;
 
 import org.apache.commons.lang3.RandomUtils;
 

@@ -1,4 +1,4 @@
-package parkinson;
+package parkinson.utils;
 
 public interface HealthDisease {
 	public double getDiffusionRateMod();

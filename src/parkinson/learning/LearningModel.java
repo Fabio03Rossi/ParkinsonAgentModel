@@ -1,4 +1,4 @@
-package parkinson;
+package parkinson.learning;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -23,6 +23,10 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
+
+import parkinson.agent.passive.Treatment;
+import repast.simphony.engine.environment.RunEnvironment;
+import repast.simphony.essentials.RepastEssentials;
 
 public abstract class LearningModel {
 	
@@ -123,7 +127,7 @@ public abstract class LearningModel {
    
 	
 	public void save(String path) {
-       var f = new File(Treatment.PATH + path);
+       var f = new File(path);
        try {
             f.createNewFile();
     	    FileWriter f2 = new FileWriter(f, false);
@@ -154,5 +158,17 @@ public abstract class LearningModel {
 		//System.out.println("JSON: " + result);
 	   return (HashMap<StateAction, Double>) result;
    }
+   
+	public void logEpisodeData(String path, String data) {
+		var f = new File(path);
+		try {
+			f.createNewFile();
+    	    FileWriter f2 = new FileWriter(f, true);
+    	    f2.write(data);
+    	    f2.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+    	}
+	}
 	
 }

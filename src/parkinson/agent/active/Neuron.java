@@ -1,8 +1,11 @@
-package parkinson;
+package parkinson.agent.active;
 
 import java.util.Random;
 
+import parkinson.Policy;
 import parkinson.Policy.StatType;
+import parkinson.agent.passive.Treatment;
+import parkinson.utils.NeuronState;
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.parameter.Parameter;

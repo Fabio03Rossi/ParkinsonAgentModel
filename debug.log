@@ -1,0 +1,377 @@
+INFO  [Thread-3] 2026-05-26T17:17:24,458 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - -0.37116474049834824
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - Dosaggio 0.9999999858420784
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - Dosaggio 0.9999999907973509
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - Dosaggio 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,460 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - -0.3714853511578809
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - Dosaggio 0.6849999940182782
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,461 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - -0.3718027557108182
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - Dosaggio 0.7952499961118809
+INFO  [Thread-3] 2026-05-26T17:17:24,462 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,463 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.3721169862182262
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - Dosaggio 0.8669124974727226
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - -0.3724280744205601
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - Dosaggio 0.9134931233572697
+INFO  [Thread-3] 2026-05-26T17:17:24,464 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,466 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,466 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,466 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,467 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.3727360517408706
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - Dosaggio 0.9437705301822253
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - -0.37304094928797804
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - Dosaggio 0.9634508446184464
+INFO  [Thread-3] 2026-05-26T17:17:24,468 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,469 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,469 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,469 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - -0.3733427978596144
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - Dosaggio 0.9762430490019902
+INFO  [Thread-3] 2026-05-26T17:17:24,470 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,471 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.37364162794553435
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - Dosaggio 0.9845579818512936
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - -0.37393746973059516
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - Dosaggio 0.9899626882033409
+INFO  [Thread-3] 2026-05-26T17:17:24,472 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - -0.37423035309780533
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - Dosaggio 0.9934757473321716
+INFO  [Thread-3] 2026-05-26T17:17:24,473 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - -0.3745203076313434
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - Dosaggio 0.9957592357659115
+INFO  [Thread-3] 2026-05-26T17:17:24,474 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,475 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,475 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,475 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,475 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,475 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,475 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - -0.3748073626195461
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - Dosaggio 0.9972435032478425
+INFO  [Thread-3] 2026-05-26T17:17:24,476 LocalSession - Dosaggio 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,477 LocalSession - NEURONI MORTI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,477 LocalSession - NEURONI STRESSATI: 0
+INFO  [Thread-3] 2026-05-26T17:17:24,477 LocalSession - MICROGLIE MORTI: 23
+INFO  [Thread-3] 2026-05-26T17:17:24,477 LocalSession - Map has been saved.
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.0
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - -0.5082820607729963
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.1
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - -0.4796497766728122
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.2
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - -0.47492969964423876
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.30000000000000004
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - -0.5024570223753722
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.4
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - -0.5035773577609176
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.5
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - -0.46568457513819
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.6000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - -0.49101859058111536
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.7000000000000001
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - -0.47044491337127436
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.8
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - -0.43717450248752326
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 0.9
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - -0.5028772198584931
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - - Death Neuron: 18, Stressed Neuron: 0, Actual Degen Neuron: 0 1.0
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - 0.12490845294213332
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - Dosaggio 0.9982082771110976
+INFO  [Thread-3] 2026-05-26T17:17:24,482 LocalSession - Dosaggio 1.0
+INFO  [pool-5-thread-1] 2026-05-26T17:17:51,033 LocalDonePoller - Polled C:\Users\fabir\AppData\Local\Temp\simphony_model_1779807466004 for DONE:  yes
+INFO  [SwingWorker-pool-3-thread-2] 2026-05-26T17:17:51,036 SessionsDriver - Run Time: 20,0249
+INFO  [SwingWorker-pool-3-thread-2] 2026-05-26T17:17:51,056 LocalSession - Finding output on localhost in C:\Users\fabir\AppData\Local\Temp\simphony_model_1779807466004
+INFO  [SwingWorker-pool-3-thread-2] 2026-05-26T17:17:51,069 SessionsDriver - Aggregating output into E:/projects/eclipse-workspace/Parkinson/output
+INFO  [SwingWorker-pool-3-thread-2] 2026-05-26T17:17:51,069 SessionsDriver - Get Output Time: 0,0005
+INFO  [SwingWorker-pool-3-thread-2] 2026-05-26T17:17:51,069 SessionsDriver - Finished. Elapsed Time: 20,0849

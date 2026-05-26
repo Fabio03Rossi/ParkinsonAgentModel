@@ -1,10 +1,12 @@
-package parkinson;
+package parkinson.agent.active;
 
 import java.util.Iterator;
 import java.util.List;
 
 import org.apache.groovy.parser.antlr4.GroovyParser.ThisFormalParameterContext;
 
+import parkinson.utils.GlialState;
+import parkinson.utils.NeuronState;
 import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.query.space.continuous.ContinuousWithin;

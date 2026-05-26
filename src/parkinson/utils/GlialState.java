@@ -1,4 +1,4 @@
-package parkinson;
+package parkinson.utils;
 
 public enum GlialState {
 	RESTING,

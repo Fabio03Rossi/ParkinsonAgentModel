@@ -1,4 +1,4 @@
-package parkinson;
+package parkinson.utils;
 
 public record ImmuneCompromisedDisease(double diffusionRateModifier, 
 		double evaporationRateModifier) implements HealthDisease {

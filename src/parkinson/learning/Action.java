@@ -1,4 +1,4 @@
-package parkinson;
+package parkinson.learning;
 
 public interface Action {
 

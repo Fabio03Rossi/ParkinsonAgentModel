@@ -3,6 +3,8 @@
 import java.util.EnumMap;
 import java.util.Map;
 
+import parkinson.utils.HealthDisease;
+
 /**
   * La Policy determina le caratteristiche mutabili della simulazione.
   * Tenendo conto della fisiologia del paziente e degli stimuli esterni per calcolare

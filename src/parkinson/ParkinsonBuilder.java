@@ -1,5 +1,9 @@
 package parkinson;
 
+import parkinson.agent.active.Microglia;
+import parkinson.agent.active.Neuron;
+import parkinson.agent.passive.Environment;
+import parkinson.agent.passive.Treatment;
 import repast.simphony.context.Context;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactory;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactoryFinder;
