@@ -113,28 +113,12 @@ public class GlialCell extends Agent{
 		this.infiammatoryState = false;
 		
 		this.cytokineLayer = (GridValueLayer) context.getValueLayer("cytoLayer");
-
-
-	}
-	
-	
-	public void cytokineRelease() {
-		// Ottengo la posizione dalla griglia
-		int x = this.grid.getLocation(this).getX();
-		int y = this.grid.getLocation(this).getY();
-		double cytokineValue = cytokineLayer.get(x,y);
-		// Setto il nuovo valore tenendo in considerazione il cytoReleaseRate da policy
-		//System.out.println("Valore cytokineValue " + cytokineValue);
-		//System.out.println("Valore cytomodifier " + this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue());
-		//System.out.println("Valore cytorelease " + cytokineValue + 1 / this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue());	    	   
-		cytokineLayer.set(cytokineValue + this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue(), x, y);
 	}
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 2)
 	public void updateValues() {
 		this.cytokineReleaseRate = this.policy.getParam(Policy.StatType.CYTO_RELEASE_RATE).getEffectiveValue();
 		this.activationThreshold = this.policy.getParam(Policy.StatType.CYTO_MICROGLIA_THRESHOLD).getEffectiveValue();
-		//this.infiammatoryState = this.policy.isNLRB3inibitor();
 	}
 	
 	@ScheduledMethod(start = 1, interval = 1, priority = 3)
@@ -153,6 +137,14 @@ public class GlialCell extends Agent{
 		 }
 	}
 	
+	public void cytokineRelease() {
+		// Ottengo la posizione dalla griglia
+		int x = this.grid.getLocation(this).getX();
+		int y = this.grid.getLocation(this).getY();
+		double cytokineValue = cytokineLayer.get(x,y);
+		// Setto il nuovo valore tenendo in considerazione il cytoReleaseRate da policy	   
+		cytokineLayer.set(cytokineValue + this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue(), x, y);
+	}
 	
 	public boolean isInflammated() {
 		return this.infiammatoryState;

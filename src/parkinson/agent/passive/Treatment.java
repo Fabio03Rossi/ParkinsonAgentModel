@@ -15,6 +15,7 @@ import parkinson.learning.LearningModel;
 import parkinson.learning.StateAction;
 import parkinson.learning.SubstanciaNigraState;
 import parkinson.learning.TreatmentModel;
+import parkinson.utils.FileManager;
 import parkinson.utils.NeuronState;
 import repast.simphony.context.Context;
 import repast.simphony.engine.environment.RunEnvironment;
@@ -33,8 +34,8 @@ import repast.simphony.util.collections.IndexedIterable;
  */
 
 public class Treatment extends PassiveAgent {
-	public static final String PATH = "C:\\Users\\theca\\Desktop\\unicam\\DCC&MAS\\ParkinsonAgentModel\\tabOutput\\";
-	public static final String JSON_NAME = "learnMap.csv";
+	public static final String PATH = "E:\\projects\\eclipse-workspace\\Parkinson\\tabOutput\\";
+	public static final String JSON_NAME = "learnMap.json";
 	public static final String CSV_NAME = "rlConvergence.csv";
 	
 	protected double resistence;
@@ -105,9 +106,10 @@ public class Treatment extends PassiveAgent {
 			rlModel.updateValue(new StateAction(oldState, lastAction), currentState, reward);
 		}
 		
-		if(!this.isTerminalState()) return;
-		
-		this.dataWrite();
+		if(this.isTerminalState()) {
+			this.dataWrite();
+			RunEnvironment.getInstance().endRun();
+		};
 	}
 	
 	//@ScheduledMethod(start = 1, interval = 1, priority = 4)
@@ -337,10 +339,10 @@ public class Treatment extends PassiveAgent {
 	}
 	
 	public void dataWrite() {
-		this.rlModel.save(PATH + JSON_NAME);
+		FileManager.save(PATH + JSON_NAME, this.rlModel.actionValues);
 		System.out.println("Map has been saved.");
 
-		this.rlModel.logEpisodeData(
+		FileManager.logEpisodeData(
 			PATH + CSV_NAME,
 			RunEnvironment.getInstance().getParameters().getInteger("randomSeed") + "," + 
     	    		this.cumulativeReward + "," + 

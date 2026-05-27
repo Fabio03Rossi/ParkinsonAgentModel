@@ -3,21 +3,21 @@
   <type>2D</type>
   <styles>
     <entry>
-      <string>parkinson.Microglia</string>
-      <string>parkinson.style.Microglia2DStyle</string>
+      <string>parkinson.agent.active.Neuron</string>
+      <string>parkinson.style.Neuron2DStyle</string>
     </entry>
     <entry>
-      <string>parkinson.Neuron</string>
-      <string>parkinson.style.Neuron2DStyle</string>
+      <string>parkinson.agent.active.Microglia</string>
+      <string>parkinson.style.Microglia2DStyle</string>
     </entry>
   </styles>
   <editedStyles>
     <entry>
-      <string>parkinson.Microglia</string>
+      <string>parkinson.agent.active.Neuron</string>
       <null/>
     </entry>
     <entry>
-      <string>parkinson.Neuron</string>
+      <string>parkinson.agent.active.Microglia</string>
       <null/>
     </entry>
   </editedStyles>
@@ -31,19 +31,19 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>-1866745686</hashCode>
+    <hashCode>-2031421812</hashCode>
   </schedParams>
   <layoutClassName>foo.bar.baz</layoutClassName>
   <layoutProjection>grid</layoutProjection>
   <layoutInterval>0</layoutInterval>
   <layerOrder>
     <entry>
-      <string>parkinson.Microglia</string>
-      <int>1</int>
+      <string>parkinson.agent.active.Neuron</string>
+      <int>0</int>
     </entry>
     <entry>
-      <string>parkinson.Neuron</string>
-      <int>0</int>
+      <string>parkinson.agent.active.Microglia</string>
+      <int>1</int>
     </entry>
   </layerOrder>
   <projections>
