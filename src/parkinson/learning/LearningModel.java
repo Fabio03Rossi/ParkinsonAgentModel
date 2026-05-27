@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import parkinson.agent.passive.Treatment;
 import parkinson.utils.FileManager;
+import repast.simphony.engine.environment.RunEnvironment;
+import repast.simphony.essentials.RepastEssentials;
 
 public abstract class LearningModel {
    
@@ -42,3 +44,25 @@ public abstract class LearningModel {
       }
    }	
 }
+
+/*
+  	public static final String PATH = "E:\\projects\\eclipse-workspace\\Parkinson\\tabOutput\\";
+	public static final String JSON_NAME = "learnMap.json";
+	public static final String CSV_NAME = "rlConvergence.csv";
+
+  	public void dataWrite() {
+		FileManager.save(PATH + JSON_NAME, this.rlModel.actionValues);
+		System.out.println("Map has been saved.");
+
+		FileManager.logEpisodeData(
+			PATH + CSV_NAME,
+			RunEnvironment.getInstance().getParameters().getInteger("randomSeed") + "," + 
+    	    		this.cumulativeReward + "," + 
+    	    		this.currentState.getDegeneratedNeuron() + "," + 
+    	    		(this.cumulativeAvgNeuronHP / RepastEssentials.GetTickCount()) + "," + 
+    	    		(this.cumulativeDosage / RepastEssentials.GetTickCount()) + "," + 
+    	    		this.epsilonProb + "," +
+    	    		RepastEssentials.GetTickCount() + "\n"
+		);
+	}
+*/

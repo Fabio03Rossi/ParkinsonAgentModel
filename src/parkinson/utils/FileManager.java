@@ -61,6 +61,7 @@ public class FileManager {
 		   .registerTypeAdapter(Action.class, new TypeAdapter<Dosage>() {
 				@Override
 				public Dosage read(JsonReader reader) throws IOException {
+					reader.setStrictness(Strictness.LENIENT);
 					if (reader.peek() == JsonToken.NULL) {
 						reader.nextNull();
 						return null;
@@ -83,7 +84,7 @@ public class FileManager {
 		   .enableComplexMapKeySerialization()
 		   .create();
 	
-	public static void save(String path, HashMap<StateAction, Double> actionValues) {
+	public static synchronized void save(String path, HashMap<StateAction, Double> actionValues) {
        var f = new File(path);
        try {
             f.createNewFile();
@@ -96,7 +97,7 @@ public class FileManager {
     	}           
    }
 
-	public static HashMap<StateAction, Double> load(String path) {
+	public static synchronized HashMap<StateAction, Double> load(String path) {
 	   	File f = new File(path);
        	if (!f.exists()) return null;
        
@@ -113,7 +114,7 @@ public class FileManager {
 		return gson.fromJson(data, new TypeToken<HashMap<StateAction, Double>>(){}.getType());
    	}
    
-	public static void logEpisodeData(String path, String data) {
+	public static synchronized void logEpisodeData(String path, String data) {
 		var f = new File(path);
 		try {
 			f.createNewFile();

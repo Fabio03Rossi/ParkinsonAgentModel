@@ -1,0 +1,37 @@
+Error while running model
+com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Unterminated string at line 1 column 32769 path $[402][0].state
+See https://github.com/google/gson/blob/main/Troubleshooting.md#malformed-json
+	at com.google.gson.Gson.fromJson(Gson.java:1106)
+	at com.google.gson.Gson.fromJson(Gson.java:981)
+	at com.google.gson.Gson.fromJson(Gson.java:891)
+	at com.google.gson.Gson.fromJson(Gson.java:857)
+	at parkinson.utils.FileManager.load(FileManager.java:114)
+	at parkinson.learning.LearningModel.<init>(LearningModel.java:16)
+	at parkinson.learning.LearningModel.<init>(LearningModel.java:22)
+	at parkinson.learning.TreatmentModel.<init>(TreatmentModel.java:12)
+	at parkinson.agent.passive.Treatment.<init>(Treatment.java:85)
+	at parkinson.ParkinsonBuilder.build(ParkinsonBuilder.java:113)
+	at repast.simphony.dataLoader.engine.ClassNameContextBuilder.build(ClassNameContextBuilder.java:41)
+	at repast.simphony.dataLoader.engine.DataLoaderControllerAction.runInitialize(DataLoaderControllerAction.java:48)
+	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:214)
+	at repast.simphony.engine.controller.DefaultController$2.visit(DefaultController.java:1)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:292)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+	at repast.simphony.util.collections.NaryTree.preOrderTraverals(NaryTree.java:295)
+	at repast.simphony.util.collections.NaryTree.preOrderTraversal(NaryTree.java:288)
+	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:212)
+	at repast.simphony.engine.controller.DefaultController.runInitialize(DefaultController.java:383)
+	at repast.simphony.batch.OneRunBatchRunner.run(OneRunBatchRunner.java:101)
+	at repast.simphony.batch.InstanceRunner.run(InstanceRunner.java:193)
+	at repast.simphony.batch.InstanceRunner.main(InstanceRunner.java:215)
+Caused by: com.google.gson.stream.MalformedJsonException: Unterminated string at line 1 column 32769 path $[402][0].state
+See https://github.com/google/gson/blob/main/Troubleshooting.md#malformed-json
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1817)
+	at com.google.gson.stream.JsonReader.nextQuotedValue(JsonReader.java:1176)
+	at com.google.gson.stream.JsonReader.nextName(JsonReader.java:936)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:512)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.read(TypeAdapterRuntimeTypeWrapper.java:40)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:189)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:161)
+	at com.google.gson.Gson.fromJson(Gson.java:1080)
+	... 22 more

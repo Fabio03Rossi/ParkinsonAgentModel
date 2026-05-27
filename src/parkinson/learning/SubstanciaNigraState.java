@@ -84,7 +84,7 @@ public class SubstanciaNigraState implements State {
          return("Death Neuron: " + this.getDegeneratedNeuron()
          + ", Stressed Neuron: " + this.getStressedNeuron()
          + ", Actual Degen Neuron: " + this.getActualDegenNeuron()
-         //+ ", AvgNeuronHealth: " + this.getAverageNeuronHealth()
+         + ", AvgNeuronHealth: " + this.getAverageNeuronHealth()
          //+ ", Inflammed Microglia: " + this.getInflammatedMicroglia()
          );
 	}
