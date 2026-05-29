@@ -50,7 +50,7 @@ public class Microglia extends GlialCell {
         switch (this.state) {
             case RESTING:
             	// TODO maybe make range parametric
-        		within = new ContinuousWithin(this.context, this, 6).query();
+        		within = new ContinuousWithin(this.context, this, 8).query();
             	//this.checkForDamages();
                 this.perceiveNeurons();
             break;

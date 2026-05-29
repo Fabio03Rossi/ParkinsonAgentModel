@@ -11,8 +11,8 @@ public abstract class LearningModel {
    
    public HashMap<StateAction, Double> actionValues;
    protected List<Action> possibleActions = null;
-   private final static double learningRate = 0.1;
-   private final static double discountFactor = 0.9;
+   private final static double learningRate = 0.5;
+   private final static double discountFactor = 0.3;
 
 	public LearningModel() {
 		this.actionValues = FileManager.load(Treatment.PATH + Treatment.JSON_NAME);
