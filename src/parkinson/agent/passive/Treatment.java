@@ -221,10 +221,10 @@ public class Treatment extends PassiveAgent {
 		double stepDecay = Math.pow(0.999, currentStep);
 		double runDecay = Math.pow(0.996, this.getBatchRunNumber());
 		epsilonProb = Math.max(0.05, epsilonProb * runDecay);
-		/*
+		
 		if (rand.nextDouble() < this.epsilonProb) {
 	        return possibleActions.get(rand.nextInt(possibleActions.size()));
-	    }*/
+	    }
 		
 		// Per ogni azione possibile
 		for (Action myAction : possibleActions) {
