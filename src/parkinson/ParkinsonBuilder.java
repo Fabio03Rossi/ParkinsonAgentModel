@@ -3,6 +3,8 @@ package parkinson;
 import parkinson.agent.active.Microglia;
 import parkinson.agent.active.Neuron;
 import parkinson.agent.passive.Treatment;
+import parkinson.learning.TreatmentModel;
+import parkinson.utils.NeuronState;
 import repast.simphony.context.Context;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactory;
 import repast.simphony.context.space.continuous.ContinuousSpaceFactoryFinder;
@@ -97,15 +99,16 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		Environment env = new Environment(cytoDiffuser, alphaDiffuser);
 		context.add(env);
 		
-				
+		/* 		
 		for(int i = 0; i < neuroNum; i++) {
 			new Neuron(context, neuronHealth);
 		}
-		
+
 		var x = new Neuron(context, neuronHealth);
 		x.setHealth(0);
 		alphaLayer.set(10, grid.getLocation(x).getX(), grid.getLocation(x).getY());
-		
+		*/
+		initializeEpisodeState(context, grid, alphaLayer, neuroNum, neuronHealth);
 		for(int i = 0; i < microNum; i++) {
 			new Microglia(context);
 		}
@@ -115,5 +118,64 @@ public class ParkinsonBuilder implements ContextBuilder<Object>{
 		RunEnvironment.getInstance().endAt(1200);
 		
 		return context;
+	}
+
+	private void initializeEpisodeState(Context<Object> context, Grid<Object> grid, GridValueLayer alphaLayer, int neuroNum, int neuronHealth) {
+		int currentRun = Treatment.getBatchRunNumber();
+		
+		// Curriculum: aumenta difficoltà ogni N episodi
+		int difficulty = (int) (currentRun / 50);  // ogni 50 run, step avanti
+		
+		int initialDegCount, initialStressCount, initialInflamCount;
+		
+		switch(difficulty % 4) {
+			case 0: // Easy: no initial inflammation
+					initialDegCount = 1;
+					initialStressCount = 0;
+					initialInflamCount = 0;
+					break;
+			case 1: // Medium: baseline inflammation
+					initialDegCount = 2;
+					initialStressCount = 3;
+					initialInflamCount = 2;
+					break;
+			case 2: // Hard: propagated inflammation
+					initialDegCount = 4;
+					initialStressCount = 5;
+					initialInflamCount = 4;
+					break;
+			case 3: // Extreme: high inflammation (test robustness)
+					initialDegCount = 8;
+					initialStressCount = 10;
+					initialInflamCount = 8;
+					break;
+			default:
+					initialDegCount = 1;
+					initialStressCount = 0;
+					initialInflamCount = 0;
+		}
+    
+		// Leggi il batch run number
+		int batchRun = Treatment.getBatchRunNumber();
+
+		// Crea neuroni healthy
+		int healthyToCreate = neuroNum - initialDegCount - initialStressCount;
+		for(int i = 0; i < healthyToCreate; i++) {
+			new Neuron(context, neuronHealth);
+		}
+
+		// Aggiungi neuroni MORTI
+		for(int i = 0; i < initialDegCount; i++) {
+			var deadNeuron = new Neuron(context, neuronHealth);
+			deadNeuron.setHealth(0);  // NeuronState.DEGENERATED_DEATH
+			alphaLayer.set(10, grid.getLocation(deadNeuron).getX(), grid.getLocation(deadNeuron).getY());
+		}
+
+		// Aggiungi neuroni STRESSATI
+		for(int i = 0; i < initialStressCount; i++) {
+			var stressedNeuron = new Neuron(context, neuronHealth);
+			stressedNeuron.setHealth(neuronHealth - 10);  // ~30% salute = STRESSED
+			stressedNeuron.setState(NeuronState.STRESSED);
+		}
 	}
 }
