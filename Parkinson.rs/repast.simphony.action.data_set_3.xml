@@ -1,0 +1,67 @@
+<repast.simphony.data2.engine.DataSetDescriptor simphonyVersion="2.11.0">
+  <name>A Data Set</name>
+  <type>AGGREGATE</type>
+  <inclTick>true</inclTick>
+  <inclBatchRun>false</inclBatchRun>
+  <inclRandomSeed>false</inclRandomSeed>
+  <scheduleParams>
+    <start>1.0</start>
+    <interval>1.0</interval>
+    <priority>-Infinity</priority>
+    <pType>LAST</pType>
+    <duration>-1.0</duration>
+    <frequency>REPEAT</frequency>
+    <hashCode>815812566</hashCode>
+  </scheduleParams>
+  <atEnd>false</atEnd>
+  <methodDataSources class="linked-hash-map">
+    <entry>
+      <string>cytorelease</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>cytorelease</id>
+        <className>parkinson.agent.passive.Treatment</className>
+        <methodName>getCytoRelease</methodName>
+        <aggType>MEAN</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>degenrate</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>degenrate</id>
+        <className>parkinson.agent.passive.Treatment</className>
+        <methodName>getDegenRate</methodName>
+        <aggType>MEAN</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>evaprate</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>evaprate</id>
+        <className>parkinson.agent.passive.Treatment</className>
+        <methodName>getEvapRate</methodName>
+        <aggType>MEAN</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>microgliathreshold</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>microgliathreshold</id>
+        <className>parkinson.agent.passive.Treatment</className>
+        <methodName>getMicrogliaThreshold</methodName>
+        <aggType>MEAN</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>neuronthreshold</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>neuronthreshold</id>
+        <className>parkinson.agent.passive.Treatment</className>
+        <methodName>getNeuronThreshold</methodName>
+        <aggType>MEAN</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+  </methodDataSources>
+  <countSources class="linked-hash-map"/>
+  <customNADataSources class="linked-hash-map"/>
+  <customAggDataSources class="linked-hash-map"/>
+</repast.simphony.data2.engine.DataSetDescriptor>

@@ -26,16 +26,13 @@ import repast.simphony.essentials.RepastEssentials;
 import repast.simphony.util.collections.IndexedIterable;
 
 /*
- * TODO
  * 
- * 1. RISOLVERE CHE L EPISODIO TERMINA QUANDO SI INCASTRANO IN UN PUNTO
- * 2. Il fatto che il modello impari che in certi stati sia meglio un dosaggio "apparentemente" sbagliato è semplicemente dovuto alla stocasticità
- * delle posizioni delle cellule -> è possibile sintetizzarla nello stato?
+1.326.144.413
  * 
  */
 
 public class Treatment extends PassiveAgent {
-  	public static final String PATH = "D:\\Informatica\\UniCAM\\Anno IV\\Multi Agent Systems and DDC\\ParkinsonAgentModel\\outputKami";
+  	public static final String PATH = "C:\\Users\\theca\\Desktop\\unicam\\DCC&MAS\\ParkinsonAgentModel\\outputKami";
 	public static final String JSON_NAME = "learnMap.json";
 	public static final String CSV_NAME = "rlConvergence.csv";
 	
@@ -380,7 +377,7 @@ public class Treatment extends PassiveAgent {
 		this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).setModifier(rateModifier);
 		this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).setModifier(rateModifier);
 		
-		this.policy.getParam(StatType.EVAPORATION_RATE).setModifier(1.0d - (rateModifier / 30));
+		this.policy.getParam(StatType.EVAPORATION_RATE).setModifier(1.0d - ((rateModifier - 1) / 50));
 
 		this.env.setEvaporationRate(this.env.getCytokineDiffuser(), this.policy.getParam(StatType.EVAPORATION_RATE).getEffectiveValue());
 		System.out.println("Valore CYTO_RELEASE_RATE " + this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue());	
@@ -401,6 +398,27 @@ public class Treatment extends PassiveAgent {
 			this.GLP1dosage = this.GLP1dosage - this.currentState.getCurrentGLP1dose() * GLP1dosageEvaporation; // evap of dosage equal to 95% of last dosage
 		*/
 	}
+	
+	public double getCytoRelease() {
+		return this.policy.getParam(StatType.CYTO_RELEASE_RATE).getEffectiveValue();
+	}
+	
+	public double getEvapRate() {
+		return this.policy.getParam(StatType.EVAPORATION_RATE).getEffectiveValue();
+	}
+	
+	public double getDegenRate() {
+		return this.policy.getParam(StatType.DEGENERATION_RATE).getEffectiveValue();
+	}
+	
+	public double getNeuronThreshold() {
+		return this.policy.getParam(StatType.CYTO_NEURON_THRESHOLD).getEffectiveValue();
+	}
+	
+	public double getMicrogliaThreshold() {
+		return this.policy.getParam(StatType.CYTO_MICROGLIA_THRESHOLD).getEffectiveValue();
+	}
+	
 	
 	private List<Action> initializeDiscreteActions() {
 		List<Action> l = new LinkedList<>();
